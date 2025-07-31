@@ -11,53 +11,97 @@ const last_posts = posts.slice(0, 3);
 
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+    <div class="text-xl py-1">Welcome 👋</div>
+    <div class="text-5xl font-bold">FUENCE PODCAST</div>
+    <div class="text-3xl py-3 font-bold">FOR PEACE, FOR HUMANITY ... </div>
     <div class="py-2">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+        <p class="mb-3 text-black-500 dark:text-black-400"><b>We are a small team of experts embarking on a journey for some exciting projects.</b> </p>
+        
+        <p class="mb-3 text-black-500 dark:text-black-400">Our first mission focuses on <b>Bangladesh</b>—a small, beautiful country with an extremely high population
+        density that has become <b><i>"A Model Country"</i></b> for development and prosperity. This country’s transformation 
+        into <b><u>A Model Country</u></b> will serve as a case study for generations and for global audiences, demonstrating how a 
+        female leader effectively proved that population is not a problem but rather a country's true asset.</p>
+
+        <p class="mb-3 text-black-500 dark:text-black-400">Our podcast will cover various aspects of research, discussions, and case studies about Bangladesh. 
+          We also aim to envision the potential future, the highest potential that Bangladesh can achieve through its remarkable people.</p>
+        
+        <p class="mb-3 text-black-500 dark:text-black-400">We will also discuss the <b><u>2024 Color Revolution</u></b>, its reasons and the players involved.</p>
+        <p class="mb-3 text-black-500 dark:text-black-400">  Our dedication is <i>to save this beautiful, secular, prosperous country from becoming a failed, terrorist state. We want to help its people return to prosperity, 
+          stability, harmony and secure a beautiful future for themselves and their kids.</i></p>
+
+         <p class="mb-3 text-black-500 dark:text-black-400">Welcome to <b><i><u>Fuence Podcast</u></i></b>. We hope you'll also be proud of being part of our journey.</p> 
+
+
       </text>
     </div>
+    <div class="divider my-2"></div>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-2"><u>Mission</u> </div>
+  </div>
+
+  <div class="py-4">
+      <text class="text-lg">
+        <p class="mb-3 text-black-500 dark:text-black-400">Our Mission is to collect, catalog, research, analyze Excellent Collective 
+          Achievements; so that others can use/replicate these with ease and necessary customization for their own set of similar 
+          goals to accomplish.</p> 
+      </text>
+  </div>
+  <div class="divider my-2"></div>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-2"><u>Vision</u> </div>
+  </div>
+
+  <div class="py-4">
+      <text class="text-lg">
+        <p class="mb-3 text-black-500 dark:text-black-400">Our vision is to build a better present and future for humanity and for
+           the people through best practices along with mutual trust, respect, harmony and cooperation.</p> 
+      </text>
+  </div>
+  <div class="divider my-2"></div>
+
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
+      <a class="btn" href="https://twitter.com/fuence4w" target="_blank"> Let's connect!</a>
+      <a href="https://buymeacoffee.com/fuence" target="_blank" class="btn btn-outline ml-5">
+        Support Us
       </a>
     </div>
   </div>
 
+
+
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2">Our Ongoing Projects {"</>"}</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
+    title="Podcast Project 1"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    desc="Case Study: Amazing Bangladesh and Its Extraordinary Patriot Leader Sheikh Hasina."
     url="#"
-    badge="NEW"
+    badge="CASE STUDY"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
+    title="Podcast Project 2"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    desc="Call for Humanity: Save Bangladesh from Becoming a Failed, Terrorist Country."
     url="#"
+    badge="CALL FOR HUMANITY"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 3"
+    title="Podcast Project 3"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    desc="Terror Alert: Expose Jamaat - e - Islami's Anti - Islamic Modus Operandi and its Conspiracy Against Bangladesh and India."
     url="#"
-    badge="FOSS"
+    badge="TERROR ALERT"
   />
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10"></div>
   </div>
 
   {
@@ -67,7 +111,7 @@ const last_posts = posts.slice(0, 3);
           title={post.data.title}
           img={post.data.heroImage}
           desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
+          url={"/podcast/" + createSlug(post.data.title, post.slug)}
           target="_self"
           badge={post.data.badge}
         />
