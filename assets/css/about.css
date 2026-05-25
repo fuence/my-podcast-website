@@ -1,0 +1,62 @@
+/* ============================================================
+   FUENCE PODCAST — ABOUT PAGE CSS (about.css)
+   ============================================================ */
+
+/* Logo showcase row */
+.about-logo-row{display:flex;align-items:center;gap:40px;flex-wrap:wrap}
+.about-logo-img{width:220px;border-radius:var(--radius);box-shadow:var(--shadow-md)}
+.about-logo-text{display:flex;flex-direction:column;gap:8px}
+.about-brand-name{font-family:var(--font-display);font-size:2.8rem;font-weight:700;color:var(--teal);font-style:italic;line-height:1}
+.about-brand-tagline{font-family:var(--font-display);font-size:1.15rem;color:var(--text-muted);font-style:italic}
+.about-pillars-row{display:flex;align-items:center;gap:10px;margin-top:8px}
+.about-pillar{font-family:var(--font-sans);font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--amber)}
+.about-pillar-dot{color:var(--border);font-size:1.2rem}
+
+/* Two-column layout */
+.about-2col{display:grid;grid-template-columns:auto 1fr;gap:64px;align-items:start}
+.about-2col-rev{grid-template-columns:1fr auto}
+.about-icon-col{display:flex;justify-content:center}
+.about-icon-block{display:flex;flex-direction:column;align-items:center;gap:12px;background:var(--bg-tint);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 24px;position:sticky;top:88px}
+.aib-icon{font-size:3rem}
+.aib-label{font-family:var(--font-sans);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted)}
+.about-lead{font-size:1.1rem;color:var(--text-dark);line-height:1.75;margin-bottom:16px;font-family:var(--font-serif)}
+
+/* VGL cards */
+.vgl-card{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:36px 28px;display:flex;flex-direction:column;gap:12px;
+  transition:all var(--transition);position:relative;overflow:hidden
+}
+.vgl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--teal)}
+.vgl-card-accent::before{background:var(--amber-bright)}
+.vgl-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.vgl-word{
+  font-family:var(--font-display);font-size:3rem;font-weight:700;
+  color:var(--border);line-height:1;margin-bottom:4px;
+  position:absolute;top:20px;right:20px;opacity:.4
+}
+.vgl-icon{font-size:2rem;margin-bottom:4px}
+.vgl-card h3{font-size:1.15rem;color:var(--text-dark)}
+.vgl-card p{font-size:.9rem;color:var(--text-muted);line-height:1.7}
+
+/* Principles */
+.principle-card{
+  background:var(--bg-dark-card);border:1px solid var(--border-dark);
+  border-radius:var(--radius);padding:28px 24px;
+  display:flex;flex-direction:column;gap:10px;
+  transition:border-color var(--transition)
+}
+.principle-card:hover{border-color:var(--teal)}
+.pc-icon{font-size:1.8rem}
+.principle-card h4{font-size:1rem;color:var(--text-light);font-family:var(--font-display)}
+.principle-card p{font-size:.87rem;color:var(--text-light-dim);line-height:1.65}
+
+/* Responsive */
+@media(max-width:900px){
+  .about-2col,.about-2col-rev{grid-template-columns:1fr}
+  .about-icon-col{display:none}
+}
+@media(max-width:600px){
+  .about-logo-img{width:160px}
+  .about-brand-name{font-size:2rem}
+}

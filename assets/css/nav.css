@@ -1,0 +1,72 @@
+/* ============================================================
+   FUENCE PODCAST — NAV & FOOTER (nav.css)
+   Affects every page. Edit nav links in assets/js/nav.js
+   ============================================================ */
+
+/* NAVBAR */
+.navbar{
+  position:sticky;top:0;z-index:200;
+  background:rgba(250,250,247,.93);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);transition:box-shadow var(--transition)
+}
+.navbar.scrolled{box-shadow:var(--shadow-sm)}
+.navbar-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+
+/* Logo */
+.navbar-logo{display:flex;align-items:center;gap:10px;text-decoration:none;transition:opacity var(--transition)}
+.navbar-logo:hover{opacity:.8}
+.logo-icon{
+  width:36px;height:36px;background:var(--teal);border-radius:var(--radius-sm);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:.85rem;font-weight:700;font-family:var(--font-display);flex-shrink:0
+}
+.logo-text{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:var(--text-dark);line-height:1.1}
+.logo-sub{font-family:var(--font-sans);font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);display:block}
+
+/* Desktop nav */
+.navbar-nav{display:flex;align-items:center;gap:2px;list-style:none}
+.navbar-nav a{
+  font-family:var(--font-sans);font-size:.87rem;font-weight:500;
+  color:var(--text-body);padding:6px 11px;border-radius:var(--radius-sm);
+  text-decoration:none;transition:all var(--transition)
+}
+.navbar-nav a:hover,.navbar-nav a.active{color:var(--teal);background:var(--teal-light)}
+.navbar-nav .nav-cta a{
+  background:var(--amber-bright);color:#fff;padding:7px 16px;
+  border-radius:var(--radius-sm);font-weight:600
+}
+.navbar-nav .nav-cta a:hover{background:var(--amber);color:#fff}
+
+/* Mobile toggle */
+.navbar-toggle{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer}
+.navbar-toggle span{display:block;width:22px;height:2px;background:var(--text-dark);border-radius:2px;transition:all .3s ease}
+
+/* Mobile menu */
+.navbar-menu{display:none;flex-direction:column;gap:2px;padding:var(--sp-md) 0 var(--sp-lg);border-top:1px solid var(--border)}
+.navbar-menu.open{display:flex}
+.navbar-menu a{font-size:.95rem;font-weight:500;color:var(--text-body);padding:10px 0;border-bottom:1px solid var(--border);text-decoration:none;transition:color var(--transition)}
+.navbar-menu a:hover{color:var(--teal)}
+.navbar-menu .menu-cta a{color:var(--amber);font-weight:600;border-bottom:none;margin-top:var(--sp-sm)}
+
+@media(max-width:768px){.navbar-nav{display:none}.navbar-toggle{display:flex}}
+
+/* FOOTER */
+.site-footer{background:var(--bg-dark);color:var(--text-light-dim);padding:var(--sp-3xl) 0 var(--sp-xl)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--sp-2xl);margin-bottom:var(--sp-2xl)}
+.footer-brand .logo-text{color:var(--text-light)}
+.footer-brand .logo-sub{color:var(--text-light-dim)}
+.footer-tagline{font-size:.88rem;color:var(--text-light-dim);line-height:1.65;margin-top:var(--sp-md);max-width:280px}
+.footer-col h4{font-family:var(--font-sans);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);margin-bottom:var(--sp-md)}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col ul a{font-size:.88rem;color:var(--text-light-dim);text-decoration:none;transition:color var(--transition)}
+.footer-col ul a:hover{color:var(--amber-bright)}
+.footer-tagline-sub{font-size:.75rem;color:var(--text-light-dim);opacity:.6;margin-top:8px;font-style:italic}
+.footer-bottom{border-top:1px solid var(--border-dark);padding-top:var(--sp-lg);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--sp-md)}
+.footer-bottom p{font-size:.8rem;color:var(--text-light-dim)}
+.footer-bottom a{color:var(--text-light-dim)}
+.footer-bottom a:hover{color:var(--amber-bright)}
+.footer-legal{display:flex;gap:var(--sp-lg)}
+
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:var(--sp-xl)}}
+@media(max-width:600px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;align-items:flex-start}}

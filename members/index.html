@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- NOTE: This page is NOT linked from the public navigation.
+       Share its URL only with authorised individuals. -->
+  <title>Members — Fuence</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/nav.css" />
+  <link rel="stylesheet" href="../assets/css/inner.css" />
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<!-- PASSWORD GATE -->
+<div class="members-gate" id="gate">
+  <div class="gate-box">
+    <div class="gate-icon">🔒</div>
+    <h2>Members Area</h2>
+    <!-- EDIT: Change this description as needed -->
+    <p>This area contains restricted research and project content.<br />
+    Enter your access credentials to continue.</p>
+    <div class="gate-form">
+      <label for="gatePass">Access Passphrase</label>
+      <input type="password" id="gatePass" placeholder="Enter passphrase…" />
+      <p class="gate-error" id="gateError">Incorrect passphrase. Please try again.</p>
+      <button class="btn btn-primary gate-submit" onclick="checkPass()">Enter →</button>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-muted);margin-top:24px">
+      If you need access, <a href="../contact/index.html">contact us</a>.
+    </p>
+  </div>
+</div>
+
+<!-- MEMBERS CONTENT (hidden until correct password entered) -->
+<div id="members-content" style="display:none">
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">Restricted Access</span>
+      <h1>Members Area</h1>
+      <p class="page-hero-sub">
+        Authorised research content and restricted series.
+        Do not share links or content from this area.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="section-label">Available to You</span>
+      <h2>Restricted Series & Content</h2>
+      <div class="divider"></div>
+
+      <div class="series-projects-grid">
+        <!-- ====================================================
+             EDIT: Add private project cards here.
+             Each card links to a specific private project page.
+             To add a new one: copy a card block, paste, update.
+             ==================================================== -->
+
+        <!-- PRIVATE PROJECT TEMPLATE:
+        <div class="series-project-card private-card">
+          <div class="spc-header">
+            <span class="badge badge-private">🔒 Restricted</span>
+            <div class="spc-region">🌐</div>
+          </div>
+          <h3>Project Title</h3>
+          <p>Short description of this restricted project.</p>
+          <div class="spc-outputs">
+            <span>📋 Reports</span>
+            <span>📝 Briefs</span>
+          </div>
+          <a href="../members/PROJECT-SLUG/index.html" class="btn btn-primary" style="margin-top:auto">
+            Access Project →
+          </a>
+        </div>
+        -->
+
+        <!-- Placeholder until real private projects are added -->
+        <div class="series-project-card private-card">
+          <div class="spc-header">
+            <span class="badge badge-private">🔒 Restricted</span>
+            <div class="spc-region">📁</div>
+          </div>
+          <h3>Project Alpha — [Title TBD]</h3>
+          <p>This is a placeholder for your first restricted project page.
+          Replace this card once your private project page is ready.</p>
+          <div class="spc-outputs"><span>📋 Reports</span><span>📝 Briefs</span></div>
+          <a href="#" class="btn btn-primary" style="margin-top:auto">Access Project →</a>
+        </div>
+
+      </div>
+
+      <div style="margin-top:48px;padding:24px;background:var(--bg-tint);border-radius:var(--radius);border:1px solid var(--border)">
+        <h4 style="margin-bottom:8px;color:var(--text-dark)">⚠️ Reminder</h4>
+        <p style="font-size:.9rem;color:var(--text-muted)">
+          All content in this area is confidential. Do not share links, documents,
+          or any content from this section without explicit authorisation.
+          Access may be revoked at any time.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="footer-placeholder"></div>
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+/* ============================================================
+   PASSWORD GATE LOGIC
+   EDIT: Change the passphrase below to your chosen password.
+   To change it: just replace 'for-peace' with your new phrase.
+   Use a strong phrase — lowercase, no spaces or use hyphens.
+   Share this passphrase ONLY with authorised individuals.
+   ============================================================ */
+const PASSPHRASE = 'for-peace'; // ← EDIT THIS
+
+function checkPass() {
+  const input = document.getElementById('gatePass').value.trim().toLowerCase();
+  if (input === PASSPHRASE) {
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('members-content').style.display = 'block';
+    // Remember for this session only (not permanent)
+    sessionStorage.setItem('fuence_auth', 'ok');
+  } else {
+    document.getElementById('gateError').style.display = 'block';
+    document.getElementById('gatePass').value = '';
+    document.getElementById('gatePass').focus();
+  }
+}
+
+// Allow Enter key to submit
+document.addEventListener('DOMContentLoaded', function() {
+  const input = document.getElementById('gatePass');
+  if (input) {
+    input.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') checkPass();
+    });
+  }
+  // Restore session if already authenticated in this tab session
+  if (sessionStorage.getItem('fuence_auth') === 'ok') {
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('members-content').style.display = 'block';
+  }
+});
+</script>
+</body>
+</html>
