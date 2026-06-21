@@ -2,8 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Fuence Podcast</title>
-  <meta name="description" content="Contact Fuence Podcast — for research partnerships, contributions, or general enquiries." />
+  <title>Contact — Fuence</title>
+  <meta name="description" content="Contact Fuence — for research partnerships, op-ed pitches, press enquiries, or general questions. No email required." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Fuence" />
+  <meta property="og:title" content="Contact — Fuence" />
+  <meta property="og:description" content="Get in touch with Fuence for research partnerships, op-ed pitches, or press enquiries. All messages are read personally." />
+  <meta property="og:url" content="https://www.fuence.com/contact/" />
+  <meta property="og:image" content="https://www.fuence.com/assets/img/fuence-logo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact — Fuence" />
+  <meta name="twitter:description" content="Get in touch with Fuence for research partnerships, op-ed pitches, or press enquiries. All messages are read personally." />
+  <meta name="twitter:image" content="https://www.fuence.com/assets/img/fuence-logo.jpg" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/nav.css" />
   <link rel="stylesheet" href="../assets/css/inner.css" />
@@ -32,42 +42,46 @@
         <h2>Send a Message</h2>
         <div class="divider"></div>
 
-        <div class="gform-wrap">
-          <!-- Privacy note shown above the form -->
-          <div class="gform-note">
-            You must sign in with your Google account to submit this form.
-            We do not collect or store your email address.
-            By submitting, you agree to our
-            <a href="../privacy-policy/index.html">Privacy Policy</a> and
-            <a href="../terms-of-use/index.html">Terms of Use</a>.
-            The "Report Abuse" link is a Google feature and does not affect your submission.
+        <form id="contact-form" novalidate style="display:flex;flex-direction:column;gap:20px">
+
+          <div>
+            <label for="cf-name" style="display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--text)">Name <span style="color:var(--accent)">*</span></label>
+            <input type="text" id="cf-name" name="name" required placeholder="Your name"
+              style="width:100%;padding:11px 14px;border:1px solid var(--border,#ddd);border-radius:6px;font-size:.95rem;background:var(--bg);color:var(--text);box-sizing:border-box" />
           </div>
 
-          <!-- ============================================================
-               PASTE YOUR GOOGLE FORM EMBED CODE HERE
-               HOW TO GET YOUR EMBED CODE:
-               1. Open your Google Form
-               2. Click the Send button (top right)
-               3. Click the < > embed icon
-               4. Copy the <iframe ...> code
-               5. Paste it here, replacing the placeholder below
-               6. Recommended: set width="100%" and height="900" on the iframe
-
-               EXAMPLE of what it looks like:
-               <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
-                 width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">
-                 Loading…
-               </iframe>
-               ============================================================ -->
-          <div style="padding:40px;text-align:center;color:var(--text-muted);font-size:.9rem;background:var(--bg-tint)">
-            <<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc9q5ZsVAMmjS9Pcz0b9i-8ZFMHAvFf7bPFGMlOQgV3t3BP1A/viewform?embedded=true" width="640" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>>
-            📋 <strong>Google Form goes here.</strong><br />
-            Paste your &lt;iframe&gt; embed code above this comment block.<br />
-            See instructions in the HTML comment above.
+          <div>
+            <label for="cf-org" style="display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--text)">Organisation <span style="font-weight:400;color:var(--text-muted)">(optional)</span></label>
+            <input type="text" id="cf-org" name="org" placeholder="Media outlet, university, NGO, or independent"
+              style="width:100%;padding:11px 14px;border:1px solid var(--border,#ddd);border-radius:6px;font-size:.95rem;background:var(--bg);color:var(--text);box-sizing:border-box" />
           </div>
-          <!-- END PASTE ZONE -->
 
-        </div>
+          <div>
+            <label for="cf-topic" style="display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--text)">Subject <span style="color:var(--accent)">*</span></label>
+            <select id="cf-topic" name="topic" required
+              style="width:100%;padding:11px 14px;border:1px solid var(--border,#ddd);border-radius:6px;font-size:.95rem;background:var(--bg);color:var(--text);box-sizing:border-box;appearance:auto">
+              <option value="">— Select a subject —</option>
+              <option value="Research partnership">Research partnership</option>
+              <option value="Op-ed pitch">Op-ed pitch</option>
+              <option value="Press enquiry">Press enquiry</option>
+              <option value="Expert contribution">Expert contribution</option>
+              <option value="General question">General question</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="cf-message" style="display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--text)">Message <span style="color:var(--accent)">*</span></label>
+            <textarea id="cf-message" name="message" rows="7" required placeholder="Tell us about your enquiry…"
+              style="width:100%;padding:11px 14px;border:1px solid var(--border,#ddd);border-radius:6px;font-size:.95rem;background:var(--bg);color:var(--text);box-sizing:border-box;resize:vertical;font-family:inherit"></textarea>
+          </div>
+
+          <div>
+            <button type="submit" class="btn btn-primary" id="cf-submit" style="min-width:160px">Send Message →</button>
+          </div>
+
+          <div id="cf-status" style="display:none;padding:14px 18px;border-radius:6px;font-size:.93rem;line-height:1.55"></div>
+
+        </form>
       </div>
 
       <!-- SIDEBAR INFO -->
@@ -124,8 +138,9 @@
         <div class="ci-block">
           <h4>Privacy Note</h4>
           <p style="font-size:.88rem;color:var(--text-muted);line-height:1.65">
-            We do not display any email address publicly.
-            All contact is handled through this form.
+            We do not publish any email address publicly.
+            This form sends your message directly to our team —
+            no third-party platform, no Google account required.
             Responses are typically within 48–72 hours.
             See our <a href="../privacy-policy/index.html">Privacy Policy</a>
             for how your data is handled.
@@ -140,5 +155,45 @@
 <div id="footer-placeholder"></div>
 <script src="../assets/js/nav.js"></script>
 <script src="../assets/js/main.js"></script>
+<script>
+(function () {
+  var CONTACT_URL = 'https://thinktank.tailf58974.ts.net/webhook/contact';
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name    = document.getElementById('cf-name').value.trim();
+    var org     = document.getElementById('cf-org').value.trim();
+    var topic   = document.getElementById('cf-topic').value;
+    var message = document.getElementById('cf-message').value.trim();
+    if (!name || !topic || !message) return;
+    var btn    = document.getElementById('cf-submit');
+    var status = document.getElementById('cf-status');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    fetch(CONTACT_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({name: name, org: org, topic: topic, message: message})
+    })
+    .then(function (r) { return r.json(); })
+    .then(function () {
+      form.style.display = 'none';
+      status.style.background = 'var(--bg-tint,#f5f5f2)';
+      status.style.color = 'var(--text)';
+      status.innerHTML = '<strong>Message sent.</strong> We\'ll be in touch within 48–72 hours.';
+      status.style.display = 'block';
+    })
+    .catch(function () {
+      btn.disabled = false;
+      btn.textContent = 'Send Message →';
+      status.style.background = '#fff0f0';
+      status.style.color = '#c00';
+      status.textContent = 'Something went wrong — please try again or reach us on Twitter: @Fuence4w';
+      status.style.display = 'block';
+    });
+  });
+}());
+</script>
 </body>
 </html>
