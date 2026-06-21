@@ -27,3 +27,6 @@ Format and workflow: see
 | 2026-06-21 | systematic | who-is-jamaat-2026 | report | bangladesh | publications.json |
 | 2026-06-21 | systematic | project-ukraine-for-india-2026 | report | bangladesh | publications.json |
 | 2026-06-21 | systematic | pakistan-bay-of-bengal-2026 | brief | india | publications.json |
+| 2026-06-21 | systematic | bay-of-bengal-gambit-china-2026 | brief | india | publications.json |
+| 2026-06-21 | systematic | chickens-neck-bangladesh-nightmare-2026 | brief | india | publications.json |
+| 2026-06-21 | systematic | evidence-file-bangladesh-2026 | brief | bangladesh | publications.json |
