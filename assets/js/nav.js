@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
           <li><a href="/about/index.html">About</a></li>
           <li><a href="/series/index.html">Series</a></li>
           <li><a href="/publications/index.html">Publications</a></li>
-          <li><a href="/community/index.html">Community</a></li>
+          <!-- ACTIVATE Community: uncomment when Discord + Forum are live
+          <li><a href="/community/index.html">Community</a></li> -->
           <li><a href="/contact/index.html">Contact</a></li>
           <!-- EDIT: Support CTA button — change link or text -->
           <li class="nav-cta"><a href="/support/index.html">☕ Support Us</a></li>
@@ -66,7 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
         <a href="/about/index.html">About</a>
         <a href="/series/index.html">Series</a>
         <a href="/publications/index.html">Publications</a>
-        <a href="/community/index.html">Community</a>
+        <!-- ACTIVATE Community: uncomment when Discord + Forum are live
+        <a href="/community/index.html">Community</a> -->
         <a href="/contact/index.html">Contact</a>
         <div class="menu-cta"><a href="/support/index.html">☕ Support Us</a></div>
       </div>
@@ -121,7 +123,8 @@ document.addEventListener('DOMContentLoaded', function () {
             <li><a href="/publications/index.html#reports">Reports</a></li>
             <li><a href="/publications/index.html#op-eds">Op-Eds</a></li>
             <li><a href="/publications/index.html#briefs">Briefs</a></li>
-            <li><a href="/community/index.html#forum">Forum</a></li>
+            <!-- ACTIVATE Forum: replace with /community/index.html#forum when live
+            <li><a href="/community/index.html#forum">Forum</a></li> -->
           </ul>
         </div>
 
