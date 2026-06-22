@@ -43,6 +43,9 @@
         <div class="divider"></div>
 
         <form id="contact-form" novalidate style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:none" aria-hidden="true">
+            <input type="text" name="website" id="cf-hp" tabindex="-1" autocomplete="off" />
+          </div>
 
           <div>
             <label for="cf-name" style="display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--text)">Name <span style="color:var(--accent)">*</span></label>
@@ -85,9 +88,9 @@
             <button type="submit" class="btn btn-primary" id="cf-submit" style="min-width:160px">Send Message →</button>
           </div>
 
-          <div id="cf-status" style="display:none;padding:14px 18px;border-radius:6px;font-size:.93rem;line-height:1.55"></div>
-
         </form>
+
+        <div id="cf-status" style="display:none;padding:14px 18px;border-radius:6px;font-size:.93rem;line-height:1.55;margin-top:16px"></div>
       </div>
 
       <!-- SIDEBAR INFO -->
@@ -174,6 +177,11 @@
     var topic   = document.getElementById('cf-topic').value;
     var message = document.getElementById('cf-message').value.trim();
     if (!name || !email || !topic || !message) return;
+    if (document.getElementById('cf-hp').value) {
+      form.style.display = 'none';
+      document.getElementById('cf-status').style.display = 'block';
+      return;
+    }
     var btn    = document.getElementById('cf-submit');
     var status = document.getElementById('cf-status');
     btn.disabled = true;
