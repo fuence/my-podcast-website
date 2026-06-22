@@ -14,6 +14,7 @@
   <meta name="twitter:title" content="Publications — Fuence" />
   <meta name="twitter:description" content="Reports, op-eds, and policy briefs from Fuence research — covering Bangladesh, South Asia geopolitics, India-China dynamics, and democratic futures." />
   <meta name="twitter:image" content="https://www.fuence.com/assets/img/fuence-logo.jpg" />
+  <link rel="canonical" href="https://www.fuence.com/publications/" />
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/nav.css" />
   <link rel="stylesheet" href="../assets/css/inner.css" />
@@ -317,5 +318,27 @@
 <div id="footer-placeholder"></div>
 <script src="../assets/js/nav.js"></script>
 <script src="../assets/js/main.js"></script>
+<script>
+(function () {
+  var MONTHS = {January:0,February:1,March:2,April:3,May:4,June:5,July:6,August:7,September:8,October:9,November:10,December:11};
+  var now = new Date();
+  document.querySelectorAll('[data-tab-content="all"] .pub-item').forEach(function (item) {
+    var meta = item.querySelector('.pi-meta .text-muted');
+    if (!meta) return;
+    var parts = meta.textContent.trim().split(' ');
+    var m = MONTHS[parts[0]], y = parseInt(parts[1]);
+    if (m === undefined || isNaN(y)) return;
+    if ((now - new Date(y, m, 1)) <= 45 * 864e5) {
+      var slot = item.querySelector('.pi-type');
+      if (!slot) return;
+      var b = document.createElement('span');
+      b.className = 'badge';
+      b.style.cssText = 'background:#1a7a42;color:#fff;margin-left:6px;font-size:.72rem';
+      b.textContent = 'New';
+      slot.appendChild(b);
+    }
+  });
+}());
+</script>
 </body>
 </html>

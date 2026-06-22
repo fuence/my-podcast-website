@@ -169,6 +169,35 @@ document.addEventListener('DOMContentLoaded', function () {
   </footer>`;
 
   /* ============================================================
+     SEO — Organization JSON-LD + favicon (injected on every page)
+     ============================================================ */
+  var _ld = document.createElement('script');
+  _ld.type = 'application/ld+json';
+  _ld.text = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    'name': 'Fuence',
+    'alternateName': 'Futura Genesis Center',
+    'url': 'https://www.fuence.com',
+    'logo': 'https://www.fuence.com/assets/img/fuence-logo.jpg',
+    'sameAs': [
+      'https://x.com/Fuence4w',
+      'https://substack.com/@fuence',
+      'https://patreon.com/Fuence',
+      'https://discord.gg/NnhTegVXg',
+      'https://www.youtube.com/@fuence'
+    ]
+  });
+  document.head.appendChild(_ld);
+
+  if (!document.querySelector('link[rel~="icon"]')) {
+    var _fav = document.createElement('link');
+    _fav.rel = 'icon'; _fav.type = 'image/jpeg';
+    _fav.href = '/assets/img/fuence-logo.jpg';
+    document.head.appendChild(_fav);
+  }
+
+  /* ============================================================
      INJECT — do not edit below
      ============================================================ */
   const navEl = document.getElementById('nav-placeholder');
