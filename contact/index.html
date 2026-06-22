@@ -51,6 +51,12 @@
           </div>
 
           <div>
+            <label for="cf-email" style="display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--text)">Email <span style="color:var(--accent)">*</span></label>
+            <input type="email" id="cf-email" name="email" required placeholder="your@email.com"
+              style="width:100%;padding:11px 14px;border:1px solid var(--border,#ddd);border-radius:6px;font-size:.95rem;background:var(--bg);color:var(--text);box-sizing:border-box" />
+          </div>
+
+          <div>
             <label for="cf-org" style="display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--text)">Organisation <span style="font-weight:400;color:var(--text-muted)">(optional)</span></label>
             <input type="text" id="cf-org" name="org" placeholder="Media outlet, university, NGO, or independent"
               style="width:100%;padding:11px 14px;border:1px solid var(--border,#ddd);border-radius:6px;font-size:.95rem;background:var(--bg);color:var(--text);box-sizing:border-box" />
@@ -163,10 +169,11 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var name    = document.getElementById('cf-name').value.trim();
+    var email   = document.getElementById('cf-email').value.trim();
     var org     = document.getElementById('cf-org').value.trim();
     var topic   = document.getElementById('cf-topic').value;
     var message = document.getElementById('cf-message').value.trim();
-    if (!name || !topic || !message) return;
+    if (!name || !email || !topic || !message) return;
     var btn    = document.getElementById('cf-submit');
     var status = document.getElementById('cf-status');
     btn.disabled = true;
@@ -174,7 +181,7 @@
     fetch(CONTACT_URL, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({name: name, org: org, topic: topic, message: message})
+      body: JSON.stringify({name: name, email: email, org: org, topic: topic, message: message})
     })
     .then(function (r) { return r.json(); })
     .then(function () {
