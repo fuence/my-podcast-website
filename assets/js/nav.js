@@ -101,12 +101,11 @@ document.addEventListener('DOMContentLoaded', function () {
             backed by evidence, built for impact.
           </p>
           <p class="footer-tagline-sub">Vision · Genesis · Legacy</p>
-          <form id="footer-subscribe-form" style="margin-top:18px;display:flex;gap:8px;flex-wrap:wrap">
-            <input type="email" id="footer-subscribe-email" placeholder="Subscribe by email"
-              style="padding:9px 13px;border:1px solid rgba(255,255,255,0.2);border-radius:5px;background:rgba(255,255,255,0.07);color:inherit;font-size:13px;flex:1;min-width:160px" />
-            <button type="submit" style="padding:9px 16px;background:var(--accent,#c07a1a);color:#fff;border:none;border-radius:5px;font-size:13px;cursor:pointer;white-space:nowrap">Go →</button>
-          </form>
-          <p id="footer-subscribe-msg" style="font-size:12px;margin-top:8px;display:none"></p>
+          <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px">
+            <a href="https://substack.com/@fuence" target="_blank" style="padding:7px 13px;background:var(--accent,#c07a1a);color:#fff;border-radius:5px;font-size:12px;text-decoration:none;white-space:nowrap">📬 Substack</a>
+            <a href="https://patreon.com/Fuence" target="_blank" style="padding:7px 13px;background:rgba(255,255,255,0.1);color:inherit;border:1px solid rgba(255,255,255,0.2);border-radius:5px;font-size:12px;text-decoration:none;white-space:nowrap">🎙 Patreon</a>
+            <a href="https://x.com/Fuence4w" target="_blank" style="padding:7px 13px;background:rgba(255,255,255,0.1);color:inherit;border:1px solid rgba(255,255,255,0.2);border-radius:5px;font-size:12px;text-decoration:none;white-space:nowrap">𝕏 Twitter</a>
+          </div>
         </div>
 
         <!-- COLUMN 2: Series — EDIT: Add new series links here -->
@@ -186,37 +185,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.getElementById('navToggle');
   const menu   = document.getElementById('navMenu');
   if (toggle && menu) toggle.addEventListener('click', () => menu.classList.toggle('open'));
-
-  // Footer subscribe form
-  const footerForm = document.getElementById('footer-subscribe-form');
-  if (footerForm) {
-    footerForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var email = document.getElementById('footer-subscribe-email').value.trim();
-      if (!email) return;
-      var btn = footerForm.querySelector('button[type=submit]');
-      var fmsg = document.getElementById('footer-subscribe-msg');
-      btn.disabled = true; btn.textContent = '…';
-      fetch('https://fuence-nas.tailf58974.ts.net/webhook/subscribe', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({email: email})
-      })
-      .then(function (r) { return r.json(); })
-      .then(function () {
-        footerForm.style.display = 'none';
-        fmsg.textContent = '✓ Subscribed. Thank you.';
-        fmsg.style.color = '#8fc98f';
-        fmsg.style.display = 'block';
-      })
-      .catch(function () {
-        btn.disabled = false; btn.textContent = 'Go →';
-        fmsg.textContent = 'Something went wrong — please try again or follow us on Twitter: @Fuence4w';
-        fmsg.style.color = '#e88';
-        fmsg.style.display = 'block';
-      });
-    });
-  }
 
   // Active link highlight
   const path = window.location.pathname;

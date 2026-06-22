@@ -315,86 +315,26 @@
 
 
 <!-- ============================================================
-     SECTION 4b: NEWSLETTER SUBSCRIBE
-     ACTIVATE: Replace SUBSCRIBE_URL with the Tailscale Funnel URL
-               e.g. https://fuence-nas.tailf58974.ts.net/webhook/subscribe
+     SECTION 4b: FOLLOW OUR WORK
+     EDIT: Update platform links below as channels go live
      ============================================================ -->
 <section class="section" id="subscribe" style="background:var(--bg-tint,#f8f8f6)">
   <div class="container">
-    <div class="text-center scroll-reveal" style="max-width:560px;margin:0 auto">
+    <div class="text-center scroll-reveal" style="max-width:680px;margin:0 auto">
       <span class="section-label">Stay Informed</span>
-      <h2 style="margin-bottom:12px">Briefings to Your Inbox</h2>
+      <h2 style="margin-bottom:12px">Follow Our Work</h2>
       <p style="color:var(--text-muted,#666);margin-bottom:32px">
-        New research, evidence briefs, and analysis — straight to your inbox.
-        No noise, no tracking, no third parties.
+        Read our research and subscribe for updates on the platforms you already use.
       </p>
-      <form id="subscribe-form" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-        <input
-          type="email"
-          id="subscribe-email"
-          placeholder="your@email.com"
-          required
-          style="padding:12px 18px;border:1px solid #ddd;border-radius:6px;font-size:15px;min-width:260px;flex:1;max-width:320px"
-        />
-        <button
-          type="submit"
-          class="btn btn-primary"
-          style="white-space:nowrap"
-        >Subscribe →</button>
-      </form>
-      <p id="subscribe-msg" style="margin-top:16px;font-size:14px;display:none"></p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+        <a href="https://substack.com/@fuence" target="_blank" class="btn btn-primary">📬 Subscribe on Substack</a>
+        <a href="https://patreon.com/Fuence" target="_blank" class="btn btn-amber">🎙 Support on Patreon</a>
+        <a href="https://x.com/Fuence4w" target="_blank" class="btn btn-outline">Follow on X →</a>
+        <a href="https://discord.gg/NnhTegVXg" target="_blank" class="btn btn-outline">Join Discord →</a>
+      </div>
     </div>
   </div>
 </section>
-
-<script>
-(function () {
-  var SUBSCRIBE_URL = 'https://fuence-nas.tailf58974.ts.net/webhook/subscribe';
-  var form = document.getElementById('subscribe-form');
-  var emailInput = document.getElementById('subscribe-email');
-  var msg = document.getElementById('subscribe-msg');
-  if (!form) return;
-
-  // Show banner if redirected back with ?subscribed param (fallback)
-  var params = new URLSearchParams(window.location.search);
-  if (params.get('subscribed') === 'true') {
-    form.style.display = 'none';
-    msg.textContent = '✓ You\'re subscribed. Thank you.';
-    msg.style.color = '#2a7a2a';
-    msg.style.display = 'block';
-  }
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var email = emailInput.value.trim();
-    if (!email) return;
-    var btn = form.querySelector('button[type=submit]');
-    btn.disabled = true;
-    btn.textContent = 'Subscribing…';
-    fetch(SUBSCRIBE_URL, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({email: email})
-    })
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      form.style.display = 'none';
-      msg.textContent = data.success
-        ? '✓ You\'re subscribed. Thank you.'
-        : '✓ You\'re on the list (or already subscribed). Thank you.';
-      msg.style.color = '#2a7a2a';
-      msg.style.display = 'block';
-    })
-    .catch(function () {
-      btn.disabled = false;
-      btn.textContent = 'Subscribe →';
-      msg.textContent = 'Something went wrong — email us at lead@fuence.com to subscribe.';
-      msg.style.color = '#b33';
-      msg.style.display = 'block';
-    });
-  });
-}());
-</script>
 
 
 <!-- ============================================================
