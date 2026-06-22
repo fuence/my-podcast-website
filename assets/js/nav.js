@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var btn = footerForm.querySelector('button[type=submit]');
       var fmsg = document.getElementById('footer-subscribe-msg');
       btn.disabled = true; btn.textContent = '…';
-      fetch('https://thinktank.tailf58974.ts.net/webhook/subscribe', {
+      fetch('https://fuence-nas.tailf58974.ts.net/webhook/subscribe', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email: email})
