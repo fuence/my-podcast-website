@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
           <li><a href="/about/index.html">About</a></li>
           <li><a href="/series/index.html">Series</a></li>
           <li><a href="/publications/index.html">Publications</a></li>
-          <!-- ACTIVATE Community: uncomment when Discord + Forum are live
-          <li><a href="/community/index.html">Community</a></li> -->
+          <li><a href="/initiatives/meridian/index.html">Meridian</a></li>
+          <li><a href="/community/index.html">Community</a></li>
           <li><a href="/contact/index.html">Contact</a></li>
           <!-- EDIT: Support CTA button — change link or text -->
           <li class="nav-cta"><a href="/support/index.html">☕ Support Us</a></li>
@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
         <a href="/about/index.html">About</a>
         <a href="/series/index.html">Series</a>
         <a href="/publications/index.html">Publications</a>
-        <!-- ACTIVATE Community: uncomment when Discord + Forum are live
-        <a href="/community/index.html">Community</a> -->
+        <a href="/initiatives/meridian/index.html">Meridian</a>
+        <a href="/community/index.html">Community</a>
         <a href="/contact/index.html">Contact</a>
         <div class="menu-cta"><a href="/support/index.html">☕ Support Us</a></div>
       </div>
@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <a href="https://substack.com/@fuence" target="_blank" style="padding:7px 13px;background:var(--accent,#c07a1a);color:#fff;border-radius:5px;font-size:12px;text-decoration:none;white-space:nowrap">📬 Substack</a>
             <a href="https://patreon.com/Fuence" target="_blank" style="padding:7px 13px;background:rgba(255,255,255,0.1);color:inherit;border:1px solid rgba(255,255,255,0.2);border-radius:5px;font-size:12px;text-decoration:none;white-space:nowrap">🎙 Patreon</a>
             <a href="https://x.com/Fuence4w" target="_blank" style="padding:7px 13px;background:rgba(255,255,255,0.1);color:inherit;border:1px solid rgba(255,255,255,0.2);border-radius:5px;font-size:12px;text-decoration:none;white-space:nowrap">𝕏 Twitter</a>
+            <a href="https://discord.gg/7zNnKfc8rr" target="_blank" style="padding:7px 13px;background:#5865F2;color:#fff;border-radius:5px;font-size:12px;text-decoration:none;white-space:nowrap">💬 Discord</a>
           </div>
         </div>
 
@@ -115,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <li><a href="/series/bangladesh/index.html">Bangladesh</a></li>
             <li><a href="/series/india/index.html">India & China</a></li>
             <li><a href="/series/index.html">Africa (Soon)</a></li>
-            <li><a href="/series/index.html">Youth & Future (Soon)</a></li>
+            <li><a href="/initiatives/meridian/index.html">The Meridian Initiative</a></li>
             <!-- ADD NEW SERIES: <li><a href="/series/TOPIC/index.html">Topic</a></li> -->
           </ul>
         </div>
@@ -156,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <a href="https://x.com/Fuence4w" target="_blank">Twitter / X</a>
           <a href="https://www.youtube.com/@fuence" target="_blank">YouTube</a>
           <a href="https://substack.com/@fuence" target="_blank">Substack</a>
-          <a href="https://discord.gg/NnhTegVXg" target="_blank">Discord</a>
+          <a href="https://discord.gg/7zNnKfc8rr" target="_blank">Discord</a>
         </div>
 
         <div class="footer-legal">
@@ -184,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'https://x.com/Fuence4w',
       'https://substack.com/@fuence',
       'https://patreon.com/Fuence',
-      'https://discord.gg/NnhTegVXg',
+      'https://discord.gg/7zNnKfc8rr',
       'https://www.youtube.com/@fuence'
     ]
   });

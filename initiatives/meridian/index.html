@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Meridian Initiative — Fuence</title>
+  <meta name="description" content="A universal framework for national transformation through youth. Pilots in Bangladesh. Designed to replicate across every country with a demographic window to capture." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Fuence" />
+  <meta property="og:title" content="The Meridian Initiative — Fuence" />
+  <meta property="og:description" content="A generation prepared. A nation elevated. Three flagships, four platforms, nine countries in scope." />
+  <meta property="og:url" content="https://www.fuence.com/initiatives/meridian/" />
+  <meta property="og:image" content="https://www.fuence.com/assets/img/fuence-logo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Meridian Initiative — Fuence" />
+  <meta name="twitter:description" content="A generation prepared. A nation elevated." />
+  <meta name="twitter:image" content="https://www.fuence.com/assets/img/fuence-logo.jpg" />
+  <link rel="canonical" href="https://www.fuence.com/initiatives/meridian/" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/nav.css" />
+  <link rel="stylesheet" href="../../assets/css/inner.css" />
+  <style>
+    .flagship-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+    .flagship-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;display:flex;flex-direction:column;gap:14px;transition:all var(--transition)}
+    .flagship-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
+    .flagship-card.go{border-top:4px solid var(--teal)}
+    .flagship-card.stay{border-top:4px solid var(--amber-bright)}
+    .flagship-card.stay-women{border-top:4px solid #7B1FA2}
+    .fc-emoji{font-size:2.4rem}
+    .fc-dir{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:12px;display:inline-block;margin-bottom:4px;width:fit-content}
+    .fc-dir.go{background:var(--teal-light);color:var(--teal)}
+    .fc-dir.stay{background:var(--amber-light);color:var(--amber)}
+    .fc-dir.stay-women{background:#F3E5F5;color:#7B1FA2}
+    .flagship-card h3{font-size:1.05rem;line-height:1.4;color:var(--text-dark);margin:0}
+    .flagship-card p{font-size:.88rem;color:var(--text-muted);line-height:1.65;flex:1}
+
+    .platform-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .plat-card{background:var(--bg-dark);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:10px}
+    .plat-card h4{color:var(--text-light);font-size:1rem}
+    .plat-card p{font-size:.87rem;color:var(--text-light-dim);line-height:1.65}
+    .plat-num{font-size:1.6rem;font-weight:800;color:var(--teal);font-family:var(--font-display)}
+
+    .phase-row{display:flex;gap:0;margin:40px 0 8px;position:relative}
+    .phase-row::before{content:'';position:absolute;top:22px;left:0;right:0;height:2px;background:var(--border);z-index:0}
+    .phase-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:10px;position:relative;z-index:1}
+    .phase-dot{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;border:2px solid var(--border);background:var(--bg-card)}
+    .phase-dot.done{background:var(--teal);border-color:var(--teal);color:#fff}
+    .phase-dot.active{background:var(--amber-bright);border-color:var(--amber-bright);color:#fff;box-shadow:0 0 0 4px rgba(232,160,32,.2)}
+    .phase-dot.next{background:var(--bg-tint);color:var(--text-muted)}
+    .phase-label{font-size:.72rem;font-weight:600;text-align:center;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em}
+    .phase-label.active{color:var(--amber)}
+
+    .country-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .country-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 20px;display:flex;align-items:center;gap:14px;transition:all var(--transition)}
+    .country-card:hover{border-color:var(--teal);box-shadow:var(--shadow-sm)}
+    .country-card.pilot{border-left:4px solid var(--amber-bright)}
+    .cc-flag{font-size:1.8rem;flex-shrink:0}
+    .cc-name{font-size:.95rem;font-weight:600;color:var(--text-dark);margin-bottom:2px}
+    .cc-role{font-size:.75rem;color:var(--text-muted)}
+    .cc-wave{font-size:.7rem;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+
+    .involve-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .involve-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;display:flex;flex-direction:column;gap:16px}
+    .involve-card h3{font-size:1rem;color:var(--text-dark);line-height:1.4}
+    .involve-card p{font-size:.87rem;color:var(--text-muted);line-height:1.65;flex:1}
+    .involve-icon{font-size:2rem}
+
+    .pilot-2col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .pilot-box{background:var(--bg-dark);border-radius:var(--radius);padding:28px}
+    .pilot-box h4{color:var(--text-light);margin-bottom:16px;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em}
+    .pilot-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .pilot-list li{font-size:.87rem;color:var(--text-light-dim);padding-left:20px;position:relative;line-height:1.55}
+    .pilot-list li::before{content:'→';position:absolute;left:0;color:var(--amber-bright);font-weight:700;font-size:.8rem}
+
+    @media(max-width:768px){
+      .flagship-grid,.platform-grid,.country-grid,.involve-grid,.pilot-2col{grid-template-columns:1fr}
+      .phase-row{flex-wrap:wrap;gap:20px}
+      .phase-row::before{display:none}
+    }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="series-hero">
+  <div class="container">
+    <a href="/index.html" class="back-link">← Home</a>
+    <div class="sh-meta">
+      <span class="badge badge-active">● New Initiative</span>
+      <span class="badge badge-teal">Youth Development</span>
+      <span class="badge badge-teal">🌍 9 Countries in Scope</span>
+      <span class="badge badge-amber">Pilot: Bangladesh</span>
+    </div>
+    <div style="display:flex;gap:20px;margin-top:10px;font-size:.84rem;color:rgba(255,255,255,.65);flex-wrap:wrap">
+      <span>🌐 Professionals' Embassy</span>
+      <span>🏗️ Prosperity Corps</span>
+      <span>🏡 Home Meridian</span>
+    </div>
+    <h1>The Meridian Initiative</h1>
+    <p style="font-size:1.2rem;color:var(--amber-bright);font-style:italic;margin-bottom:16px;letter-spacing:.01em">
+      A generation prepared. A nation elevated.
+    </p>
+    <p class="sh-lead">
+      A universal framework for national transformation through youth —
+      piloting in Bangladesh and designed to replicate across every country
+      sitting on a demographic window it cannot afford to waste.
+    </p>
+    <div class="sh-actions">
+      <a href="/contact/index.html" class="btn btn-primary btn-lg">Explore Partnership →</a>
+      <a href="https://discord.gg/7zNnKfc8rr" class="btn btn-outline-light btn-lg" target="_blank">Join the Community</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE MOMENT — overview grid
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <div class="series-overview-grid">
+      <div class="so-text">
+        <span class="section-label">The Moment</span>
+        <h2>Every country with a young population is sitting on one of two futures.</h2>
+        <div class="divider"></div>
+        <p>In the first, the youth grow up without platforms, without pathways, and without guidance. Their energy turns to frustration. Their talent goes unrecognised. The demographic bulge becomes a demographic burden.</p>
+        <p>In the second, a generation is prepared — through structured platforms across knowledge, opportunity, identity, and innovation — to reach their own peak. Some go abroad and represent their country with skill and pride. Some stay and build it from within. As a collective force, they move the nation.</p>
+        <p>The demographic window — when a country's youth cohort is largest relative to its total population — lasts approximately 10 to 20 years. The outcomes of that window shape the following 30 to 40. Countries that build their platforms now capture the dividend. Countries that wait find the window closed.</p>
+        <p style="font-weight:600;color:var(--text-dark)">The Meridian Initiative is the framework that makes the second future inevitable.</p>
+      </div>
+      <div class="so-questions">
+        <div class="questions-box">
+          <h4>Questions Meridian Answers</h4>
+          <ul class="questions-list">
+            <li>What happens when 47 million young people have talent but no platform?</li>
+            <li>How do you quality-gate an outbound workforce without blocking opportunity?</li>
+            <li>How do you value both going and staying equally — and build for both?</li>
+            <li>How do you build a framework for one country and replicate it across ten?</li>
+            <li>What does a 5-year, 10-year, 20-year youth success story actually look like?</li>
+            <li>How do you organise diaspora, institutions, governments, and communities into one coherent system?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THREE FLAGSHIPS
+     ============================================================ -->
+<section class="section section-tint">
+  <div class="container">
+    <div class="text-center scroll-reveal" style="margin-bottom:48px">
+      <span class="section-label">Three Flagships</span>
+      <h2>Two directions. One framework.</h2>
+      <div class="divider divider-center"></div>
+      <p style="max-width:560px;margin:0 auto;color:var(--text-muted)">
+        Meridian does not tell youth which path to take.
+        It builds the conditions under which every path is real,
+        quality-supported, and connected to national progress.
+      </p>
+    </div>
+    <div class="flagship-grid">
+
+      <div class="flagship-card go scroll-reveal delay-1">
+        <div class="fc-emoji">🌐</div>
+        <span class="fc-dir go">Go — Global Pathway</span>
+        <h3>Professionals' Embassy</h3>
+        <p>Quality-gated framework for youth entering global career paths. Every participant completes five modules — skill, language, culture, norms, evaluation — before receiving Meridian certification and placement support. Diaspora chapters in destination countries run the local employer relationship and mentoring pipeline for every subsequent cohort.</p>
+        <div style="font-size:.8rem;color:var(--teal);font-weight:600;margin-top:4px">Destination countries: 🇩🇪 🇦🇪 🇬🇧 🇯🇵 and expanding</div>
+      </div>
+
+      <div class="flagship-card stay scroll-reveal delay-2">
+        <div class="fc-emoji">🏗️</div>
+        <span class="fc-dir stay">Stay — Build Locally</span>
+        <h3>The Prosperity Corps</h3>
+        <p>The organised body of youth who elevate the nation from within — across every sector and every geography. The Prosperity Corps deploys through a replicable <strong>Ideal Local Program</strong> template: economic activity, skills access, community infrastructure, sustainability, and clear pathways to growth. Adapted to each geography and segment.</p>
+        <div style="font-size:.8rem;color:var(--amber);font-weight:600;margin-top:4px">Pilot sites: Dhaka · Narsingdi / Tangail district</div>
+      </div>
+
+      <div class="flagship-card stay-women scroll-reveal delay-3">
+        <div class="fc-emoji">🏡</div>
+        <span class="fc-dir stay-women">Stay — Women's Platform</span>
+        <h3>The Home Meridian</h3>
+        <p>Dedicated program for young women within the Prosperity Corps. Starts where women are — their actual context, their actual constraints — and builds outward through skills development, market access, visibility, mentorship, and civic participation. The Home Meridian makes women's contributions visible, valued, and growing.</p>
+        <div style="font-size:.8rem;color:#7B1FA2;font-weight:600;margin-top:4px">Target: all ages 14–40 · dedicated cohort structure</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOUR PLATFORMS
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <div style="margin-bottom:48px">
+      <span class="section-label">The Backbone</span>
+      <h2>Four platforms every youth stands on</h2>
+      <div class="divider"></div>
+      <p style="max-width:600px;color:var(--text-muted)">
+        Every flagship deploys across four interconnected platforms.
+        Together they form the full arc of a youth's journey —
+        from preparation through action, identity, and contribution.
+      </p>
+    </div>
+    <div class="platform-grid">
+      <div class="plat-card scroll-reveal delay-1">
+        <div class="plat-num">01</div>
+        <h4>Knowledge & Skill</h4>
+        <p>Training, language, culture, professional certification. The preparation layer — ensuring every participant meets a defined standard before they act, move, or produce. The quality gate lives here.</p>
+      </div>
+      <div class="plat-card scroll-reveal delay-2">
+        <div class="plat-num">02</div>
+        <h4>Opportunity & Pathway</h4>
+        <p>Global careers, local programs, entrepreneurship, civic service. The action layer — the structured pathways that turn preparation into real outcomes. Both going and staying are equally served.</p>
+      </div>
+      <div class="plat-card scroll-reveal delay-3">
+        <div class="plat-num">03</div>
+        <h4>Identity & Culture</h4>
+        <p>Arts, music, sports, cuisine, heritage, language. The grounding layer — ensuring that no matter where youth go or what they build, they carry a strong, positive, forward-facing national identity.</p>
+      </div>
+      <div class="plat-card scroll-reveal delay-1">
+        <div class="plat-num">04</div>
+        <h4>Innovation & Construction</h4>
+        <p>Science, technology, engineering, entrepreneurship, supply chains, markets. The building layer — where youth don't just participate in the economy but extend it, diversify it, and make it more resilient.</p>
+      </div>
+    </div>
+    <div style="margin-top:32px;padding:20px 24px;background:var(--bg-tint);border-radius:var(--radius);border-left:4px solid var(--amber-bright)">
+      <strong>Meta-platform:</strong>
+      <span style="color:var(--text-muted);font-size:.9rem"> National Voice & Vision — the communications, publishing, and narrative platform that makes the country's Meridian story visible internationally. Research published. Events convened. Progress documented. This is how a pilot becomes a model.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE PILOT
+     ============================================================ -->
+<section class="section section-tint" id="pilot">
+  <div class="container">
+    <div style="margin-bottom:48px">
+      <span class="section-label">How It Works</span>
+      <h2>One country. One pilot. Then replicate.</h2>
+      <div class="divider"></div>
+      <p style="max-width:600px;color:var(--text-muted)">
+        Meridian enters a country through a single structured pilot.
+        Everything is documented for replication. The second country
+        costs less and takes less time than the first.
+      </p>
+    </div>
+    <div class="pilot-2col">
+      <div>
+        <div class="pilot-box" style="margin-bottom:20px">
+          <h4>What the partner country contributes</h4>
+          <ul class="pilot-list">
+            <li>A coordination point — ministry, embassy, or designated agency</li>
+            <li>Access to existing youth institutions: TVET, universities, civic bodies</li>
+            <li>A defined pilot geography or sector — one city, one region, or one segment</li>
+            <li>Political endorsement of the pilot's objectives</li>
+          </ul>
+        </div>
+        <div class="pilot-box">
+          <h4>What Meridian delivers in Phase 1 (0–12 months)</h4>
+          <ul class="pilot-list">
+            <li>Country research: demographic baseline, opportunity gap mapping, destination pathways</li>
+            <li>Platform design customised to the country's context, culture, and priority segments</li>
+            <li>Professionals' Embassy: training program, quality gate, certification standard</li>
+            <li>First Prosperity Corps pilot — one Ideal Local Program site</li>
+            <li>National Voice & Vision: the country's Meridian narrative, published internationally</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px">
+          <h4 style="margin-bottom:20px;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)">Success at 12 months</h4>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <span style="font-size:1.3rem;flex-shrink:0">✅</span>
+              <div><strong style="font-size:.9rem">First cohort through the Quality Gate</strong><br><span style="font-size:.82rem;color:var(--text-muted)">Certified, placed, outcomes tracked</span></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <span style="font-size:1.3rem;flex-shrink:0">✅</span>
+              <div><strong style="font-size:.9rem">First Ideal Local Program running</strong><br><span style="font-size:.82rem;color:var(--text-muted)">Measurable participation and early economic data</span></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <span style="font-size:1.3rem;flex-shrink:0">✅</span>
+              <div><strong style="font-size:.9rem">Country success visualization documented</strong><br><span style="font-size:.82rem;color:var(--text-muted)">5-year / 10-year / 20-year outcomes defined</span></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <span style="font-size:1.3rem;flex-shrink:0">✅</span>
+              <div><strong style="font-size:.9rem">Replication roadmap produced</strong><br><span style="font-size:.82rem;color:var(--text-muted)">Blueprint ready for the second country</span></div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <span style="font-size:1.3rem;flex-shrink:0">✅</span>
+              <div><strong style="font-size:.9rem">Institutional partners signed</strong><br><span style="font-size:.82rem;color:var(--text-muted)">Ministry, implementing NGO, research partner, co-funder</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:20px;padding:18px 20px;background:var(--bg-dark);border-radius:var(--radius-sm);font-size:.85rem;color:var(--text-light-dim)">
+          <strong style="color:var(--amber-bright)">Co-funding model:</strong><br>
+          Phase 0 can proceed on minimal budget. Phase 1 is designed for co-funding — GIZ / FCDO / JICA for pilot countries, government allocation for domestic programs. Meridian brings the framework and international platform. Partners bring the resources.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BANGLADESH — CURRENT FOCUS
+     ============================================================ -->
+<section class="section" id="bangladesh">
+  <div class="container">
+    <div class="series-overview-grid">
+      <div class="so-text">
+        <span class="section-label">Current Focus</span>
+        <h2>Bangladesh — Inaugural Pilot</h2>
+        <div class="divider"></div>
+        <p>Bangladesh is the natural first pilot. With approximately 47 million young people aged 15–29, a median age of 28, and a demographic window lasting 10–15 more years, the stakes are as high as they can be.</p>
+        <p>Bangladesh sends over 700,000 workers abroad annually — but the dominant profile remains low-skill, low-wage, and exploitable. The Professionals' Embassy is the quality gate that changes this. Meanwhile, the domestic economy absorbs the majority of youth without platforms or growth pathways. The Prosperity Corps and Home Meridian are the structures that change this.</p>
+        <p>The entry point is BMET — the Bureau of Manpower, Employment and Training — which has the regulatory mandate, the training centres, and the employer networks. From there, the framework expands to the Ministry of Youth, BRAC, and the universities.</p>
+        <div style="margin-top:24px">
+          <a href="/series/bangladesh/index.html" class="btn btn-outline">Bangladesh Research Series →</a>
+        </div>
+      </div>
+      <div class="so-questions">
+        <div style="background:var(--bg-tint);border-radius:var(--radius-lg);padding:28px">
+          <h4 style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:20px">Bangladesh at a glance</h4>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:12px">
+              <span style="font-size:.85rem;color:var(--text-muted)">Youth population (15–29)</span>
+              <strong style="font-size:.9rem">~47 million</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:12px">
+              <span style="font-size:.85rem;color:var(--text-muted)">Workers sent abroad annually</span>
+              <strong style="font-size:.9rem">700,000+</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:12px">
+              <span style="font-size:.85rem;color:var(--text-muted)">Annual remittances</span>
+              <strong style="font-size:.9rem">~$22 billion</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:12px">
+              <span style="font-size:.85rem;color:var(--text-muted)">Demographic window remaining</span>
+              <strong style="font-size:.9rem">10–15 years</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between">
+              <span style="font-size:.85rem;color:var(--text-muted)">Entry point institution</span>
+              <strong style="font-size:.9rem">BMET</strong>
+            </div>
+          </div>
+          <div style="margin-top:24px">
+            <h4 style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:16px">Phase status</h4>
+            <div class="phase-row">
+              <div class="phase-item">
+                <div class="phase-dot done">✓</div>
+                <span class="phase-label">Research</span>
+              </div>
+              <div class="phase-item">
+                <div class="phase-dot active">→</div>
+                <span class="phase-label active">Outreach</span>
+              </div>
+              <div class="phase-item">
+                <div class="phase-dot next">0</div>
+                <span class="phase-label">Scoping</span>
+              </div>
+              <div class="phase-item">
+                <div class="phase-dot next">1</div>
+                <span class="phase-label">Pilot</span>
+              </div>
+              <div class="phase-item">
+                <div class="phase-dot next">2</div>
+                <span class="phase-label">Replicate</span>
+              </div>
+            </div>
+            <p style="font-size:.8rem;color:var(--text-muted);margin-top:8px;text-align:center">Country pack complete. Wave 1 outreach active.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NINE COUNTRIES IN SCOPE
+     ============================================================ -->
+<section class="section section-tint" id="countries">
+  <div class="container">
+    <div class="text-center scroll-reveal" style="margin-bottom:48px">
+      <span class="section-label">Global Scope</span>
+      <h2>Nine countries. Three outreach waves.</h2>
+      <div class="divider divider-center"></div>
+      <p style="max-width:560px;margin:0 auto;color:var(--text-muted)">
+        One country at a time — but the conversations begin in parallel.
+        Each country relationship is non-binding until a formal pilot agreement.
+        The goal of Wave 1 outreach is communication and credibility, not commitment.
+      </p>
+    </div>
+    <div class="country-grid">
+      <div class="country-card pilot scroll-reveal delay-1">
+        <div class="cc-flag">🇧🇩</div>
+        <div>
+          <div class="cc-name">Bangladesh</div>
+          <div class="cc-role">Inaugural pilot country</div>
+          <div class="cc-wave">Wave 1 — Active outreach</div>
+        </div>
+      </div>
+      <div class="country-card scroll-reveal delay-2">
+        <div class="cc-flag">🇱🇹</div>
+        <div>
+          <div class="cc-name">Lithuania</div>
+          <div class="cc-role">EU legal node — Invest Lithuania</div>
+          <div class="cc-wave">Wave 1 — Active outreach</div>
+        </div>
+      </div>
+      <div class="country-card scroll-reveal delay-3">
+        <div class="cc-flag">🇩🇪</div>
+        <div>
+          <div class="cc-name">Germany</div>
+          <div class="cc-role">Destination — GIZ / BMZ</div>
+          <div class="cc-wave">Wave 1 — Active outreach</div>
+        </div>
+      </div>
+      <div class="country-card scroll-reveal delay-1">
+        <div class="cc-flag">🇦🇪</div>
+        <div>
+          <div class="cc-name">United Arab Emirates</div>
+          <div class="cc-role">Destination — Gulf corridor</div>
+          <div class="cc-wave">Wave 2</div>
+        </div>
+      </div>
+      <div class="country-card scroll-reveal delay-2">
+        <div class="cc-flag">🇬🇧</div>
+        <div>
+          <div class="cc-name">United Kingdom</div>
+          <div class="cc-role">Destination — FCDO / British Council</div>
+          <div class="cc-wave">Wave 2</div>
+        </div>
+      </div>
+      <div class="country-card scroll-reveal delay-3">
+        <div class="cc-flag">🇯🇵</div>
+        <div>
+          <div class="cc-name">Japan</div>
+          <div class="cc-role">Destination — JICA / SSW program</div>
+          <div class="cc-wave">Wave 2</div>
+        </div>
+      </div>
+      <div class="country-card scroll-reveal delay-1">
+        <div class="cc-flag">🇰🇪</div>
+        <div>
+          <div class="cc-name">Kenya</div>
+          <div class="cc-role">Africa — pilot target country</div>
+          <div class="cc-wave">Wave 3</div>
+        </div>
+      </div>
+      <div class="country-card scroll-reveal delay-2">
+        <div class="cc-flag">🇨🇴</div>
+        <div>
+          <div class="cc-name">Colombia</div>
+          <div class="cc-role">Latin America — pilot target country</div>
+          <div class="cc-wave">Wave 3</div>
+        </div>
+      </div>
+      <div class="country-card scroll-reveal delay-3">
+        <div class="cc-flag">🇺🇿</div>
+        <div>
+          <div class="cc-name">Uzbekistan</div>
+          <div class="cc-role">Central Asia — pilot target country</div>
+          <div class="cc-wave">Wave 3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GET INVOLVED — three tracks
+     ============================================================ -->
+<section class="section" id="get-involved">
+  <div class="container">
+    <div style="margin-bottom:48px">
+      <span class="section-label">Get Involved</span>
+      <h2>Three ways to engage</h2>
+      <div class="divider"></div>
+      <p style="max-width:580px;color:var(--text-muted)">
+        No pre-conditions. No commitments until you decide there should be.
+        The first conversation is simply: does this make sense in your context?
+      </p>
+    </div>
+    <div class="involve-grid">
+
+      <div class="involve-card scroll-reveal delay-1" style="border-top:4px solid var(--teal)">
+        <div class="involve-icon">🏛️</div>
+        <h3>Government & Embassy Track</h3>
+        <p>For ministries, embassies, and bilateral agencies. The conversation begins with a scoping call — we map your country's youth demographic, discuss the pilot structure, and identify where the framework fits your existing institutions. No financial ask at first contact.</p>
+        <div style="font-size:.8rem;color:var(--text-muted);margin-bottom:8px">
+          <strong>Relevant for:</strong> Ministry of Youth · Labour Ministry · Embassy in destination country · Bilateral agency heads
+        </div>
+        <a href="/contact/index.html" class="btn btn-primary">Open a Conversation →</a>
+      </div>
+
+      <div class="involve-card scroll-reveal delay-2" style="border-top:4px solid var(--amber-bright)">
+        <div class="involve-icon">🤝</div>
+        <h3>Institutional Partner Track</h3>
+        <p>For NGOs, universities, employers, and bilateral agencies (GIZ, JICA, FCDO, British Council). We are actively seeking: an implementing NGO with ground reach, a university research partner, employer networks in destination countries, and a co-funding partner for Phase 0.</p>
+        <div style="font-size:.8rem;color:var(--text-muted);margin-bottom:8px">
+          <strong>Relevant for:</strong> Development agencies · NGOs · Universities · Employer federations · Foundations
+        </div>
+        <a href="/contact/index.html" class="btn btn-amber">Explore Partnership →</a>
+      </div>
+
+      <div class="involve-card scroll-reveal delay-3" style="border-top:4px solid #7B1FA2">
+        <div class="involve-icon">💬</div>
+        <h3>Community Track</h3>
+        <p>For researchers, diaspora professionals, advocates, and anyone who wants to follow the work in depth. Join the Fuence Podcast Discord — the members-only research community where initiative updates are shared, discussions happen, and collaboration opportunities emerge.</p>
+        <div style="font-size:.8rem;color:var(--text-muted);margin-bottom:8px">
+          <strong>Relevant for:</strong> Researchers · Writers · Diaspora professionals · Youth advocates · Students
+        </div>
+        <a href="https://discord.gg/7zNnKfc8rr" class="btn btn-outline" target="_blank">Join the Community →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA BAND
+     ============================================================ -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="action-band scroll-reveal">
+      <div>
+        <span class="section-label">The First Conversation</span>
+        <h2>What does your country's youth peak look like?</h2>
+        <p style="color:var(--text-light-dim);max-width:500px;margin-top:12px">
+          There are no pre-conditions. The framework adapts to the country's context,
+          priorities, and existing infrastructure. The question is whether the timing is right
+          and the will is there. If you think it might be — reach out.
+        </p>
+        <p style="color:var(--text-light-dim);font-size:.85rem;margin-top:12px">
+          Futura Genesis — Strategic Research &amp; Initiative Design<br>
+          contact@fuence.com · fuence.com
+        </p>
+      </div>
+      <div class="action-btns">
+        <a href="/contact/index.html" class="btn btn-primary btn-lg">Contact the Team</a>
+        <a href="https://discord.gg/7zNnKfc8rr" class="btn btn-outline-light btn-lg" target="_blank">💬 Join Discord Community</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../../assets/js/nav.js"></script>
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>
