@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bangladesh 1971: The Liberation War — Fuence</title>
+  <meta name="description" content="A documented historical record of Bangladesh's liberation from Pakistani occupation — covering the pre-war, Operation Searchlight, India's intervention, and the founding of the republic." />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Fuence" />
+  <meta property="og:title" content="Bangladesh 1971: The Liberation War — A Historical Record" />
+  <meta property="og:description" content="A documented historical record of Bangladesh's liberation from Pakistani occupation. Based on primary sources, contemporaneous records, and International Crimes Tribunal findings." />
+  <meta property="og:url" content="https://www.fuence.com/projects/1971-atlas/" />
+  <meta property="og:image" content="https://www.fuence.com/assets/img/fuence-logo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bangladesh 1971: The Liberation War — A Historical Record" />
+  <meta name="twitter:description" content="A documented historical record of Bangladesh's liberation from Pakistani occupation." />
+  <meta name="twitter:image" content="https://www.fuence.com/assets/img/fuence-logo.jpg" />
+  <link rel="canonical" href="https://www.fuence.com/projects/1971-atlas/" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/nav.css" />
+  <link rel="stylesheet" href="../../assets/css/inner.css" />
+  <style>
+    /* Page-specific styles — 1971 Atlas */
+    .atlas-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 64px;
+      align-items: start;
+    }
+    .atlas-body h2 {
+      font-family: var(--font-sans);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 48px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--teal);
+    }
+    .atlas-body h3 {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 32px 0 10px;
+    }
+    .atlas-body p {
+      font-size: .97rem;
+      color: var(--text-body);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .atlas-body ul {
+      margin: 12px 0 20px 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .atlas-body ul li {
+      font-size: .95rem;
+      color: var(--text-body);
+      line-height: 1.7;
+      padding-left: 20px;
+      position: relative;
+    }
+    .atlas-body ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 700;
+    }
+    .atlas-body ol {
+      margin: 12px 0 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .atlas-body ol li {
+      font-size: .95rem;
+      color: var(--text-body);
+      line-height: 1.7;
+    }
+    .atlas-body ol li strong {
+      color: var(--text-dark);
+    }
+    blockquote.atlas-quote {
+      margin: 28px 0;
+      padding: 20px 24px;
+      background: var(--bg-tint);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    blockquote.atlas-quote p {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text-dark);
+      margin: 0;
+      line-height: 1.7;
+    }
+    blockquote.atlas-quote cite {
+      display: block;
+      margin-top: 10px;
+      font-size: .82rem;
+      color: var(--text-muted);
+      font-style: normal;
+    }
+    .section-anchor {
+      display: block;
+      position: relative;
+      top: -96px;
+      visibility: hidden;
+    }
+    .atlas-nav {
+      background: var(--bg-dark);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      position: sticky;
+      top: 88px;
+    }
+    .atlas-nav-label {
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--text-light-dim);
+      margin-bottom: 18px;
+    }
+    .atlas-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 28px;
+    }
+    .atlas-nav-links li a {
+      display: block;
+      font-size: .88rem;
+      color: var(--text-light-dim);
+      padding: 7px 12px;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition);
+      text-decoration: none;
+      line-height: 1.4;
+    }
+    .atlas-nav-links li a:hover {
+      background: rgba(255,255,255,.07);
+      color: var(--teal);
+    }
+    .atlas-nav-links li a .nav-num {
+      display: inline-block;
+      width: 18px;
+      font-size: .75rem;
+      color: var(--teal);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .atlas-nav-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin: 20px 0;
+    }
+    .atlas-nav-source {
+      font-size: .78rem;
+      color: var(--text-light-dim);
+      line-height: 1.6;
+      opacity: .7;
+    }
+    .convictions-list {
+      margin: 16px 0 24px 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .convictions-list li {
+      font-size: .93rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      padding: 12px 16px;
+      background: var(--bg-tint);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--teal);
+    }
+    .convictions-list li strong {
+      display: block;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+    .founding-pillars {
+      margin: 20px 0 28px 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      counter-reset: pillars;
+    }
+    .founding-pillars li {
+      counter-increment: pillars;
+      font-size: .95rem;
+      color: var(--text-body);
+      line-height: 1.7;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .founding-pillars li::before {
+      content: counter(pillars);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      background: var(--teal);
+      color: #fff;
+      font-size: .8rem;
+      font-weight: 700;
+      border-radius: 50%;
+      margin-top: 2px;
+    }
+    .atlas-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 56px 0 48px;
+    }
+    .atlas-crosslink {
+      background: var(--bg-tint);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .atlas-crosslink-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+    .atlas-crosslink h4 {
+      font-size: 1rem;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .atlas-crosslink p {
+      font-size: .88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0 0 16px;
+    }
+    .atlas-source-note {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: .82rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    @media(max-width:900px) {
+      .atlas-layout { grid-template-columns: 1fr; gap: 40px; }
+      .atlas-nav { position: static; }
+    }
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<section class="series-hero">
+  <div class="container">
+    <div class="sh-meta">
+      <span class="badge badge-teal">Historical Record</span>
+      <span class="badge">Bangladesh</span>
+      <span class="badge">1971</span>
+    </div>
+    <h1>Bangladesh 1971: The Liberation War</h1>
+    <p class="sh-lead">A documented account of Bangladesh's liberation from Pakistani occupation — the pre-war, the nine months of atrocity, India's intervention, and the founding of the republic. Based on primary sources and International Crimes Tribunal records.</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="section">
+  <div class="container">
+
+    <a href="../../publications/" class="back-link">← Publications &amp; Projects</a>
+
+    <div class="atlas-layout">
+
+      <!-- LEFT: PROSE -->
+      <div class="atlas-body">
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 1 — PRE-WAR
+             ══════════════════════════════════════════════ -->
+        <span class="section-anchor" id="pre-war"></span>
+        <h2>Section 1 — Life Under Pakistani Occupation</h2>
+        <p class="text-muted" style="font-size:.85rem;margin-top:-8px;margin-bottom:28px;">East Pakistan, 1947–1971</p>
+
+        <p>Bangladesh did not appear without warning. It was produced by twenty-four years of deliberate subjugation.</p>
+
+        <p>When British India was partitioned in 1947, the Bengali-majority eastern wing became East Pakistan — bound to the western wing not by geography or culture but by religion alone. The two wings of the new country were separated by over 1,500 kilometres of Indian territory, spoke different languages, possessed entirely different economic structures, and shared nothing beyond a Muslim majority. From the outset, the Pakistani state treated this asymmetry as an opportunity.</p>
+
+        <h3>The Economic Extraction</h3>
+        <p>East Pakistan generated the majority of Pakistan's foreign exchange — primarily through jute, which accounted for the bulk of the country's export earnings in the early decades. The revenues flowed west. Development investment, public sector employment, military commissions, and central government appointments were overwhelmingly concentrated in West Pakistan. East Pakistan's economy was systematically directed toward producing wealth it did not keep.</p>
+
+        <h3>The Linguistic Suppression</h3>
+        <p>Urdu was declared the sole national language of Pakistan in 1948, despite being spoken by a small minority of the population. Bengali, spoken by the majority, was dismissed as insufficiently Islamic. In 1952, students in Dhaka took to the streets to defend their language. Pakistani police opened fire. The martyrs of the Language Movement — Abul Barkat, Rafiquddin Ahmed, Abul Jabbar, and others — became the founding symbols of Bengali resistance. Bangladesh now observes February 21 as Language Martyrs' Day; it is also recognised internationally as International Mother Language Day.</p>
+
+        <h3>The Political Exclusion</h3>
+        <p>Bengalis were systematically underrepresented in Pakistan's civil service and military officer corps. Policy was made in Karachi and then Islamabad; East Pakistan implemented it. The political structures of Pakistan were designed to ensure that even a democratic majority among Bengalis could not translate into genuine governing authority.</p>
+
+        <h3>The Six-Point Program</h3>
+        <p>In 1966, Sheikh Mujibur Rahman — leader of the Awami League and the dominant political figure in East Pakistan — articulated the Six-Point Program: a comprehensive demand for genuine fiscal, military, and administrative autonomy for East Pakistan within a federal Pakistan. The Pakistani establishment heard it as a demand for secession. Mujib was arrested. The Six Points became the platform of every Bengali who understood that autonomy, not charity, was what the east required.</p>
+
+        <h3>The 1970 Elections</h3>
+        <p>The December 1970 general elections were the first free elections in Pakistan's history. The Awami League contested on the Six-Point platform and won 167 of 169 seats allocated to East Pakistan in the National Assembly — an absolute majority in the parliament as a whole, sufficient to form the federal government without coalition. Sheikh Mujibur Rahman had a democratic mandate to govern Pakistan.</p>
+
+        <p>General Yahya Khan, Pakistan's military ruler, refused to convene the National Assembly.</p>
+
+        <p>The decision was not procedural. It was a declaration that the democratic verdict of tens of millions of Bengalis would not be honoured — that the governing of Pakistan would remain in West Pakistani hands regardless of what voters decided. Negotiations continued through February and March 1971, but they were never conducted in good faith. Yahya Khan was already planning what came next.</p>
+
+        <p>On March 25, 1971, Pakistani troops moved.</p>
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 2 — THE WAR
+             ══════════════════════════════════════════════ -->
+        <hr class="atlas-divider">
+        <span class="section-anchor" id="the-war"></span>
+        <h2>Section 2 — The War</h2>
+        <p class="text-muted" style="font-size:.85rem;margin-top:-8px;margin-bottom:28px;">Operation Searchlight and Nine Months of Atrocity</p>
+
+        <p>The intention behind Operation Searchlight was stated plainly. In February 1971, at a conference of Pakistani generals, Yahya Khan told his officers:</p>
+
+        <blockquote class="atlas-quote">
+          <p>"Kill three million of them and the rest will eat out of our hands."</p>
+          <cite>— General Yahya Khan, Pakistani military ruler, February 1971</cite>
+        </blockquote>
+
+        <p>What began on the night of March 25, 1971 was the systematic attempt to execute that order.</p>
+
+        <h3>Operation Searchlight — March 25, 1971</h3>
+        <p>Pakistani Army tanks rolled into Dhaka after midnight. The operation had designated targets: Dhaka University, where nationalist student movements were concentrated; the Hindu-majority neighbourhood of Shankharipotti; the headquarters of the Awami League; specific political workers and intellectuals whose names were on lists. Soldiers opened fire on students in their dormitories. Professors were shot at their homes. Entire streets were set alight. The operation was designed to decapitate Bengali nationalism before it could mount organised resistance.</p>
+
+        <p>Bangladesh observes March 25 as Genocide Day. The date marks not a battle but a military order to kill a civilian population into submission.</p>
+
+        <h3>The Scale of the Killing</h3>
+        <p>Over the nine months that followed, the violence spread across the country. The estimate accepted by the Government of Bangladesh is three million dead. An estimated 200,000 women were subjected to systematic sexual violence — deployed deliberately, at scale, to terrorise and destroy communities. Ten million Bengalis fled across the border into India, producing one of the largest refugee crises of the twentieth century.</p>
+
+        <h3>The United States and the Blood Telegram</h3>
+        <p>US diplomats in Dhaka were witnesses to what was happening. In April 1971, Consul General Archer Blood and the US consular staff filed a formal dissent cable — the "Blood Telegram" — describing the Pakistani Army's actions as "selective genocide" and condemning the US government's silence. The Nixon administration, prioritising its Cold War relationship with Pakistan as a channel to China, suppressed the dissent and continued to support the Pakistani government. The United States bears documented responsibility for choosing alliance over accountability during the 1971 genocide.</p>
+
+        <h3>The Collaborators: Jamaat-e-Islami, the Razakars, and Al-Badr</h3>
+        <p>The Pakistani Army did not operate alone. Jamaat-e-Islami (JEI), the Islamist political party that had opposed Bengali nationalism on the grounds that religion could not countenance ethnic identity as the basis of political organisation, provided the local infrastructure for the killing.</p>
+
+        <p>JEI organised and led two paramilitary auxiliary forces:</p>
+
+        <ul>
+          <li><strong>The Razakars</strong> — a broad paramilitary structure drawn from JEI's networks. They assisted Pakistani Army units in identifying Bengali nationalists, guiding soldiers to targets, and participating in raids and killings. They served as local intelligence and enforcement for an army that did not know the terrain or the faces.</li>
+          <li><strong>Al-Badr</strong> — an elite force drawn from JEI's student wing. In the final weeks of the war, as Pakistani military defeat became certain, Al-Badr undertook a systematic campaign to murder Bangladesh's intellectual class. Doctors, professors, journalists, engineers, and lawyers were abducted and killed. Their bodies were left at the Rayer Bazar killing field on the outskirts of Dhaka — a deliberate attempt to ensure that an independent Bangladesh would have no intellectual leadership.</li>
+        </ul>
+
+        <h3>The International Crimes Tribunal — Convictions</h3>
+        <p>The individuals who commanded and organised these forces are not unknown. The International Crimes Tribunal (ICT), established by the Government of Bangladesh in 2009, identified, charged, tried, and convicted many of them. Approximately 3,500 individuals were charged; 79% were members or affiliates of JEI.</p>
+
+        <ul class="convictions-list">
+          <li>
+            <strong>Golam Azam</strong>
+            Supreme leader of Jamaat-e-Islami — convicted of crimes against humanity
+          </li>
+          <li>
+            <strong>Motiur Rahman Nizami</strong>
+            Ameer of JEI — convicted of crimes against humanity and genocide; sentenced to death
+          </li>
+          <li>
+            <strong>Ali Ahsan Mujahid</strong>
+            Secretary-general of JEI — convicted of crimes against humanity; sentenced to death
+          </li>
+          <li>
+            <strong>Delwar Hossain Sayedee</strong>
+            Senior JEI leader — convicted of crimes against humanity
+          </li>
+        </ul>
+
+        <p>These are not political accusations. They are judicial verdicts, issued by a formal tribunal in the country where the crimes occurred, based on evidence and witness testimony.</p>
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 3 — LIBERATION
+             ══════════════════════════════════════════════ -->
+        <hr class="atlas-divider">
+        <span class="section-anchor" id="liberation"></span>
+        <h2>Section 3 — Liberation</h2>
+        <p class="text-muted" style="font-size:.85rem;margin-top:-8px;margin-bottom:28px;">India's Intervention and December 16, 1971</p>
+
+        <p>India's role in Bangladesh's liberation was both humanitarian and strategic. These two things are not in conflict — they are both true, and naming both is more accurate than claiming only one.</p>
+
+        <h3>The Nine-Month Prelude</h3>
+        <p>From March 1971 onwards, India absorbed the consequences of Pakistan's war against its own people. Ten million refugees crossed the border into West Bengal, Tripura, and Meghalaya. Prime Minister Indira Gandhi's government reached two conclusions simultaneously: that a Bangladesh independent of Pakistan was the only durable resolution, and that India's own security in the east made a stable, friendly neighbour preferable to a Pakistani-controlled East Pakistan perpetually seething with resentment and insurgency.</p>
+
+        <p>India began training and equipping the Mukti Bahini — the Bangladeshi liberation forces — from early in the conflict. Indian intelligence agencies supported Mukti Bahini operations. The Mukti Bahini were Bangladeshi fighters on their own soil; they did not fight alone.</p>
+
+        <h3>The Diplomatic Campaign</h3>
+        <p>Indira Gandhi also waged a diplomatic offensive. She toured Western Europe and the United States, making the case for Bangladesh. The United States remained aligned with Pakistan. But Gandhi's campaign succeeded in winning the positions that mattered at the United Nations Security Council: when Pakistan pressed for resolutions that would have constrained India, the United Kingdom and France — both permanent members — declined to support them. Pakistan was diplomatically isolated.</p>
+
+        <h3>December 3, 1971: Pakistan Strikes First</h3>
+        <p>On the evening of December 3, 1971, Pakistan launched Operation Chengiz Khan — a preemptive series of air strikes against Indian Air Force bases across the western and eastern fronts. Yahya Khan's calculation was that widening the war to the western border would force India to fight on two fronts and give the international community grounds to demand a ceasefire before Bangladesh was lost. The calculation failed. India declared war. The preemptive strikes gave India the formal justification for full military intervention.</p>
+
+        <h3>The Thirteen-Day War</h3>
+        <p>The Indian Army's eastern campaign moved on multiple axes simultaneously toward Dhaka. Speed was the strategic objective — reach the capital before international pressure forced a halt. Indian forces coordinated with Mukti Bahini fighters who knew the terrain and the population. Pakistani forces, already degraded by nine months of counterinsurgency, could not form effective defensive lines. Within thirteen days of formal Indian entry into the war, Pakistani resistance in East Pakistan had collapsed.</p>
+
+        <h3>December 16, 1971</h3>
+        <p>At 16:31 hours on December 16, 1971, Lieutenant General Amir Abdullah Khan Niazi, Commander of Pakistani forces in East Pakistan, signed the Pakistani Instrument of Surrender in Dhaka. He surrendered to Lieutenant General Jagjit Singh Aurora, commanding the joint Indian and Bangladeshi forces.</p>
+
+        <p>Ninety-three thousand Pakistani soldiers and officers were taken prisoner — the largest military surrender since the end of the Second World War.</p>
+
+        <p><strong>Bangladesh was free.</strong></p>
+
+        <p>December 16 is Bijoy Dibash — Victory Day. It is observed annually in Bangladesh as the nation's founding moment, and in India. The date marks the fulfilment of a democratic mandate expressed at the ballot box in December 1970, answered with tanks in March 1971, and enforced at the cost of three million lives.</p>
+
+        <!-- ══════════════════════════════════════════════
+             SECTION 4 — THE FOUNDING
+             ══════════════════════════════════════════════ -->
+        <hr class="atlas-divider">
+        <span class="section-anchor" id="the-founding"></span>
+        <h2>Section 4 — The Founding</h2>
+        <p class="text-muted" style="font-size:.85rem;margin-top:-8px;margin-bottom:28px;">What Bangladesh Was Built to Be</p>
+
+        <p>Sheikh Mujibur Rahman — Bangabandhu, Father of the Nation — was arrested on the night of March 25, 1971, as Operation Searchlight began. He spent the nine months of the liberation war in a Pakistani prison, charged with treason. He was tried in secret and sentenced to death. The sentence was not carried out — the Pakistani government, watching its forces collapse in the east, calculated that executing Mujib would remove any basis for negotiation.</p>
+
+        <p>On January 10, 1972, Mujibur Rahman returned to Bangladesh. When his plane landed, hundreds of thousands of people were at the airport. He was the embodiment of everything the liberation had been fought for.</p>
+
+        <h3>The Immediate Reconstruction</h3>
+        <p>The country he returned to was devastated. Three million of its people were dead. Two hundred thousand women had been violated. Infrastructure had been wrecked. The intellectual class had been hunted. The economy was in ruins. The tasks were total: establish a government, repatriate refugees, restart an economy, bury the dead, and write the laws of a country that had not existed eighteen months earlier.</p>
+
+        <p>On March 26, 1972 — the first anniversary of Bangladesh's independence — the banks were nationalised. The decision was consistent with the founding vision: the economy of Bangladesh would not be extracted from its people as East Pakistan's had been.</p>
+
+        <h3>The Constitution of Bangladesh — November 4, 1972</h3>
+        <p>Less than a year after liberation, Bangladesh adopted its constitution. The document came into force on December 16 — Bijoy Dibash — the same date that had marked liberation. Article 8(1) established four fundamental principles of state policy, collectively known as <strong>Mujibism</strong>:</p>
+
+        <ol class="founding-pillars">
+          <li><strong>Nationalism</strong> — Bengali national identity as the foundation of the state; the linguistic and cultural heritage of the Bengali people as the basis for citizenship</li>
+          <li><strong>Socialism</strong> — economic justice; the equitable distribution of resources; the rejection of the exploitative economic model that had defined East Pakistan's relationship to West Pakistan</li>
+          <li><strong>Democracy</strong> — government by the consent of the governed; the rule of law; the institutions of representative politics that Pakistan had denied the Bengalis</li>
+          <li><strong>Secularism</strong> — the separation of religion from state authority; the equal status of all religious communities; the repudiation of the idea that religion determines political identity</li>
+        </ol>
+
+        <h3>The Meaning of Secularism</h3>
+        <p>Secularism demands particular attention. Bangladesh in 1971 was not a country that voted against Islam. It was a country that voted against the weaponisation of religion — against the claim that being Muslim meant accepting Pakistani governance, accepting economic extraction, accepting that Bengali identity was un-Islamic and therefore unentitled to political expression.</p>
+
+        <p>The 1972 constitution's secularism was the constitutional form of the same rejection that drove the Language Movement in 1952 and the Six-Point Program in 1966. Bangladesh was founded on Bengali identity — linguistic, cultural, and civic — not on religion. Every Bangladeshi citizen, regardless of faith, was a citizen of the same republic on the same terms.</p>
+
+        <h3>What Was Won</h3>
+        <p>The liberation of 1971 established four things simultaneously: a nation, a democracy, a secular state, and the principle that a people's democratic verdict cannot be overturned by military force with impunity.</p>
+
+        <p>What had been taken from the Bengalis — the right to govern themselves by their own values — was returned. What was returned was not simply territory or sovereignty. It was the right of a people to be what they had always been, without asking permission from those who had decided that what they were was a problem to be solved.</p>
+
+        <p>Bangladesh was born secular, democratic, Bengali, and free.</p>
+
+        <!-- CROSS-LINK -->
+        <hr class="atlas-divider">
+        <div class="atlas-crosslink">
+          <div class="atlas-crosslink-icon">🗺</div>
+          <div>
+            <h4>The India–Bangladesh Bilateral Atlas</h4>
+            <p>This historical record is the foundation layer of the BWBUAI Atlas. The companion document covers the full India–Bangladesh relationship across all dimensions — geography, economics, security, culture, and the road ahead.</p>
+            <a href="../../publications/" class="btn btn-outline btn-sm">View Publications →</a>
+          </div>
+        </div>
+
+        <!-- SOURCE NOTE -->
+        <div class="atlas-source-note">
+          <strong>Sources:</strong> Primary research notes compiled from the Bangladesh Genocide Archive, International Crimes Tribunal (Bangladesh) official records, IDSA 1971 corpus, and contemporaneous diplomatic records including the Blood Telegram (1971). Wikipedia is not cited in this document — for 1971 content, all claims trace to primary records or official tribunal verdicts.<br><br>
+          <strong>Version:</strong> 1.0 — June 2026 &nbsp;|&nbsp; <strong>Project:</strong> BWBUAI Atlas, Publication 1 (Layer 2)
+        </div>
+
+      </div><!-- /atlas-body -->
+
+      <!-- RIGHT: STICKY NAV -->
+      <aside class="atlas-nav">
+        <div class="atlas-nav-label">In This Record</div>
+        <ul class="atlas-nav-links">
+          <li>
+            <a href="#pre-war">
+              <span class="nav-num">1</span> Life Under Occupation<br>
+              <span style="font-size:.78rem;opacity:.6;padding-left:18px;">1947–1971</span>
+            </a>
+          </li>
+          <li>
+            <a href="#the-war">
+              <span class="nav-num">2</span> The War<br>
+              <span style="font-size:.78rem;opacity:.6;padding-left:18px;">Operation Searchlight, 9 months</span>
+            </a>
+          </li>
+          <li>
+            <a href="#liberation">
+              <span class="nav-num">3</span> Liberation<br>
+              <span style="font-size:.78rem;opacity:.6;padding-left:18px;">December 16, 1971</span>
+            </a>
+          </li>
+          <li>
+            <a href="#the-founding">
+              <span class="nav-num">4</span> The Founding<br>
+              <span style="font-size:.78rem;opacity:.6;padding-left:18px;">1972 Constitution, Mujibism</span>
+            </a>
+          </li>
+        </ul>
+        <hr class="atlas-nav-divider">
+        <div class="atlas-nav-label">Key Dates</div>
+        <ul class="atlas-nav-links" style="margin-bottom:0">
+          <li><a href="#pre-war"><span class="nav-num" style="width:52px;font-weight:400;font-size:.78rem;">Feb 1952</span> Language martyrs</a></li>
+          <li><a href="#pre-war"><span class="nav-num" style="width:52px;font-weight:400;font-size:.78rem;">Dec 1970</span> AL wins elections</a></li>
+          <li><a href="#the-war"><span class="nav-num" style="width:52px;font-weight:400;font-size:.78rem;">25 Mar 1971</span> Operation Searchlight</a></li>
+          <li><a href="#liberation"><span class="nav-num" style="width:52px;font-weight:400;font-size:.78rem;">3 Dec 1971</span> India enters the war</a></li>
+          <li><a href="#liberation"><span class="nav-num" style="width:52px;font-weight:400;font-size:.78rem;">16 Dec 1971</span> Liberation — Bijoy Dibash</a></li>
+          <li><a href="#the-founding"><span class="nav-num" style="width:52px;font-weight:400;font-size:.78rem;">4 Nov 1972</span> Constitution adopted</a></li>
+        </ul>
+        <hr class="atlas-nav-divider">
+        <div class="atlas-nav-source">
+          Based on primary sources and ICT Bangladesh tribunal records. This is a public document — no registration required.
+        </div>
+      </aside>
+
+    </div><!-- /atlas-layout -->
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../../assets/js/nav.js"></script>
+<script src="../../assets/js/main.js"></script>
+</body>
+</html>
