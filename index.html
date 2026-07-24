@@ -1,443 +1,937 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- ============================================================
-       EDIT: SEO — Change title and description for search engines
-       ============================================================ -->
-  <title>Fuence — For Peace, For Humanity</title>
-  <meta name="description" content="Independent research center on geopolitics, sovereignty, and democratic accountability. Analysis on Bangladesh, India-China dynamics, and the future of democratic societies." />
-  <link rel="canonical" href="https://www.fuence.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Fuence" />
-  <meta property="og:title" content="Fuence — For Peace, For Humanity" />
-  <meta property="og:description" content="Independent research on geopolitics, sovereignty, and global transformation. Analysis on Bangladesh, India-China dynamics, and the future of democratic societies." />
-  <meta property="og:url" content="https://www.fuence.com/" />
-  <meta property="og:image" content="https://www.fuence.com/assets/img/fuence-logo.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Fuence — For Peace, For Humanity" />
-  <meta name="twitter:description" content="Independent research on geopolitics, sovereignty, and global transformation. Analysis on Bangladesh, India-China dynamics, and the future of democratic societies." />
-  <meta name="twitter:image" content="https://www.fuence.com/assets/img/fuence-logo.jpg" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/nav.css" />
-  <link rel="stylesheet" href="assets/css/home.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORIGO — Išrinkti produktai | Selected Products | Wybrane produkty</title>
+<meta name="description" content="Aukštos kokybės produktai jūsų namams. Premium selected products. Produkty premium dla Twojego domu.">
+<!-- Umami analytics (Marketing Studio, 2026-07-21) — live as of the
+     iieik.eu site added in Umami's setup wizard, website_id below. -->
+<script defer src="http://192.168.8.216:8093/script.js" data-website-id="06ccdee1-5304-4227-9d01-2e7aa926967e"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:     #1a1a1a;
+  --cream:   #f5f0e8;
+  --parchm:  #ede7d9;
+  --olive:   #3d5a3e;
+  --olive-l: #5a7c5b;
+  --gold:    #b8860b;
+  --gold-l:  #d4a017;
+  --rust:    #8b3a2a;
+  --warm:    #f9f5ee;
+  --muted:   #6b6560;
+  --border:  #d9d2c4;
+  --white:   #ffffff;
+  --shadow:  0 4px 24px rgba(26,26,26,.08);
+  --shadow-h:0 8px 40px rgba(26,26,26,.15);
+  --r:       6px;
+  --trans:   all .3s cubic-bezier(.4,0,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--warm);color:var(--ink);line-height:1.6;font-size:16px}
+
+/* ── LANGUAGE SWITCHER ── */
+.lang-bar{background:var(--olive);padding:6px 0;text-align:center}
+.lang-bar a{color:rgba(255,255,255,.6);text-decoration:none;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin:0 10px;transition:var(--trans)}
+.lang-bar a.active,.lang-bar a:hover{color:#fff}
+.lang-bar a.active{font-weight:500;text-decoration:underline;text-underline-offset:3px}
+
+/* ── HEADER ── */
+header{background:var(--cream);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:baseline;gap:8px;text-decoration:none}
+.logo-mark{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;letter-spacing:.15em;color:var(--olive);line-height:1}
+.logo-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;margin-bottom:4px}
+.logo-sub{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+nav{display:flex;gap:32px;align-items:center}
+nav a{text-decoration:none;color:var(--ink);font-size:14px;letter-spacing:.05em;transition:var(--trans);position:relative}
+nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:var(--trans)}
+nav a:hover::after{width:100%}
+nav a:hover{color:var(--olive)}
+.nav-cta{background:var(--olive);color:#fff!important;padding:10px 22px;border-radius:var(--r);font-size:13px;letter-spacing:.08em}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--olive-l)!important;color:#fff!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:24px;height:2px;background:var(--ink);transition:var(--trans)}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,var(--olive) 0%,#2a3d2b 100%);padding:100px 24px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-content{max-width:700px;margin:0 auto;position:relative}
+.hero-eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:20px}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,7vw,84px);font-weight:300;color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}
+.hero-title em{font-style:italic;color:var(--gold-l)}
+.hero-subtitle{font-size:15px;color:rgba(255,255,255,.65);max-width:500px;margin:24px auto 40px;line-height:1.7}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;padding:14px 32px;border-radius:var(--r);font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;transition:var(--trans);cursor:pointer;border:none}
+.btn-primary{background:var(--gold);color:var(--ink)}
+.btn-primary:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 8px 24px rgba(184,134,11,.3)}
+.btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.7)}
+.hero-badges{display:flex;gap:24px;justify-content:center;margin-top:48px;flex-wrap:wrap}
+.badge{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.6);font-size:12px;letter-spacing:.05em}
+.badge-icon{font-size:18px}
+
+/* ── MARQUEE ── */
+.marquee-wrap{background:var(--gold);padding:10px 0;overflow:hidden}
+.marquee{display:flex;gap:48px;animation:marquee 20s linear infinite;white-space:nowrap}
+.marquee span{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink);font-weight:500}
+.marquee span::after{content:'◆';margin-left:48px;opacity:.4}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── SECTIONS ── */
+section{padding:80px 24px}
+.container{max-width:1200px;margin:0 auto}
+.section-label{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:300;line-height:1.1;margin-bottom:16px}
+.section-desc{font-size:15px;color:var(--muted);max-width:560px;line-height:1.7}
+
+/* ── TRACKS ── */
+.tracks{background:var(--cream)}
+.tracks-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:48px}
+.track{padding:48px;position:relative;overflow:hidden}
+.track-1{background:var(--olive)}
+.track-2{background:#2a1f3d}
+.track::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;opacity:.06;background:#fff}
+.track-num{font-family:'Cormorant Garamond',serif;font-size:80px;font-weight:300;color:rgba(255,255,255,.08);position:absolute;top:16px;right:24px;line-height:1}
+.track-icon{font-size:28px;margin-bottom:16px}
+.track-name{font-family:'Cormorant Garamond',serif;font-size:28px;color:#fff;margin-bottom:8px;font-weight:400}
+.track-tagline{font-size:13px;color:rgba(255,255,255,.55);letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+.track-desc{font-size:14px;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:24px}
+.track-tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);font-size:11px;padding:4px 12px;border-radius:20px;letter-spacing:.05em}
+
+/* ── PRODUCTS ── */
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:48px}
+.product-card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:var(--trans);cursor:pointer}
+.product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-h)}
+.product-img{height:220px;display:flex;align-items:center;justify-content:center;font-size:64px;position:relative;overflow:hidden}
+.product-img.food{background:linear-gradient(135deg,#f0ead6,#e8dfc8)}
+.product-img.cookware{background:linear-gradient(135deg,#2a2a2a,#444)}
+.product-img.tech{background:linear-gradient(135deg,#1a1f3d,#2d3560)}
+.product-img.health{background:linear-gradient(135deg,#2d4a2e,#4a7a4b)}
+.track-badge{position:absolute;top:12px;left:12px;font-size:10px;padding:4px 10px;border-radius:20px;letter-spacing:.08em;font-weight:500}
+.track-badge.t1{background:var(--olive);color:#fff}
+.track-badge.t2{background:#2a1f3d;color:#fff}
+.exclusive-badge{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--ink);font-size:9px;padding:4px 8px;border-radius:20px;font-weight:500;letter-spacing:.08em}
+.stock-badge{display:inline-block;font-size:10px;padding:3px 9px;border-radius:20px;font-weight:500;letter-spacing:.05em;margin-bottom:8px}
+.stock-badge.in{background:#e8f3e8;color:var(--olive)}
+.stock-badge.out{background:#f3e8e8;color:var(--rust)}
+.catalog-offline{grid-column:1/-1;text-align:center;padding:48px 24px;color:var(--muted);background:var(--cream);border-radius:12px}
+.catalog-offline a{color:var(--olive);font-weight:500}
+.product-body{padding:20px}
+.product-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;margin-bottom:4px;line-height:1.2}
+.product-origin{font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.product-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px}
+.product-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--border)}
+.product-price{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--olive)}
+.product-delivery{font-size:11px;color:var(--muted)}
+.btn-order{background:var(--olive);color:#fff;padding:8px 18px;border-radius:var(--r);font-size:12px;letter-spacing:.06em;text-decoration:none;transition:var(--trans);font-weight:500}
+.btn-order:hover{background:var(--olive-l)}
+
+/* ── WHY US ── */
+.why{background:var(--parchm)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-top:48px}
+.why-item{text-align:center;padding:32px 20px}
+.why-icon{font-size:36px;margin-bottom:16px}
+.why-title{font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:10px}
+.why-text{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* ── CONTACT ── */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:48px}
+.contact-info h3{font-family:'Cormorant Garamond',serif;font-size:28px;margin-bottom:16px;font-weight:400}
+.contact-info p{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:24px}
+.contact-detail{display:flex;align-items:center;gap:12px;margin-bottom:12px;font-size:14px}
+.contact-detail-icon{width:36px;height:36px;background:var(--olive);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.delivery-info{background:var(--cream);border-radius:12px;padding:24px;margin-top:24px;border-left:3px solid var(--gold)}
+.delivery-info h4{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.delivery-row{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid var(--border)}
+.delivery-row:last-child{border-bottom:none}
+.order-form{background:var(--white);border-radius:12px;padding:36px;box-shadow:var(--shadow)}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:26px;margin-bottom:24px;font-weight:400}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:var(--r);font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:var(--warm);transition:var(--trans);outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--olive);background:#fff}
+.form-group textarea{height:100px;resize:vertical}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-consent{margin-bottom:12px}
+.consent-label{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:var(--muted);cursor:pointer;text-transform:none;letter-spacing:normal}
+.consent-label input{width:auto;margin-top:2px;flex-shrink:0}
+.consent-label a{color:var(--olive)}
+.form-submit{width:100%;padding:16px;background:var(--olive);color:#fff;border:none;border-radius:var(--r);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:var(--trans);font-family:'DM Sans',sans-serif;font-weight:500;margin-top:8px}
+.form-submit:hover{background:var(--olive-l);transform:translateY(-1px)}
+.form-note{font-size:11px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.6}
+
+/* ── FOOD INFO (EU Reg 1169/2011) ── */
+.food-info{margin-top:12px;padding-top:12px;border-top:1px dashed var(--border)}
+.food-info-toggle{background:none;border:none;color:var(--olive);font-size:11px;letter-spacing:.05em;text-transform:uppercase;font-weight:500;cursor:pointer;padding:0;font-family:'DM Sans',sans-serif}
+.food-info-toggle:hover{text-decoration:underline}
+.food-info-body{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.6}
+.food-info-body dt{font-weight:500;color:var(--ink);margin-top:8px;font-size:11px;letter-spacing:.03em;text-transform:uppercase}
+.food-info-body dd{margin:2px 0 0}
+.nutrition-table{width:100%;border-collapse:collapse;margin-top:4px;font-size:11px}
+.nutrition-table td{padding:3px 0;border-bottom:1px solid var(--border)}
+.nutrition-table td:last-child{text-align:right}
+.return-terms-line{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5}
+.track2-terms{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5}
+.track2-terms div{margin-top:4px}
+.secondhand-disclosure{font-size:11px;color:#6b4f00;background:#fff4e5;border-left:3px solid var(--gold);border-radius:6px;padding:8px 10px;margin-top:8px;line-height:1.5;font-weight:500}
+.seal-notice-line{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.5}
+
+/* ── SHIPPING / ORDER TOTAL ── */
+.shipping-summary{margin-top:4px;padding:12px 14px;background:var(--warm);border-radius:var(--r);font-size:13px}
+.shipping-row{display:flex;justify-content:space-between;padding:3px 0}
+.shipping-row.total{font-weight:600;color:var(--olive);font-size:15px;padding-top:8px;margin-top:4px;border-top:1px solid var(--border)}
+.shipping-note{font-size:11px;color:var(--muted);margin-top:4px}
+
+/* ── ABOUT ── */
+.about{background:var(--white)}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-visual{background:linear-gradient(135deg,var(--olive),#2a3d2b);border-radius:16px;height:400px;display:flex;align-items:center;justify-content:center;font-size:80px;position:relative;overflow:hidden}
+.about-visual::after{content:'ORIGO';font-family:'Cormorant Garamond',serif;font-size:80px;color:rgba(255,255,255,.06);position:absolute;bottom:-10px;right:-10px;letter-spacing:.2em}
+.about-text .section-title{font-size:clamp(28px,3vw,42px)}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.stat{text-align:center;padding:20px;background:var(--warm);border-radius:10px}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--olive);font-weight:600;line-height:1}
+.stat-label{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:.08em}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);color:rgba(255,255,255,.6);padding:48px 24px 24px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1fr 2fr;gap:48px;margin-bottom:40px}
+.footer-brand .logo-mark{color:rgba(255,255,255,.9)}
+.footer-brand p{font-size:13px;margin-top:12px;line-height:1.7;color:rgba(255,255,255,.45)}
+.footer-links{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.footer-col h4{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;transition:var(--trans)}
+.footer-col a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;flex-wrap:wrap;gap:12px}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--olive);color:#fff;padding:14px 24px;border-radius:var(--r);font-size:14px;transform:translateY(80px);opacity:0;transition:var(--trans);z-index:999;box-shadow:var(--shadow-h)}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  nav{display:none}nav.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--cream);padding:24px;border-bottom:1px solid var(--border);gap:20px}
+  .hamburger{display:flex}
+  .tracks-grid{grid-template-columns:1fr}
+  .contact-wrap,.about-inner,.footer-top{grid-template-columns:1fr}
+  .about-visual{height:200px}
+  .footer-links{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  section{padding:60px 20px}
+}
+
+/* ── LANGUAGE VISIBILITY ── */
+[data-lang]{display:none}
+body.lt [data-lang="lt"]{display:block}
+body.lt span[data-lang="lt"]{display:inline}
+body.lt [data-lang="lt"].flex{display:flex}
+body.en [data-lang="en"]{display:block}
+body.en span[data-lang="en"]{display:inline}
+body.en [data-lang="en"].flex{display:flex}
+body.pl [data-lang="pl"]{display:block}
+body.pl span[data-lang="pl"]{display:inline}
+body.pl [data-lang="pl"].flex{display:flex}
+
+/* Inline lang variants */
+.t span[data-lang]{display:none}
+body.lt .t span[data-lang="lt"],
+body.en .t span[data-lang="en"],
+body.pl .t span[data-lang="pl"]{display:inline}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+</style>
 </head>
-<body>
+<body class="lt">
 
-<div id="nav-placeholder"></div>
-
-<!-- ============================================================
-     SECTION 1: HERO
-     EDIT: Change headline, subtext, and button links below
-     ============================================================ -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="container">
-    <div class="hero-inner">
-
-      <div class="hero-content fade-up">
-        <!-- EDIT: Small label above headline -->
-        <span class="section-label">Independent Research Center</span>
-
-        <!-- EDIT: Main headline -->
-        <h1 class="hero-title">
-          Understanding the World<br />
-          <em>Before It Changes You</em>
-        </h1>
-
-        <!-- EDIT: 2-3 sentence description -->
-        <p class="hero-sub">
-          Fuence is an independent research center producing evidence-based
-          analysis on geopolitics, sovereignty struggles, and the forces reshaping
-          global order — with a commitment to democratic accountability
-          and human dignity.
-        </p>
-
-        <!-- EDIT: Button links — replace # with real URLs -->
-        <div class="hero-actions">
-          <a href="series/index.html" class="btn btn-primary btn-lg">Explore Series</a>
-<a href="support/index.html" class="btn btn-amber btn-lg">☕ Support This Work</a>
-        </div>
-      </div>
-
-      <!-- Logo panel — your uploaded logo displayed here -->
-      <div class="hero-logo-panel fade-up delay-2">
-        <!-- EDIT: Update path if you rename the logo file -->
-        <img src="assets/img/fuence-logo.jpg" alt="Fuence — For Peace, For Humanity" />
-        <p class="hero-logo-tagline">For Peace, For Humanity …</p>
-        <p class="hero-logo-pillars">Vision · Genesis · Legacy</p>
-      </div>
-
-    </div>
-
-    <!-- EDIT: Update stats as your project grows -->
-    <div class="hero-stats fade-up delay-3">
-      <div class="stat-item">
-        <span class="stat-number">2</span>
-        <span class="stat-label">Active Series</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-number">4+</span>
-        <span class="stat-label">In Pipeline</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat-item">
-        <span class="stat-number">3</span>
-        <span class="stat-label">Output Types</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     SECTION 2: THREE PILLARS
-     EDIT: Change pillar titles, icons, descriptions, and links
-     ============================================================ -->
-<section class="section section-tint">
-  <div class="container">
-    <div class="pillars-header text-center scroll-reveal">
-      <span class="section-label">Our Approach</span>
-      <h2>Document. Analyse. Engage.</h2>
-      <div class="divider divider-center"></div>
-      <p class="pillars-sub">
-        Every series follows a rigorous three-stage process —
-        from evidence collection to international advocacy.
-      </p>
-    </div>
-    <div class="grid-3">
-      <!-- EDIT: Pillar 1 -->
-      <div class="pillar-card scroll-reveal delay-1">
-        <div class="pillar-icon">📋</div>
-        <h3>Document</h3>
-        <p>We collect data, compile evidence, and build dossiers on complex geopolitical situations — sourced from international records, field research, and expert input.</p>
-        <a href="publications/index.html" class="pillar-link">See Publications →</a>
-      </div>
-      <!-- EDIT: Pillar 2 -->
-      <div class="pillar-card scroll-reveal delay-2">
-        <div class="pillar-icon">🔍</div>
-        <h3>Analyse</h3>
-        <p>Our research produces reports, op-eds, and policy briefs — translated into podcast episodes and multimedia content for global audiences.</p>
-        <a href="series/index.html" class="pillar-link">Explore Series →</a>
-      </div>
-      <!-- EDIT: Pillar 3 -->
-      <div class="pillar-card scroll-reveal delay-3">
-        <div class="pillar-icon">🌐</div>
-        <h3>Engage</h3>
-        <p>From international petitions to diplomatic outreach, we connect research to action — amplifying voices that global institutions often ignore.</p>
-        <a href="community/index.html" class="pillar-link">Join Community →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- LATEST RESEARCH BANNER — update title + href when a new pinned publication is added -->
-<div style="background:#eaf5f2;border-top:2px solid #2a9d8f;border-bottom:1px solid #c5e8e2;padding:11px 0">
-  <div class="container" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-    <span style="background:#2a9d8f;color:#fff;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 9px;border-radius:3px;white-space:nowrap;flex-shrink:0">New Research</span>
-    <span style="font-size:.88rem;font-weight:600;flex:1;min-width:180px;color:#1a3a32">Who is Jamaat-e-Islami? Understanding Bangladesh's Most Dangerous Political Force</span>
-    <a href="https://blog.fuence.com/who-is-jamaat-2026/" style="font-size:.84rem;color:#2a9d8f;white-space:nowrap;font-weight:600;text-decoration:none">Read Report →</a>
-  </div>
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <a href="#" onclick="setLang('lt')" id="lang-lt" class="active">LT — Lietuvių</a>
+  <a href="#" onclick="setLang('en')" id="lang-en">EN — English</a>
+  <a href="#" onclick="setLang('pl')" id="lang-pl">PL — Polski</a>
 </div>
 
-<!-- ============================================================
-     SECTION 3: ACTIVE SERIES
-     EDIT: Each series card below.
-     TO ADD A NEW SERIES: Copy one <article> block, paste below,
-     update badge, title, description, tags, and links.
-     ============================================================ -->
-<section class="section" id="series">
-  <div class="container">
-    <div class="series-header scroll-reveal">
-      <div>
-        <span class="section-label">Current Work</span>
-        <h2>Active Series</h2>
-        <div class="divider"></div>
-      </div>
-      <a href="series/index.html" class="btn btn-outline">View All Series</a>
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">ORIGO</span>
+      <span class="logo-dot"></span>
+      <span class="logo-sub t">
+        <span data-lang="lt">Rinktiniai produktai</span>
+        <span data-lang="en">Selected products</span>
+        <span data-lang="pl">Wybrane produkty</span>
+      </span>
+    </a>
+    <nav id="main-nav">
+      <a href="#products" class="t">
+        <span data-lang="lt">Produktai</span>
+        <span data-lang="en">Products</span>
+        <span data-lang="pl">Produkty</span>
+      </a>
+      <a href="#about" class="t">
+        <span data-lang="lt">Apie mus</span>
+        <span data-lang="en">About</span>
+        <span data-lang="pl">O nas</span>
+      </a>
+      <a href="#contact" class="nav-cta t">
+        <span data-lang="lt">Užsakyti</span>
+        <span data-lang="en">Order</span>
+        <span data-lang="pl">Zamów</span>
+      </a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content reveal">
+    <div class="hero-eyebrow t">
+      <span data-lang="lt">Vilnius, Lietuva — Pristatome į visą Baltijos regioną</span>
+      <span data-lang="en">Vilnius, Lithuania — Delivering across the Baltic region</span>
+      <span data-lang="pl">Wilno, Litwa — Dostawa do całego regionu bałtyckiego</span>
     </div>
+    <h1 class="hero-title">
+      <span class="t">
+        <span data-lang="lt">Išrinkta<br><em>tiesiai iš šaltinio</em></span>
+        <span data-lang="en">Selected<br><em>from the source</em></span>
+        <span data-lang="pl">Wybrane<br><em>prosto ze źródła</em></span>
+      </span>
+    </h1>
+    <p class="hero-subtitle t">
+      <span data-lang="lt">Aukštos kokybės produktai iš Europos — maistas, virtuvės reikmenys ir technologijos. Kiekvienas produktas asmeniškai patikrintas prieš siūlant jums.</span>
+      <span data-lang="en">High-quality products sourced from Europe — premium food, cookware, and technology. Every product personally tested before we offer it to you.</span>
+      <span data-lang="pl">Produkty wysokiej jakości pozyskiwane z Europy — żywność premium, naczynia i technologia. Każdy produkt osobiście przetestowany zanim go zaoferujemy.</span>
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn btn-primary t">
+        <span data-lang="lt">Peržiūrėti produktus</span>
+        <span data-lang="en">Browse products</span>
+        <span data-lang="pl">Przeglądaj produkty</span>
+      </a>
+      <a href="#contact" class="btn btn-outline t">
+        <span data-lang="lt">Užsakyti</span>
+        <span data-lang="en">Place an order</span>
+        <span data-lang="pl">Złóż zamówienie</span>
+      </a>
+    </div>
+    <div class="hero-badges">
+      <div class="badge"><span class="badge-icon">🚚</span>
+        <span class="t"><span data-lang="lt">LP Express / Omniva</span><span data-lang="en">LP Express / Omniva</span><span data-lang="pl">LP Express / Omniva</span></span>
+      </div>
+      <div class="badge"><span class="badge-icon">🇪🇺</span>
+        <span class="t"><span data-lang="lt">ES kilmės produktai</span><span data-lang="en">EU origin products</span><span data-lang="pl">Produkty z UE</span></span>
+      </div>
+      <div class="badge"><span class="badge-icon">✅</span>
+        <span class="t"><span data-lang="lt">Asmeniškai patikrinta</span><span data-lang="en">Personally tested</span><span data-lang="pl">Osobiście przetestowane</span></span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="series-list">
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee" id="marquee-content"></div>
+</div>
 
-      <!-- ======================================================
-           EDIT: SERIES CARD — BANGLADESH
-           ====================================================== -->
-      <article class="series-card scroll-reveal">
-        <div class="series-card-meta">
-          <span class="badge badge-active">● Active</span>
-          <span class="badge badge-teal">South Asia</span>
+<!-- TRACKS -->
+<section class="tracks">
+  <div class="container">
+    <div class="section-label t"><span data-lang="lt">Kaip mes dirbame</span><span data-lang="en">How we work</span><span data-lang="pl">Jak działamy</span></div>
+    <h2 class="section-title reveal t"><span data-lang="lt">Du produktų keliai</span><span data-lang="en">Two product tracks</span><span data-lang="pl">Dwie ścieżki produktów</span></h2>
+    <div class="tracks-grid reveal">
+      <div class="track track-1">
+        <span class="track-num">1</span>
+        <div class="track-icon">🫙</div>
+        <h3 class="track-name t"><span data-lang="lt">Kasdieniai rinktiniai</span><span data-lang="en">Everyday selection</span><span data-lang="pl">Codzienny wybór</span></h3>
+        <p class="track-tagline t"><span data-lang="lt">Maistas · Virtuvė · Sveikata</span><span data-lang="en">Food · Kitchen · Health</span><span data-lang="pl">Żywność · Kuchnia · Zdrowie</span></p>
+        <p class="track-desc t"><span data-lang="lt">Iš Europos šaltinių gauti aukštos kokybės produktai, kuriuos laikome sandėlyje ir pristatome greitai. Natūralūs, patikimos kilmės.</span><span data-lang="en">High-quality products sourced from Europe, kept in stock for fast delivery. Natural, verified origin, no returns needed.</span><span data-lang="pl">Produkty wysokiej jakości pozyskiwane z Europy, dostępne od ręki. Naturalne, zweryfikowane pochodzenie.</span></p>
+        <div class="track-tags">
+          <span class="tag t"><span data-lang="lt">Ekstra tyras aliejus</span><span data-lang="en">Extra virgin olive oil</span><span data-lang="pl">Oliwa extra virgin</span></span>
+          <span class="tag t"><span data-lang="lt">Specialty kava</span><span data-lang="en">Specialty coffee</span><span data-lang="pl">Kawa specialty</span></span>
+          <span class="tag t"><span data-lang="lt">Ketaus indai</span><span data-lang="en">Cast iron</span><span data-lang="pl">Żeliwo</span></span>
+          <span class="tag t"><span data-lang="lt">Himalajų druska</span><span data-lang="en">Himalayan salt</span><span data-lang="pl">Sól himalajska</span></span>
+          <span class="tag t"><span data-lang="lt">Menkių aliejus</span><span data-lang="en">Cod liver oil</span><span data-lang="pl">Olej z dorsza</span></span>
         </div>
-        <div class="series-card-body">
-          <h3>Bangladesh: Sovereignty, Dissent & Democratic Futures</h3>
-          <p>Documenting political conditions, civil society suppression, and international accountability pathways in Bangladesh — backed by evidence and field research.</p>
-          <div class="series-card-tags">
-            <span>Democracy</span><span>Human Rights</span><span>South Asia</span><span>Governance</span>
+      </div>
+      <div class="track track-2">
+        <span class="track-num">2</span>
+        <div class="track-icon">🖥️</div>
+        <h3 class="track-name t"><span data-lang="lt">Išskirtiniai</span><span data-lang="en">Exclusive items</span><span data-lang="pl">Produkty ekskluzywne</span></h3>
+        <p class="track-tagline t"><span data-lang="lt">Technologijos · Specializuota įranga</span><span data-lang="en">Technology · Specialist equipment</span><span data-lang="pl">Technologia · Sprzęt specjalistyczny</span></p>
+        <p class="track-desc t"><span data-lang="lt">Rinktiniai technologiniai produktai, kuriuos patys naudojame ir tikrinome. Riboti kiekiai, greitas pristatymas iš tiekėjo.</span><span data-lang="en">Selected tech products we use and have personally tested. Limited quantities, direct delivery from verified suppliers within 7–14 days.</span><span data-lang="pl">Wybrane produkty technologiczne, których sami używamy. Ograniczone ilości, dostawa bezpośrednio od dostawcy w 7–14 dni.</span></p>
+        <div class="track-tags">
+          <span class="tag">TerraMaster NAS</span>
+          <span class="tag">Epson EcoTank</span>
+          <span class="tag t"><span data-lang="lt">Saugyklos sprendimai</span><span data-lang="en">Storage solutions</span><span data-lang="pl">Rozwiązania storage</span></span>
+          <span class="tag t"><span data-lang="lt">14 d. grąžinimas</span><span data-lang="en">14-day returns</span><span data-lang="pl">Zwrot 14 dni</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="container">
+    <div class="section-label t"><span data-lang="lt">Mūsų asortimentas</span><span data-lang="en">Our range</span><span data-lang="pl">Nasza oferta</span></div>
+    <h2 class="section-title reveal t"><span data-lang="lt">Rinktiniai produktai</span><span data-lang="en">Selected products</span><span data-lang="pl">Wybrane produkty</span></h2>
+    <p class="section-desc reveal t"><span data-lang="lt">Kiekvienas produktas asmeniškai patikrintas. Riboti kiekiai — kokybė svarbiau nei kiekis.</span><span data-lang="en">Every product personally tested. Limited quantities — quality over volume.</span><span data-lang="pl">Każdy produkt osobiście przetestowany. Ograniczone ilości — jakość ponad ilość.</span></p>
+    <div class="products-grid" id="products-grid"></div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="container">
+    <div class="section-label t"><span data-lang="lt">Kodėl ORIGO</span><span data-lang="en">Why ORIGO</span><span data-lang="pl">Dlaczego ORIGO</span></div>
+    <h2 class="section-title reveal t"><span data-lang="lt">Skirtumas aiškus</span><span data-lang="en">The difference is clear</span><span data-lang="pl">Różnica jest wyraźna</span></h2>
+    <div class="why-grid" id="why-grid"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-visual reveal">🌿</div>
+      <div class="about-text reveal">
+        <div class="section-label t"><span data-lang="lt">Apie mus</span><span data-lang="en">About us</span><span data-lang="pl">O nas</span></div>
+        <h2 class="section-title t"><span data-lang="lt">Iš Vilniaus<br>į jūsų namus</span><span data-lang="en">From Vilnius<br>to your home</span><span data-lang="pl">Z Wilna<br>do Twojego domu</span></h2>
+        <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-top:16px" class="t">
+          <span data-lang="lt">Esame maža Vilniaus įmonė, kuri rūpestingai atrenka produktus iš Europos ir pasaulio. Kiekvienas produktas pirmiausia patikinamas — pats jį naudojame prieš siūlydami jums. Mažas kiekis, didelė kokybė.</span>
+          <span data-lang="en">We are a small Vilnius-based business that carefully selects products from Europe and beyond. Every product is personally tested — we use it ourselves before offering it to you. Small volumes, exceptional quality.</span>
+          <span data-lang="pl">Jesteśmy małą firmą z Wilna, która starannie dobiera produkty z Europy i ze świata. Każdy produkt jest osobiście testowany — sami go używamy zanim go zaproponujemy. Małe ilości, wyjątkowa jakość.</span>
+        </p>
+        <div class="stat-row">
+          <div class="stat"><div class="stat-num">EU</div><div class="stat-label t"><span data-lang="lt">Kilmės šaltiniai</span><span data-lang="en">Origin sources</span><span data-lang="pl">Źródła pochodzenia</span></div></div>
+          <div class="stat"><div class="stat-num">14d</div><div class="stat-label t"><span data-lang="lt">Grąžinimo laikas</span><span data-lang="en">Return window</span><span data-lang="pl">Okno zwrotu</span></div></div>
+          <div class="stat"><div class="stat-num">✓</div><div class="stat-label t"><span data-lang="lt">Patikrinta asmeniškai</span><span data-lang="en">Personally tested</span><span data-lang="pl">Osobiście zbadane</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--cream)">
+  <div class="container">
+    <div class="section-label t"><span data-lang="lt">Susisiekite</span><span data-lang="en">Get in touch</span><span data-lang="pl">Kontakt</span></div>
+    <h2 class="section-title reveal t"><span data-lang="lt">Užsakykite dabar</span><span data-lang="en">Order now</span><span data-lang="pl">Zamów teraz</span></h2>
+    <div class="contact-wrap">
+      <div class="contact-info reveal">
+        <h3 class="t"><span data-lang="lt">Kaip užsakyti?</span><span data-lang="en">How to order?</span><span data-lang="pl">Jak zamówić?</span></h3>
+        <p class="t">
+          <span data-lang="lt">Užpildykite formą arba rašykite el. paštu. Patvirtinsime užsakymą per 24 val. ir atsiųsime mokėjimo informaciją.</span>
+          <span data-lang="en">Fill the form or write to us by email. We confirm your order within 24 hours and send payment details.</span>
+          <span data-lang="pl">Wypełnij formularz lub napisz do nas e-mailem. Potwierdzimy zamówienie w ciągu 24 godzin i wyślemy dane do płatności.</span>
+        </p>
+        <div class="contact-detail"><span class="contact-detail-icon">✉️</span><span>info@iieik.eu</span></div>
+        <div class="contact-detail"><span class="contact-detail-icon">📍</span><span class="t"><span data-lang="lt">Vilnius, Lietuva</span><span data-lang="en">Vilnius, Lithuania</span><span data-lang="pl">Wilno, Litwa</span></span></div>
+        <div class="delivery-info">
+          <h4 class="t"><span data-lang="lt">Pristatymo informacija</span><span data-lang="en">Delivery info</span><span data-lang="pl">Informacje o dostawie</span></h4>
+          <div class="delivery-row"><span class="t"><span data-lang="lt">Lietuva (sandėlyje)</span><span data-lang="en">Lithuania (in stock)</span><span data-lang="pl">Litwa (z magazynu)</span></span><span>1–2 d.</span></div>
+          <div class="delivery-row"><span class="t"><span data-lang="lt">Lietuva (iš tiekėjo)</span><span data-lang="en">Lithuania (from supplier)</span><span data-lang="pl">Litwa (od dostawcy)</span></span><span>5–10 d.</span></div>
+          <div class="delivery-row"><span class="t"><span data-lang="lt">Latvija / Estija</span><span data-lang="en">Latvia / Estonia</span><span data-lang="pl">Łotwa / Estonia</span></span><span>3–7 d.</span></div>
+          <div class="delivery-row"><span class="t"><span data-lang="lt">Lenkija</span><span data-lang="en">Poland</span><span data-lang="pl">Polska</span></span><span>5–10 d.</span></div>
+          <div class="delivery-row"><span class="t"><span data-lang="lt">Išskirtiniai (iš HK)</span><span data-lang="en">Exclusive (from HK)</span><span data-lang="pl">Ekskluzywne (z HK)</span></span><span>7–14 d.</span></div>
+        </div>
+      </div>
+      <div class="order-form reveal">
+        <h3 class="form-title t"><span data-lang="lt">Užsakymo forma</span><span data-lang="en">Order form</span><span data-lang="pl">Formularz zamówienia</span></h3>
+        <form id="order-form" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="t"><span data-lang="lt">Vardas</span><span data-lang="en">Name</span><span data-lang="pl">Imię i nazwisko</span></label>
+              <input type="text" id="f-name" required placeholder="Jonas Jonaitis">
+            </div>
+            <div class="form-group">
+              <label class="t"><span data-lang="lt">El. paštas</span><span data-lang="en">Email</span><span data-lang="pl">E-mail</span></label>
+              <input type="email" id="f-email" required placeholder="jonas@example.lt">
+            </div>
           </div>
-        </div>
-        <div class="series-card-actions">
-          <a href="series/bangladesh/index.html" class="btn btn-primary">Explore Series</a>
-          <!-- ACTIVATE Petition: replace # and uncomment when Change.org petition is live
-          <a href="#" class="btn btn-petition" target="_blank">✍ Sign Petition</a> -->
-        </div>
-      </article>
-
-      <!-- ======================================================
-           EDIT: SERIES CARD — INDIA & CHINA
-           ====================================================== -->
-      <article class="series-card scroll-reveal">
-        <div class="series-card-meta">
-          <span class="badge badge-active">● Active</span>
-          <span class="badge badge-teal">Geopolitics</span>
-        </div>
-        <div class="series-card-body">
-          <h3>India as a Counterweight: Standing Against Chinese Hegemony</h3>
-          <p>Examining India's strategic role in South and Southeast Asia as a democratic counterbalance to China's expanding influence — alliances, economics, and the decade ahead.</p>
-          <div class="series-card-tags">
-            <span>China</span><span>India</span><span>Hegemony</span><span>Indo-Pacific</span>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="t"><span data-lang="lt">Telefonas</span><span data-lang="en">Phone</span><span data-lang="pl">Telefon</span></label>
+              <input type="tel" id="f-phone" placeholder="+370 600 00000">
+            </div>
+            <div class="form-group">
+              <label class="t"><span data-lang="lt">Miestas / Šalis</span><span data-lang="en">City / Country</span><span data-lang="pl">Miasto / Kraj</span></label>
+              <input type="text" id="f-city" placeholder="Vilnius, LT">
+            </div>
           </div>
-        </div>
-        <div class="series-card-actions">
-          <a href="series/india/index.html" class="btn btn-primary">Explore Series</a>
-        </div>
-      </article>
-
-      <!-- ACTIVATE Africa: uncomment when Africa series has content
-      <article class="series-card series-card-soon scroll-reveal">
-        <div class="series-card-meta">
-          <span class="badge badge-soon">Coming Soon</span>
-          <span class="badge badge-amber">Africa</span>
-        </div>
-        <div class="series-card-body">
-          <h3>Africa: Sovereignty, Resources & the New Scramble</h3>
-          <p>Foreign debt dynamics, resource extraction, and the growing African civil society movements demanding a new global compact on development and self-determination.</p>
-          <div class="series-card-tags"><span>Africa</span><span>Sovereignty</span><span>Development</span></div>
-        </div>
-        <div class="series-card-actions">
-          <a href="support/index.html" class="btn btn-outline">Support to Accelerate</a>
-        </div>
-      </article> -->
-
-      <!-- ACTIVATE Youth & Future: uncomment when that series has content
-      <article class="series-card series-card-soon scroll-reveal">
-        <div class="series-card-meta">
-          <span class="badge badge-soon">Coming Soon</span>
-          <span class="badge badge-amber">Global</span>
-        </div>
-        <div class="series-card-body">
-          <h3>Youth & Future Strategy: Who Inherits the World?</h3>
-          <p>Global youth movements, future governance models, and strategies for building a world that is equitable, free, and worth inheriting.</p>
-          <div class="series-card-tags"><span>Youth</span><span>Future</span><span>Global Order</span><span>Education</span></div>
-        </div>
-        <div class="series-card-actions">
-          <a href="support/index.html" class="btn btn-outline">Support to Accelerate</a>
-        </div>
-      </article> -->
-
-      <!-- ======================================================
-           TEMPLATE: ADD NEW SERIES CARD
-           Copy this block (uncomment), fill in details.
-           ====================================================== -->
-      <!--
-      <article class="series-card scroll-reveal">
-        <div class="series-card-meta">
-          <span class="badge badge-active">● Active</span>
-          <span class="badge badge-teal">REGION</span>
-        </div>
-        <div class="series-card-body">
-          <h3>YOUR SERIES TITLE</h3>
-          <p>Your series description here.</p>
-          <div class="series-card-tags">
-            <span>Tag 1</span><span>Tag 2</span>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="t"><span data-lang="lt">Produktas</span><span data-lang="en">Product</span><span data-lang="pl">Produkt</span></label>
+              <select required id="product-select" onchange="updateShippingSummary()">
+                <option value="" class="t" disabled selected><span data-lang="lt">— Pasirinkite —</span><span data-lang="en">— Select —</span><span data-lang="pl">— Wybierz —</span></option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="t"><span data-lang="lt">Kiekis</span><span data-lang="en">Quantity</span><span data-lang="pl">Ilość</span></label>
+              <input type="number" id="f-qty" min="1" max="500" step="1" value="1" required oninput="updateShippingSummary()">
+            </div>
           </div>
-        </div>
-        <div class="series-card-actions">
-          <a href="series/YOURSLUG/index.html" class="btn btn-primary">Explore Series</a>
-        </div>
-      </article>
-      -->
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     SECTION 4: LATEST PUBLICATIONS
-     EDIT: Update these 3 cards with your latest articles.
-     Copy a .pub-strip-card block to add more.
-     ============================================================ -->
-<section class="section section-tint" id="latest">
-  <div class="container">
-    <div class="series-header scroll-reveal">
-      <div>
-        <span class="section-label">Latest Research</span>
-        <h2>From the Desk</h2>
-        <div class="divider"></div>
-      </div>
-      <!-- ACTIVATE Substack: replace # and uncomment when channel is live
-      <a href="#" class="btn btn-outline" target="_blank">All on Substack →</a> -->
-    </div>
-    <div class="grid-3">
-
-      <!-- CONTENT:BEGIN home-latest -->
-      <div class="pub-strip-card card scroll-reveal delay-1">
-        <span class="badge badge-teal">Report</span>
-        <h4>Who is Jamaat-e-Islami? Understanding Bangladesh's Most Dangerous Political Force</h4>
-        <p class="pub-strip-excerpt">A clear-eyed explainer on JEI: its 1971 war crimes, its 2.4 million members, its state infiltration, its international sponsors, and why India must understand it as a direct threat.</p>
-        <div class="pub-strip-meta">
-          <span class="text-muted">June 2026</span>
-          <a href="https://blog.fuence.com/who-is-jamaat-2026/" class="pub-strip-link" target="_blank">Read →</a>
-        </div>
-      </div>
-
-      <div class="pub-strip-card card scroll-reveal delay-2">
-        <span class="badge badge-teal">Report</span>
-        <h4>Project Ukraine for India: How Bangladesh Was Turned Into a Weapon Against New Delhi</h4>
-        <p class="pub-strip-excerpt">The structural parallel between Ukraine and Bangladesh: how a reliable partner was turned into a threat platform through a coordinated international operation — and what India must do while the window is open.</p>
-        <div class="pub-strip-meta">
-          <span class="text-muted">June 2026</span>
-          <a href="https://blog.fuence.com/project-ukraine-for-india-2026/" class="pub-strip-link" target="_blank">Read →</a>
-        </div>
-      </div>
-
-      <div class="pub-strip-card card scroll-reveal delay-3">
-        <span class="badge badge-teal">Brief</span>
-        <h4>Pakistan's Return to the Bay of Bengal: What India's Eastern Flank Cannot Afford to Ignore</h4>
-        <p class="pub-strip-excerpt">Commodore Farooq's statement on PNS Hangul, the $4–5B Chinese submarine programme, and why Bangladesh's diplomatic realignment is the missing piece of Pakistan's Bay of Bengal ambitions.</p>
-        <div class="pub-strip-meta">
-          <span class="text-muted">June 2026</span>
-          <a href="https://blog.fuence.com/pakistan-bay-of-bengal-2026/" class="pub-strip-link" target="_blank">Read →</a>
-        </div>
-      </div>
-      <!-- CONTENT:END home-latest -->
-
-    </div>
-    <div style="text-align:center;margin-top:40px">
-      <a href="publications/index.html" class="btn btn-outline">View All Publications</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     SECTION 4b: FOLLOW OUR WORK
-     EDIT: Update platform links below as channels go live
-     ============================================================ -->
-<section class="section" id="subscribe" style="background:var(--bg-tint,#f8f8f6)">
-  <div class="container">
-    <div class="text-center scroll-reveal" style="max-width:680px;margin:0 auto">
-      <span class="section-label">Stay Informed</span>
-      <h2 style="margin-bottom:12px">Follow Our Work</h2>
-      <p style="color:var(--text-muted,#666);margin-bottom:32px">
-        Read our research and subscribe for updates on the platforms you already use.
-      </p>
-      <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
-        <a href="https://substack.com/@fuence" target="_blank" class="btn btn-primary">📬 Subscribe on Substack</a>
-        <a href="https://patreon.com/Fuence" target="_blank" class="btn btn-amber">🎙 Support on Patreon</a>
-        <a href="https://x.com/Fuence4w" target="_blank" class="btn btn-outline">Follow on X →</a>
-        <a href="https://discord.gg/7zNnKfc8rr" target="_blank" class="btn btn-outline">Join Discord →</a>
+          <div class="form-group">
+            <label class="t"><span data-lang="lt">Pristatymo būdas</span><span data-lang="en">Delivery method</span><span data-lang="pl">Sposób dostawy</span></label>
+            <select id="f-courier" onchange="updateShippingSummary()"></select>
+          </div>
+          <div class="form-group">
+            <div class="shipping-summary" id="shipping-summary"></div>
+          </div>
+          <div class="form-group">
+            <label class="t"><span data-lang="lt">Pastabos</span><span data-lang="en">Notes</span><span data-lang="pl">Uwagi</span></label>
+            <textarea id="f-notes" placeholder="..."></textarea>
+          </div>
+          <!-- Anti-spam: real customers never see or fill this (hidden off-screen).
+               Bots that fill every field trip the honeypot -> silent quarantine. -->
+          <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
+            <label for="f-company">Company</label>
+            <input type="text" id="f-company" name="company" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" id="f-token" value="8228b2a58b62854faeaa15c04a9fa760">
+          <!-- Mandatory consent checkbox (legal completeness pass, 2026-07-22)
+               -- validated server-side too, see origo-order-intake.py's
+               validate() (reason: terms_not_accepted). -->
+          <div class="form-group form-consent">
+            <label class="consent-label">
+              <input type="checkbox" id="f-consent" required>
+              <span class="t">
+                <span data-lang="lt">Sutinku su <a href="terms.html" target="_blank" rel="noopener">Pirkimo–pardavimo taisyklėmis</a> ir susipažinau su <a href="privacy.html" target="_blank" rel="noopener">Privatumo politika</a>.</span>
+                <span data-lang="en">I agree to the <a href="terms.html" target="_blank" rel="noopener">Terms and Conditions</a> and have read the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+                <span data-lang="pl">Akceptuję <a href="terms.html" target="_blank" rel="noopener">Regulamin</a> i zapoznałem/-am się z <a href="privacy.html" target="_blank" rel="noopener">Polityką prywatności</a>.</span>
+              </span>
+            </label>
+          </div>
+          <button type="submit" class="form-submit t"><span data-lang="lt">Siųsti užsakymą</span><span data-lang="en">Send order</span><span data-lang="pl">Wyślij zamówienie</span></button>
+          <p class="form-note t"><span data-lang="lt">Atsakysime per 24 val. Mokėjimas — išankstiniu banko pavedimu (SEPA).</span><span data-lang="en">We respond within 24h. Payment by SEPA bank transfer (prepaid).</span><span data-lang="pl">Odpowiadamy w ciągu 24h. Płatność przelewem SEPA (z góry).</span></p>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ============================================================
-     SECTION 5: SUPPORT
-     EDIT: Update platform links under each tier
-     ============================================================ -->
-<section class="section section-dark" id="support">
-  <div class="container">
-    <div class="support-header text-center scroll-reveal">
-      <span class="section-label">Independence Matters</span>
-      <h2>Support Independent Research</h2>
-      <div class="divider divider-center"></div>
-      <p class="support-sub">
-        Fuence accepts no funding that compromises editorial independence.
-        Every contribution directly supports research, production, and advocacy.
-      </p>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-mark">ORIGO</div>
+        <p class="t"><span data-lang="lt">Rinktiniai produktai iš Europos. Vilnius, Lietuva.</span><span data-lang="en">Selected products from Europe. Vilnius, Lithuania.</span><span data-lang="pl">Wybrane produkty z Europy. Wilno, Litwa.</span></p>
+        <p style="margin-top:8px;font-size:12px;color:rgba(255,255,255,.3)">iieik.eu · info@iieik.eu</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4 class="t"><span data-lang="lt">Produktai</span><span data-lang="en">Products</span><span data-lang="pl">Produkty</span></h4>
+          <a href="#products" class="t"><span data-lang="lt">Maistas</span><span data-lang="en">Food</span><span data-lang="pl">Żywność</span></a>
+          <a href="#products" class="t"><span data-lang="lt">Virtuvė</span><span data-lang="en">Cookware</span><span data-lang="pl">Naczynia</span></a>
+          <a href="#products" class="t"><span data-lang="lt">Technologijos</span><span data-lang="en">Technology</span><span data-lang="pl">Technologia</span></a>
+          <a href="#products" class="t"><span data-lang="lt">Sveikata</span><span data-lang="en">Health</span><span data-lang="pl">Zdrowie</span></a>
+        </div>
+        <div class="footer-col">
+          <h4 class="t"><span data-lang="lt">Informacija</span><span data-lang="en">Information</span><span data-lang="pl">Informacje</span></h4>
+          <a href="#about" class="t"><span data-lang="lt">Apie mus</span><span data-lang="en">About us</span><span data-lang="pl">O nas</span></a>
+          <a href="#contact" class="t"><span data-lang="lt">Pristatymas</span><span data-lang="en">Delivery</span><span data-lang="pl">Dostawa</span></a>
+          <a href="returns.html" class="t"><span data-lang="lt">Grąžinimas</span><span data-lang="en">Returns</span><span data-lang="pl">Zwroty</span></a>
+          <a href="terms.html" class="t"><span data-lang="lt">Pirkimo–pardavimo taisyklės</span><span data-lang="en">Terms &amp; Conditions</span><span data-lang="pl">Regulamin</span></a>
+          <a href="privacy.html" class="t"><span data-lang="lt">Privatumo politika</span><span data-lang="en">Privacy Policy</span><span data-lang="pl">Polityka prywatności</span></a>
+          <a href="company.html" class="t"><span data-lang="lt">Apie pardavėją</span><span data-lang="en">About the seller</span><span data-lang="pl">O sprzedawcy</span></a>
+          <a href="mailto:info@iieik.eu">info@iieik.eu</a>
+        </div>
+        <div class="footer-col">
+          <h4 class="t"><span data-lang="lt">Raskite mus</span><span data-lang="en">Find us on</span><span data-lang="pl">Znajdź nas na</span></h4>
+          <a href="#">kaina.lt</a>
+          <a href="#">kainos.lt</a>
+          <a href="#">pigu.lt</a>
+          <a href="#">skelbimai.lt</a>
+        </div>
+      </div>
     </div>
-    <div class="grid-3">
-      <div class="support-tier card card-dark scroll-reveal delay-1">
-        <div class="tier-icon">☕</div>
-        <h3>Individual</h3>
-        <p class="tier-desc">Buy us a coffee, become a Patron, or support on Ko-fi. Every contribution keeps this work independent.</p>
-        <div class="tier-actions">
-          <!-- EDIT: Replace YOURUSERNAME with your real usernames -->
-          <a href="https://buymeacoffee.com/fuence" class="btn btn-amber" target="_blank">Buy Me a Coffee</a>
-          <a href="https://ko-fi.com/fuence" class="btn btn-outline-light" target="_blank">Ko-fi</a>
-        </div>
-      </div>
-      <div class="support-tier card card-dark scroll-reveal delay-2">
-        <div class="tier-icon">🎙</div>
-        <h3>Podcast Member</h3>
-        <p class="tier-desc">Become a Patreon member for exclusive content, early access to research, and community channels.</p>
-        <div class="tier-actions">
-          <a href="https://patreon.com/Fuence" class="btn btn-primary" target="_blank">Join on Patreon</a>
-          <a href="support/index.html" class="btn btn-outline-light">Learn More</a>
-        </div>
-      </div>
-      <div class="support-tier card card-dark scroll-reveal delay-3">
-        <div class="tier-icon">🏢</div>
-        <h3>Organization</h3>
-        <p class="tier-desc">Partner with us on research briefs, sponsored episode series, or joint advocacy campaigns. Full editorial independence maintained.</p>
-        <div class="tier-actions">
-          <a href="contact/index.html" class="btn btn-outline-light">Get in Touch</a>
-        </div>
-      </div>
+    <div class="footer-bottom">
+      <span>© 2025 ORIGO / iieik.eu · <span class="t"><span data-lang="lt">Visos teisės saugomos</span><span data-lang="en">All rights reserved</span><span data-lang="pl">Wszelkie prawa zastrzeżone</span></span></span>
+      <span class="t"><span data-lang="lt">Individuali veikla · Vilnius, Lietuva</span><span data-lang="en">Individual business · Vilnius, Lithuania</span><span data-lang="pl">Działalność indywidualna · Wilno, Litwa</span></span>
     </div>
   </div>
-</section>
+</footer>
 
+<div class="toast" id="toast"></div>
 
-<!-- ============================================================
-     SECTION 6: COMMUNITY
-     EDIT: Update involvement list and button links
-     ============================================================ -->
-<section class="section">
-  <div class="container">
-    <div class="community-wrap scroll-reveal">
-      <div class="community-text">
-        <span class="section-label">Get Involved</span>
-        <h2>This Is a Collective Effort</h2>
-        <div class="divider"></div>
-        <p>We are building a network of researchers, writers, translators, and advocates. Whether you want to co-author a brief or join our community discussions — there is a place for you.</p>
-        <ul class="involvement-list">
-          <!-- EDIT: Change these as your project grows -->
-          <li>📝 Co-author a research brief or op-ed</li>
-          <li>🎙 Guest speaker on a podcast episode</li>
-          <li>📢 Amplify petitions and campaigns</li>
-          <li>🔬 Contribute subject-matter research</li>
-          <li>💬 Join our forum and Discord community</li>
-        </ul>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px">
-          <a href="community/index.html" class="btn btn-primary">Join Community</a>
-          <a href="contact/index.html" class="btn btn-outline">Contact Us</a>
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────────
+const LANG = { lt:0, en:1, pl:2 };
+let currentLang = 'lt';
+
+// Product data is fetched from products.json (generated by build.py from
+// products.yaml -- the single source of truth) rather than hardcoded here.
+// `products` stays empty until loadProducts() resolves; renderProducts()
+// is only called once real data (or the offline fallback) is ready.
+let products = [];
+let catalogOffline = false;
+// config/shipping.yaml, passed through products.json's "shipping" key.
+// configured:false (the default until Elijo fills in real courier rates)
+// means the site shows "confirmed after order" instead of a computed
+// figure -- never a fabricated price.
+let shippingConfig = { configured: false, free_shipping_threshold_eur: null, couriers: [] };
+
+const FOOD_INFO_LABELS = {
+  lt: { toggle: 'ℹ️ Maisto informacija', ingredients: 'Sudėtis', allergens: 'Alergenai', nutrition: 'Maistinė vertė (100 g/100 ml)', nutritionExempt: 'Maisto papildams privalomos maistinės vertės deklaracijos netaikomos.', net: 'Kiekis', storage: 'Laikymo sąlygos', origin: 'Kilmės šalis', seller: 'Pardavėjas / importuotojas' },
+  en: { toggle: 'ℹ️ Food information', ingredients: 'Ingredients', allergens: 'Allergens', nutrition: 'Nutrition (per 100 g/100 ml)', nutritionExempt: 'Food supplements are exempt from the mandatory nutrition declaration.', net: 'Net quantity', storage: 'Storage conditions', origin: 'Country of origin', seller: 'Seller / importer' },
+  pl: { toggle: 'ℹ️ Informacje o żywności', ingredients: 'Składniki', allergens: 'Alergeny', nutrition: 'Wartość odżywcza (na 100 g/100 ml)', nutritionExempt: 'Suplementy diety są zwolnione z obowiązkowej deklaracji wartości odżywczej.', net: 'Ilość netto', storage: 'Warunki przechowywania', origin: 'Kraj pochodzenia', seller: 'Sprzedawca / importer' },
+};
+const NUTRITION_ROW_LABELS = {
+  lt: { energy: 'Energinė vertė', fat: 'Riebalai', saturates: 'iš jų sočiosios riebalų rūgštys', carbs: 'Angliavandeniai', sugars: 'iš jų cukrūs', protein: 'Baltymai', salt: 'Druska' },
+  en: { energy: 'Energy', fat: 'Fat', saturates: 'of which saturates', carbs: 'Carbohydrate', sugars: 'of which sugars', protein: 'Protein', salt: 'Salt' },
+  pl: { energy: 'Wartość energetyczna', fat: 'Tłuszcz', saturates: 'w tym kwasy nasycone', carbs: 'Węglowodany', sugars: 'w tym cukry', protein: 'Białko', salt: 'Sól' },
+};
+const TRACK2_TERMS_LABELS = {
+  lt: { withdrawal: 'Atsisakymo teisė', guarantee: 'Garantija' },
+  en: { withdrawal: 'Withdrawal right', guarantee: 'Guarantee' },
+  pl: { withdrawal: 'Prawo do odstąpienia', guarantee: 'Gwarancja' },
+};
+const SHIPPING_LABELS = {
+  lt: { pick: '— Pasirinkite —', subtotal: 'Prekės', shipping: 'Pristatymas', total: 'Viso', pending: 'Pristatymo kaina bus patvirtinta patvirtinus užsakymą.', free: 'Nemokamas' },
+  en: { pick: '— Select —', subtotal: 'Items', shipping: 'Shipping', total: 'Total', pending: 'Shipping cost will be confirmed once the order is confirmed.', free: 'Free' },
+  pl: { pick: '— Wybierz —', subtotal: 'Produkty', shipping: 'Dostawa', total: 'Razem', pending: 'Koszt dostawy zostanie potwierdzony po potwierdzeniu zamówienia.', free: 'Bezpłatna' },
+};
+
+const whyItems = [
+  { icon:'🔍', title:['Asmeniškai patikrinta','Personally tested','Osobiście przetestowane'],
+    text:['Kiekvieną produktą pats naudojame prieš siūlydami. Jokių staigmenų.','We use every product ourselves before offering it. No surprises.','Każdy produkt sami używamy zanim go zaproponujemy. Żadnych niespodzianek.'] },
+  { icon:'🇪🇺', title:['ES kilmės produktai','EU origin products','Produkty z UE'],
+    text:['Pirmaujame ES tiekėjus. Aiški kilmė, kokybiški sertifikatai.','We prioritise EU suppliers. Clear origin, quality certifications.','Priorytetowo traktujemy dostawców z UE. Jasne pochodzenie, certyfikaty jakości.'] },
+  { icon:'📦', title:['Greitas pristatymas','Fast delivery','Szybka dostawa'],
+    text:['Dauguma produktų sandėlyje Vilniuje — pristatome per 1–3 d. LP Express / Omniva.','Most products in stock in Vilnius — delivered in 1–3 days via LP Express / Omniva.','Większość produktów w magazynie w Wilnie — dostawa w 1–3 dni przez LP Express / Omniva.'] },
+  { icon:'💬', title:['Atsakome per 24h','Response within 24h','Odpowiedź w 24h'],
+    text:['Kiekvienas užklausimas svarbus. Atsakome lietuviškai, angliškai ir lenkiškai.','Every inquiry matters. We respond in Lithuanian, English, and Polish.','Każde zapytanie jest ważne. Odpowiadamy po litewsku, angielsku i polsku.'] },
+];
+
+// ── LOAD PRODUCTS (from products.json, generated by build.py) ─────────────
+async function loadProducts() {
+  try {
+    const res = await fetch('products.json', {cache: 'no-store'});
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    if (!Array.isArray(data.products)) throw new Error('malformed products.json');
+    products = data.products;
+    shippingConfig = data.shipping || shippingConfig;
+    catalogOffline = false;
+  } catch (err) {
+    console.error('Failed to load products.json:', err);
+    products = [];
+    catalogOffline = true;
+  }
+  renderProducts();
+}
+
+// ── FOOD INFO PANEL (EU Reg 1169/2011) ─────────────────────────────────────
+function buildFoodInfoPanel(p) {
+  const fi = p.food_info;
+  if (!fi) return '';
+  const L = FOOD_INFO_LABELS[currentLang];
+  const N = NUTRITION_ROW_LABELS[currentLang];
+  const n = fi.nutrition_per_100g || {};
+  const nutritionHtml = fi.nutrition_declaration_exempt
+    ? `<p>${L.nutritionExempt}</p>`
+    : `<table class="nutrition-table">
+        <tr><td>${N.energy}</td><td>${n.energy_kj ?? ''} kJ / ${n.energy_kcal ?? ''} kcal</td></tr>
+        <tr><td>${N.fat}</td><td>${n.fat ?? ''} g</td></tr>
+        <tr><td>${N.saturates}</td><td>${n.saturates ?? ''} g</td></tr>
+        <tr><td>${N.carbs}</td><td>${n.carbs ?? ''} g</td></tr>
+        <tr><td>${N.sugars}</td><td>${n.sugars ?? ''} g</td></tr>
+        <tr><td>${N.protein}</td><td>${n.protein ?? ''} g</td></tr>
+        <tr><td>${N.salt}</td><td>${n.salt ?? ''} g</td></tr>
+      </table>`;
+  const seller = fi.seller_details || {};
+  return `
+    <div class="food-info">
+      <button type="button" class="food-info-toggle" onclick="toggleFoodInfo(this)">${L.toggle}</button>
+      <div class="food-info-body" hidden>
+        <dt>${L.ingredients}</dt><dd>${(fi.ingredients || {})[currentLang] || ''}</dd>
+        <dt>${L.allergens}</dt><dd>${(fi.allergens || {})[currentLang] || ''}</dd>
+        <dt>${L.nutrition}</dt><dd>${nutritionHtml}</dd>
+        <dt>${L.net}</dt><dd>${fi.net_quantity || ''}</dd>
+        <dt>${L.storage}</dt><dd>${(fi.storage_conditions || {})[currentLang] || ''}</dd>
+        <dt>${L.origin}</dt><dd>${(fi.origin_country || {})[currentLang] || ''}</dd>
+        <dt>${L.seller}</dt><dd>${seller.name || ''}${seller.address ? ', ' + seller.address : ''}</dd>
+      </div>
+    </div>`;
+}
+
+function toggleFoodInfo(btn) {
+  const body = btn.nextElementSibling;
+  body.hidden = !body.hidden;
+}
+
+// ── TRACK 2 (track: exclusive) WITHDRAWAL + GUARANTEE PANEL ────────────────
+// Track 2 products carry withdrawal_terms_text/guarantee_text INSTEAD OF
+// return_terms_text (see build.py's build_products_json()) -- the
+// site displays both, plus a prominent secondhand disclosure banner
+// when the unit is condition: opened-tested (2026-07-22).
+function buildTrack2TermsPanel(p) {
+  if (p.track !== 'exclusive') return '';
+  const L = TRACK2_TERMS_LABELS[currentLang];
+  const withdrawal = (p.withdrawal_terms_text || {})[currentLang];
+  const guarantee = (p.guarantee_text || {})[currentLang];
+  const disclosure = (p.secondhand_disclosure_text || {})[currentLang];
+  return `
+    ${disclosure ? `<div class="secondhand-disclosure">${disclosure}</div>` : ''}
+    <div class="track2-terms">
+      ${withdrawal ? `<div>↩ <strong>${L.withdrawal}:</strong> ${withdrawal}</div>` : ''}
+      ${guarantee ? `<div>🛡 <strong>${L.guarantee}:</strong> ${guarantee}</div>` : ''}
+    </div>`;
+}
+
+// ── RENDER PRODUCTS ───────────────────────────────────────────────────────
+function renderProducts() {
+  const grid = document.getElementById('products-grid');
+  const sel = document.getElementById('product-select');
+
+  if (catalogOffline) {
+    grid.innerHTML = `
+      <div class="catalog-offline reveal">
+        <p class="t">
+          <span data-lang="lt">Katalogas laikinai neveikia. Rašykite mums el. paštu — atsakysime per 24 val.</span>
+          <span data-lang="en">Catalog temporarily offline. Email us — we'll respond within 24h.</span>
+          <span data-lang="pl">Katalog chwilowo niedostępny. Napisz do nas e-mailem — odpowiemy w ciągu 24h.</span>
+        </p>
+        <p style="margin-top:12px"><a href="mailto:info@iieik.eu">info@iieik.eu</a></p>
+      </div>`;
+    sel.innerHTML = `<option value="" disabled selected>${currentLang==='lt'?'— Katalogas neveikia —':currentLang==='en'?'— Catalog offline —':'— Katalog niedostępny —'}</option>`;
+    observeReveal();
+    return;
+  }
+
+  grid.innerHTML = products.map(p => {
+    const exclusive = p.track === 'exclusive';
+    const trackClass = exclusive ? 't2' : 't1';
+    const trackLabel = exclusive ? 'Track 2' : 'Track 1';
+    const media = (p.photos && p.photos.length)
+      ? `<img src="photos/${p.sku}/${p.photos[0]}" alt="${p.name[currentLang]}" style="width:100%;height:100%;object-fit:cover">`
+      : `<span style="font-size:56px">${p.icon || ''}</span>`;
+    return `
+    <div class="product-card reveal">
+      <div class="product-img ${p.category || ''}">
+        <span class="track-badge ${trackClass}">${trackLabel}</span>
+        ${exclusive ? '<span class="exclusive-badge">EXCLUSIVE</span>' : ''}
+        ${media}
+      </div>
+      <div class="product-body">
+        <div class="product-name">${p.name[currentLang]}</div>
+        ${p.origin ? `<div class="product-origin">📍 ${p.origin[currentLang]}</div>` : ''}
+        <span class="stock-badge ${p.in_stock ? 'in' : 'out'}">${
+          p.in_stock
+            ? (currentLang==='lt'?'Yra sandėlyje':currentLang==='en'?'In stock':'Dostępne')
+            : (currentLang==='lt'?'Užsakoma iš tiekėjo':currentLang==='en'?'Order from supplier':'Zamówienie u dostawcy')
+        }</span>
+        <div class="product-desc">${p.desc[currentLang]}</div>
+        ${buildFoodInfoPanel(p)}
+        ${p.seal_notice_text ? `<div class="seal-notice-line">${p.seal_notice_text[currentLang] || ''}</div>` : ''}
+        ${p.return_terms_text ? `<div class="return-terms-line">↩ ${p.return_terms_text[currentLang] || ''}</div>` : ''}
+        ${buildTrack2TermsPanel(p)}
+        <div class="product-footer">
+          <div>
+            <div class="product-price">€${p.price_eur.toFixed(2)}</div>
+            ${p.delivery_estimate ? `<div class="product-delivery">🚚 ${p.delivery_estimate[currentLang]}</div>` : ''}
+          </div>
+          <a href="#contact" class="btn-order" onclick="prefillProduct('${p.sku}')">
+            ${ currentLang==='lt' ? 'Užsakyti' : currentLang==='en' ? 'Order' : 'Zamów' }
+          </a>
         </div>
       </div>
-      <div class="community-card scroll-reveal delay-2">
-        <div class="cc-label">What We Produce</div>
-        <ul class="cc-list">
-          <li><span class="cc-dot teal"></span>Reports & Dossiers</li>
-          <li><span class="cc-dot teal"></span>Op-Eds & Analysis</li>
-          <li><span class="cc-dot teal"></span>Policy Briefs</li>
-          <li><span class="cc-dot teal"></span>Guest Articles</li>
-          <li><span class="cc-dot amber"></span>Podcast Episodes</li>
-          <li><span class="cc-dot amber"></span>Seminars & Webinars</li>
-          <li><span class="cc-dot amber"></span>Social Media Campaigns</li>
-          <li><span class="cc-dot amber"></span>International Petitions</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+    </div>`;
+  }).join('');
+  // Populate select
+  sel.innerHTML = `<option value="" disabled selected>${currentLang==='lt'?'— Pasirinkite —':currentLang==='en'?'— Select —':'— Wybierz —'}</option>` +
+    products.map(p => `<option value="${p.sku}">${p.name[currentLang]} — €${p.price_eur.toFixed(2)}</option>`).join('');
+  populateCourierSelect();
+  updateShippingSummary();
+  observeReveal();
+}
 
+// ── SHIPPING / ORDER TOTAL ──────────────────────────────────────────────────
+function populateCourierSelect() {
+  const sel = document.getElementById('f-courier');
+  if (!sel) return;
+  const couriers = shippingConfig.couriers || [];
+  const prevValue = sel.value;
+  sel.innerHTML = couriers.map(c => `<option value="${c.name}">${c.name}</option>`).join('');
+  if (couriers.some(c => c.name === prevValue)) sel.value = prevValue;
+}
 
-<div id="footer-placeholder"></div>
-<script src="assets/js/nav.js"></script>
-<script src="assets/js/main.js"></script>
+function computeShippingForCourier(courierName, sku, qty) {
+  if (!shippingConfig.configured) return null; // not yet configured -- show "confirmed after order" instead
+  const product = products.find(p => p.sku === sku);
+  const threshold = shippingConfig.free_shipping_threshold_eur;
+  const subtotal = product ? product.price_eur * qty : 0;
+  if (threshold != null && subtotal >= threshold) return 0;
+  const courier = (shippingConfig.couriers || []).find(c => c.name === courierName);
+  if (!courier || !product || product.weight_grams == null) return null;
+  const totalGrams = product.weight_grams * qty;
+  const brackets = [...(courier.weight_brackets || [])].sort((a, b) => a.max_grams - b.max_grams);
+  const match = brackets.find(b => totalGrams <= b.max_grams);
+  return match ? match.price_eur : (brackets.length ? brackets[brackets.length - 1].price_eur : null);
+}
+
+function updateShippingSummary() {
+  const box = document.getElementById('shipping-summary');
+  if (!box) return;
+  const S = SHIPPING_LABELS[currentLang];
+  const sku = document.getElementById('product-select').value;
+  const qty = parseInt(document.getElementById('f-qty').value, 10) || 1;
+  const product = products.find(p => p.sku === sku);
+  const courierSel = document.getElementById('f-courier');
+  const courierName = courierSel ? courierSel.value : '';
+
+  if (!product) {
+    box.innerHTML = '';
+    return;
+  }
+  const subtotal = product.price_eur * qty;
+  const shippingCost = computeShippingForCourier(courierName, sku, qty);
+  const shippingHtml = shippingCost == null
+    ? `<div class="shipping-note">${S.pending}</div>`
+    : `<div class="shipping-row"><span>${S.shipping}</span><span>${shippingCost === 0 ? S.free : '€' + shippingCost.toFixed(2)}</span></div>
+       <div class="shipping-row total"><span>${S.total}</span><span>€${(subtotal + shippingCost).toFixed(2)}</span></div>`;
+  box.innerHTML = `
+    <div class="shipping-row"><span>${S.subtotal}</span><span>€${subtotal.toFixed(2)}</span></div>
+    ${shippingHtml}`;
+}
+
+function renderWhy() {
+  const L = LANG[currentLang];
+  document.getElementById('why-grid').innerHTML = whyItems.map(w => `
+    <div class="why-item reveal">
+      <div class="why-icon">${w.icon}</div>
+      <h3 class="why-title">${w.title[L]}</h3>
+      <p class="why-text">${w.text[L]}</p>
+    </div>`).join('');
+  observeReveal();
+}
+
+function renderMarquee() {
+  const items = ['EVOO · Extra Virgin Olive Oil','Specialty Coffee · Kava','Cast Iron · Ketaus Indai','Pink Salt · Himalajų Druska','TerraMaster NAS','Epson EcoTank','Cod Liver Oil · Menkių Aliejus'];
+  const full = [...items,...items,...items,...items];
+  document.getElementById('marquee-content').innerHTML = full.map(i => `<span>${i}</span>`).join('');
+}
+
+// ── LANGUAGE ──────────────────────────────────────────────────────────────
+function setLang(lang) {
+  document.body.className = lang;
+  currentLang = lang;
+  document.getElementById('lang-lt').className = lang==='lt' ? 'active' : '';
+  document.getElementById('lang-en').className = lang==='en' ? 'active' : '';
+  document.getElementById('lang-pl').className = lang==='pl' ? 'active' : '';
+  document.documentElement.lang = lang;
+  renderProducts();  // also refreshes the shipping summary (calls updateShippingSummary() internally)
+  renderWhy();
+  localStorage.setItem('origo-lang', lang);
+}
+
+// ── FORM ──────────────────────────────────────────────────────────────────
+function prefillProduct(name) {
+  setTimeout(()=>{ const s=document.getElementById('product-select'); if(s) s.value=name; }, 100);
+}
+
+const ORDER_ENDPOINT = 'https://orders.iieik.eu/webhook/origo-order';
+
+function showToast(msgs) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msgs[currentLang];
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 5000);
+}
+
+async function submitForm(e) {
+  e.preventDefault();
+
+  const sku = document.getElementById('product-select').value;
+  const product = products.find(p => p.sku === sku);
+  const qty = parseInt(document.getElementById('f-qty').value, 10) || 1;
+  const cityCountry = document.getElementById('f-city').value.trim();
+  // "Vilnius, LT" -> city="Vilnius", country="LT"; falls back to the whole
+  // string as city + default LT if no comma-separated country code given.
+  const cityParts = cityCountry.split(',').map(s => s.trim());
+  const country = (cityParts.length > 1 && cityParts[1].length === 2) ? cityParts[1].toUpperCase() : 'LT';
+  const city = cityParts[0] || '';
+
+  const payload = {
+    token: document.getElementById('f-token').value,
+    honeypot: document.getElementById('f-company').value,
+    source: 'website',
+    customer: {
+      name: document.getElementById('f-name').value.trim(),
+      email: document.getElementById('f-email').value.trim(),
+      phone: document.getElementById('f-phone').value.trim(),
+      lang: currentLang, // which language the confirmation/legal-text email is sent in
+      address: { street: '', city, postal_code: '', country },
+    },
+    items: product ? [{ sku: product.sku, name: product.name[currentLang], qty, unit_price: product.price_eur }] : [],
+    // cost is never sent -- origo-order-intake.py recomputes it server-side
+    // from the courier + weight, the client's estimate is display-only.
+    shipping: { courier: document.getElementById('f-courier').value },
+    notes: document.getElementById('f-notes').value.trim(),
+    // Consent checkbox (legal completeness pass, 2026-07-22) -- the
+    // "required" attribute already blocks submission client-side, but
+    // origo-order-intake.py's validate() checks this server-side too
+    // (reason: terms_not_accepted), never trusting the client alone.
+    terms_accepted: document.getElementById('f-consent').checked,
+  };
+
+  const successMsgs = { lt:'Užsakymas išsiųstas! Atsakysime per 24 val. ✓', en:'Order sent! We will respond within 24h. ✓', pl:'Zamówienie wysłane! Odpowiemy w ciągu 24h. ✓' };
+  const failMsgs = {
+    lt: 'Nepavyko išsiųsti formos. Prašome užsakymą siųsti el. paštu: orders@iieik.eu',
+    en: 'Could not send the form. Please email your order to: orders@iieik.eu',
+    pl: 'Nie udało się wysłać formularza. Prosimy wysłać zamówienie e-mailem: orders@iieik.eu',
+  };
+
+  try {
+    const res = await fetch(ORDER_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    if (!data.ok) throw new Error('server rejected order');
+    showToast(successMsgs);
+    e.target.reset();
+  } catch (err) {
+    console.error('Order submission failed:', err);
+    showToast(failMsgs);
+  }
+}
+
+// ── NAV ───────────────────────────────────────────────────────────────────
+function toggleMenu() {
+  document.getElementById('main-nav').classList.toggle('open');
+}
+
+// ── SCROLL REVEAL ─────────────────────────────────────────────────────────
+function observeReveal() {
+  const els = document.querySelectorAll('.reveal:not(.visible)');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e,i) => { if(e.isIntersecting) { setTimeout(()=>e.target.classList.add('visible'),i*80); io.unobserve(e.target); } });
+  }, { threshold:0.08 });
+  els.forEach(el => io.observe(el));
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('origo-lang') || 'lt';
+  setLang(saved);
+  renderMarquee();
+  observeReveal();
+  loadProducts();
+});
+</script>
 </body>
 </html>
