@@ -450,6 +450,14 @@ def build_products_json(products: list[dict], config: dict) -> tuple[dict, dict]
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "products": items,
         "shipping": load_shipping_config(),
+        # Checkout payment-method gating (2026-07-25) -- see config.yaml's
+        # own payment_methods comment for what enabling gateway actually
+        # requires. Defaults match index.html's own fallback if this key
+        # is ever missing (e.g. an older config.yaml on a stale clone).
+        "payment_methods": config.get("payment_methods", {
+            "bank_transfer": {"enabled": True},
+            "gateway": {"enabled": False, "provider": None},
+        }),
     }, gaps_report
 
 

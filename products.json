@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T18:23:20Z",
+  "generated_at": "2026-07-25T08:40:29Z",
   "products": [
     {
       "sku": "ORG-PAN-26",
@@ -151,5 +151,14 @@
         ]
       }
     ]
+  },
+  "payment_methods": {
+    "bank_transfer": {
+      "enabled": true
+    },
+    "gateway": {
+      "enabled": false,
+      "provider": null
+    }
   }
 }

@@ -129,8 +129,52 @@ section{padding:80px 24px}
 .product-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--border)}
 .product-price{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--olive)}
 .product-delivery{font-size:11px;color:var(--muted)}
-.btn-order{background:var(--olive);color:#fff;padding:8px 18px;border-radius:var(--r);font-size:12px;letter-spacing:.06em;text-decoration:none;transition:var(--trans);font-weight:500}
+.btn-order{background:var(--olive);color:#fff;padding:8px 18px;border-radius:var(--r);font-size:12px;letter-spacing:.06em;text-decoration:none;transition:var(--trans);font-weight:500;border:none;font-family:'DM Sans',sans-serif;cursor:pointer}
 .btn-order:hover{background:var(--olive-l)}
+
+/* ── CART BUTTON / BADGE ── */
+.cart-btn{position:relative;background:none;border:none;cursor:pointer;font-size:20px;padding:6px;color:var(--ink);display:flex;align-items:center}
+.cart-badge{position:absolute;top:-2px;right:-2px;background:var(--gold);color:var(--ink);font-size:10px;font-weight:700;min-width:16px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 4px}
+.cart-badge.hidden{display:none}
+
+/* ── CART DRAWER ── */
+.cart-overlay{position:fixed;inset:0;background:rgba(26,26,26,.4);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.cart-overlay.open{opacity:1;pointer-events:auto}
+.cart-drawer{position:fixed;top:0;right:0;height:100%;width:380px;max-width:92vw;background:var(--white);z-index:201;box-shadow:var(--shadow-h);transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
+.cart-drawer.open{transform:translateX(0)}
+.cart-drawer-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border)}
+.cart-drawer-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400}
+.cart-drawer-close{background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted);line-height:1;padding:0 4px}
+.cart-drawer-body{flex:1;overflow-y:auto;padding:0 24px}
+.cart-empty{color:var(--muted);font-size:13px;text-align:center;padding:48px 0}
+.cart-item{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border)}
+.cart-item-img{width:56px;height:56px;border-radius:8px;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px;background:var(--cream)}
+.cart-item-img img{width:100%;height:100%;object-fit:cover}
+.cart-item-body{flex:1;min-width:0}
+.cart-item-name{font-size:13.5px;font-weight:500;margin-bottom:4px;line-height:1.3}
+.cart-item-price{font-size:12px;color:var(--muted)}
+.cart-item-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.qty-stepper{display:flex;align-items:center;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.qty-stepper button{background:var(--cream);border:none;width:24px;height:24px;font-size:13px;cursor:pointer;color:var(--ink);font-family:inherit}
+.qty-stepper button:hover{background:var(--border)}
+.qty-stepper span{width:28px;text-align:center;font-size:12.5px}
+.cart-item-remove{background:none;border:none;color:var(--rust);font-size:11px;cursor:pointer;text-decoration:underline;padding:0;font-family:'DM Sans',sans-serif}
+.cart-drawer-footer{padding:20px 24px;border-top:1px solid var(--border)}
+.cart-subtotal-row{display:flex;justify-content:space-between;font-size:15px;font-weight:600;color:var(--olive);margin-bottom:14px}
+.cart-checkout-btn{width:100%;text-align:center}
+
+/* ── CHECKOUT ── */
+.checkout-items{margin-bottom:20px}
+.checkout-item-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}
+.checkout-item-name{flex:1;min-width:0}
+.checkout-item-price{font-weight:500;color:var(--olive);white-space:nowrap}
+.checkout-empty{color:var(--muted);font-size:13px;padding:16px 0;text-align:center}
+.payment-options{display:flex;flex-direction:column;gap:10px}
+.payment-option{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;cursor:pointer;font-size:13px}
+.payment-option.disabled{opacity:.5;cursor:not-allowed}
+.payment-option input{margin-top:2px}
+.payment-option-label{display:block;font-weight:500}
+.payment-option-note{display:block;font-size:11px;color:var(--muted);margin-top:2px}
 
 /* ── WHY US ── */
 .why{background:var(--parchm)}
@@ -225,6 +269,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:48px 24px 24px}
   .footer-links{grid-template-columns:1fr 1fr}
   .form-row{grid-template-columns:1fr}
   section{padding:60px 20px}
+  .cart-drawer{width:100%;max-width:100vw}
 }
 
 /* ── LANGUAGE VISIBILITY ── */
@@ -288,6 +333,9 @@ body.pl .t span[data-lang="pl"]{display:inline}
         <span data-lang="pl">Zamów</span>
       </a>
     </nav>
+    <button class="cart-btn" onclick="toggleBasket()" aria-label="Basket">
+      🛒<span class="cart-badge hidden" id="cart-badge">0</span>
+    </button>
     <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </div>
 </header>
@@ -447,8 +495,11 @@ body.pl .t span[data-lang="pl"]{display:inline}
         </div>
       </div>
       <div class="order-form reveal">
-        <h3 class="form-title t"><span data-lang="lt">Užsakymo forma</span><span data-lang="en">Order form</span><span data-lang="pl">Formularz zamówienia</span></h3>
+        <h3 class="form-title t"><span data-lang="lt">Kasa</span><span data-lang="en">Checkout</span><span data-lang="pl">Kasa</span></h3>
         <form id="order-form" onsubmit="submitForm(event)">
+          <div class="form-group">
+            <div class="checkout-items" id="checkout-items"></div>
+          </div>
           <div class="form-row">
             <div class="form-group">
               <label class="t"><span data-lang="lt">Vardas</span><span data-lang="en">Name</span><span data-lang="pl">Imię i nazwisko</span></label>
@@ -469,24 +520,16 @@ body.pl .t span[data-lang="pl"]{display:inline}
               <input type="text" id="f-city" placeholder="Vilnius, LT">
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="t"><span data-lang="lt">Produktas</span><span data-lang="en">Product</span><span data-lang="pl">Produkt</span></label>
-              <select required id="product-select" onchange="updateShippingSummary()">
-                <option value="" class="t" disabled selected><span data-lang="lt">— Pasirinkite —</span><span data-lang="en">— Select —</span><span data-lang="pl">— Wybierz —</span></option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="t"><span data-lang="lt">Kiekis</span><span data-lang="en">Quantity</span><span data-lang="pl">Ilość</span></label>
-              <input type="number" id="f-qty" min="1" max="500" step="1" value="1" required oninput="updateShippingSummary()">
-            </div>
-          </div>
           <div class="form-group">
             <label class="t"><span data-lang="lt">Pristatymo būdas</span><span data-lang="en">Delivery method</span><span data-lang="pl">Sposób dostawy</span></label>
-            <select id="f-courier" onchange="updateShippingSummary()"></select>
+            <select id="f-courier" onchange="renderCheckout()"></select>
           </div>
           <div class="form-group">
             <div class="shipping-summary" id="shipping-summary"></div>
+          </div>
+          <div class="form-group">
+            <label class="t"><span data-lang="lt">Mokėjimo būdas</span><span data-lang="en">Payment method</span><span data-lang="pl">Sposób płatności</span></label>
+            <div class="payment-options" id="payment-options"></div>
           </div>
           <div class="form-group">
             <label class="t"><span data-lang="lt">Pastabos</span><span data-lang="en">Notes</span><span data-lang="pl">Uwagi</span></label>
@@ -512,8 +555,8 @@ body.pl .t span[data-lang="pl"]{display:inline}
               </span>
             </label>
           </div>
-          <button type="submit" class="form-submit t"><span data-lang="lt">Siųsti užsakymą</span><span data-lang="en">Send order</span><span data-lang="pl">Wyślij zamówienie</span></button>
-          <p class="form-note t"><span data-lang="lt">Atsakysime per 24 val. Mokėjimas — išankstiniu banko pavedimu (SEPA).</span><span data-lang="en">We respond within 24h. Payment by SEPA bank transfer (prepaid).</span><span data-lang="pl">Odpowiadamy w ciągu 24h. Płatność przelewem SEPA (z góry).</span></p>
+          <button type="submit" class="form-submit t" id="checkout-submit"><span data-lang="lt">Siųsti užsakymą</span><span data-lang="en">Send order</span><span data-lang="pl">Wyślij zamówienie</span></button>
+          <p class="form-note t"><span data-lang="lt">Atsakysime per 24 val.</span><span data-lang="en">We respond within 24h.</span><span data-lang="pl">Odpowiadamy w ciągu 24h.</span></p>
         </form>
       </div>
     </div>
@@ -562,6 +605,17 @@ body.pl .t span[data-lang="pl"]{display:inline}
     </div>
   </div>
 </footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeBasket()"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-drawer-head">
+    <div class="cart-drawer-title t"><span data-lang="lt">Krepšelis</span><span data-lang="en">Basket</span><span data-lang="pl">Koszyk</span></div>
+    <button class="cart-drawer-close" onclick="closeBasket()" aria-label="Close">×</button>
+  </div>
+  <div class="cart-drawer-body" id="cart-drawer-body"></div>
+  <div class="cart-drawer-footer" id="cart-drawer-footer"></div>
+</div>
 
 <div class="toast" id="toast"></div>
 
@@ -623,6 +677,7 @@ async function loadProducts() {
     if (!Array.isArray(data.products)) throw new Error('malformed products.json');
     products = data.products;
     shippingConfig = data.shipping || shippingConfig;
+    paymentConfig = data.payment_methods || paymentConfig;
     catalogOffline = false;
   } catch (err) {
     console.error('Failed to load products.json:', err);
@@ -630,6 +685,7 @@ async function loadProducts() {
     catalogOffline = true;
   }
   renderProducts();
+  renderCart();
 }
 
 // ── FOOD INFO PANEL (EU Reg 1169/2011) ─────────────────────────────────────
@@ -693,7 +749,6 @@ function buildTrack2TermsPanel(p) {
 // ── RENDER PRODUCTS ───────────────────────────────────────────────────────
 function renderProducts() {
   const grid = document.getElementById('products-grid');
-  const sel = document.getElementById('product-select');
 
   if (catalogOffline) {
     grid.innerHTML = `
@@ -705,7 +760,6 @@ function renderProducts() {
         </p>
         <p style="margin-top:12px"><a href="mailto:info@iieik.eu">info@iieik.eu</a></p>
       </div>`;
-    sel.innerHTML = `<option value="" disabled selected>${currentLang==='lt'?'— Katalogas neveikia —':currentLang==='en'?'— Catalog offline —':'— Katalog niedostępny —'}</option>`;
     observeReveal();
     return;
   }
@@ -742,18 +796,14 @@ function renderProducts() {
             <div class="product-price">€${p.price_eur.toFixed(2)}</div>
             ${p.delivery_estimate ? `<div class="product-delivery">🚚 ${p.delivery_estimate[currentLang]}</div>` : ''}
           </div>
-          <a href="#contact" class="btn-order" onclick="prefillProduct('${p.sku}')">
-            ${ currentLang==='lt' ? 'Užsakyti' : currentLang==='en' ? 'Order' : 'Zamów' }
-          </a>
+          <button type="button" class="btn-order" onclick="addToBasket('${p.sku}')">
+            ${ currentLang==='lt' ? 'Į krepšelį' : currentLang==='en' ? 'Add to basket' : 'Do koszyka' }
+          </button>
         </div>
       </div>
     </div>`;
   }).join('');
-  // Populate select
-  sel.innerHTML = `<option value="" disabled selected>${currentLang==='lt'?'— Pasirinkite —':currentLang==='en'?'— Select —':'— Wybierz —'}</option>` +
-    products.map(p => `<option value="${p.sku}">${p.name[currentLang]} — €${p.price_eur.toFixed(2)}</option>`).join('');
   populateCourierSelect();
-  updateShippingSummary();
   observeReveal();
 }
 
@@ -767,41 +817,88 @@ function populateCourierSelect() {
   if (couriers.some(c => c.name === prevValue)) sel.value = prevValue;
 }
 
-function computeShippingForCourier(courierName, sku, qty) {
+// items: [{product, qty}] (resolvedBasketItems() shape) -- an estimate only,
+// same posture as before: origo-order-intake.py always recomputes the real
+// charge server-side from the courier + weight, never trusting this figure.
+function computeShippingForCourier(courierName, items) {
   if (!shippingConfig.configured) return null; // not yet configured -- show "confirmed after order" instead
-  const product = products.find(p => p.sku === sku);
+  if (!items.length) return null;
   const threshold = shippingConfig.free_shipping_threshold_eur;
-  const subtotal = product ? product.price_eur * qty : 0;
+  const subtotal = items.reduce((s, i) => s + i.product.price_eur * i.qty, 0);
   if (threshold != null && subtotal >= threshold) return 0;
   const courier = (shippingConfig.couriers || []).find(c => c.name === courierName);
-  if (!courier || !product || product.weight_grams == null) return null;
-  const totalGrams = product.weight_grams * qty;
+  if (!courier) return null;
+  let totalGrams = 0;
+  for (const i of items) {
+    if (i.product.weight_grams == null) return null;
+    totalGrams += i.product.weight_grams * i.qty;
+  }
   const brackets = [...(courier.weight_brackets || [])].sort((a, b) => a.max_grams - b.max_grams);
   const match = brackets.find(b => totalGrams <= b.max_grams);
   return match ? match.price_eur : (brackets.length ? brackets[brackets.length - 1].price_eur : null);
 }
 
-function updateShippingSummary() {
-  const box = document.getElementById('shipping-summary');
-  if (!box) return;
-  const S = SHIPPING_LABELS[currentLang];
-  const sku = document.getElementById('product-select').value;
-  const qty = parseInt(document.getElementById('f-qty').value, 10) || 1;
-  const product = products.find(p => p.sku === sku);
-  const courierSel = document.getElementById('f-courier');
-  const courierName = courierSel ? courierSel.value : '';
+// ── CHECKOUT (basket-driven) ────────────────────────────────────────────
+const PAYMENT_LABELS = {
+  lt: { bank:'Banko pavedimas (SEPA)', bankNote:'Apmokėjimo duomenis atsiųsime el. paštu patvirtinus užsakymą.', gateway:'Mokėjimas kortele / internetu', soon:'Netrukus' },
+  en: { bank:'Bank transfer (SEPA)', bankNote:'Payment details sent by email once your order is confirmed.', gateway:'Card / online payment', soon:'Coming soon' },
+  pl: { bank:'Przelew bankowy (SEPA)', bankNote:'Dane do płatności wyślemy e-mailem po potwierdzeniu zamówienia.', gateway:'Płatność kartą / online', soon:'Wkrótce' },
+};
 
-  if (!product) {
-    box.innerHTML = '';
+function renderPaymentOptions() {
+  const box = document.getElementById('payment-options');
+  if (!box) return;
+  const L = PAYMENT_LABELS[currentLang];
+  const gatewayEnabled = !!(paymentConfig.gateway && paymentConfig.gateway.enabled);
+  const wasGatewayChecked = box.querySelector('input[value="online_gateway"]')?.checked;
+  box.innerHTML = `
+    <label class="payment-option">
+      <input type="radio" name="f-payment" value="bank_transfer" ${(!gatewayEnabled || !wasGatewayChecked) ? 'checked' : ''}>
+      <span><span class="payment-option-label">${L.bank}</span><span class="payment-option-note">${L.bankNote}</span></span>
+    </label>
+    <label class="payment-option${gatewayEnabled ? '' : ' disabled'}">
+      <input type="radio" name="f-payment" value="online_gateway" ${gatewayEnabled ? '' : 'disabled'} ${gatewayEnabled && wasGatewayChecked ? 'checked' : ''}>
+      <span><span class="payment-option-label">${L.gateway}</span>${gatewayEnabled ? '' : `<span class="payment-option-note">${L.soon}</span>`}</span>
+    </label>`;
+}
+
+// Rebuilds the checkout section (item summary, shipping estimate, submit
+// enabled/disabled) from the current basket -- called by renderCart()
+// after every add/remove/qty change, and directly on courier change.
+function renderCheckout() {
+  const B = BASKET_LABELS[currentLang];
+  const S = SHIPPING_LABELS[currentLang];
+  const summaryBox = document.getElementById('checkout-items');
+  const shippingBox = document.getElementById('shipping-summary');
+  const submitBtn = document.getElementById('checkout-submit');
+  if (!summaryBox || !shippingBox) return;
+
+  renderPaymentOptions();
+
+  const items = resolvedBasketItems();
+  if (!items.length) {
+    summaryBox.innerHTML = `<div class="checkout-empty">${B.emptyCheckout}</div>`;
+    shippingBox.innerHTML = '';
+    if (submitBtn) submitBtn.disabled = true;
     return;
   }
-  const subtotal = product.price_eur * qty;
-  const shippingCost = computeShippingForCourier(courierName, sku, qty);
+  if (submitBtn) submitBtn.disabled = false;
+
+  summaryBox.innerHTML = items.map(i => `
+    <div class="checkout-item-row">
+      <span class="checkout-item-name">${i.product.name[currentLang]} × ${i.qty}</span>
+      <span class="checkout-item-price">€${(i.product.price_eur * i.qty).toFixed(2)}</span>
+    </div>`).join('');
+
+  const courierSel = document.getElementById('f-courier');
+  const courierName = courierSel ? courierSel.value : '';
+  const subtotal = items.reduce((s, i) => s + i.product.price_eur * i.qty, 0);
+  const shippingCost = computeShippingForCourier(courierName, items);
   const shippingHtml = shippingCost == null
     ? `<div class="shipping-note">${S.pending}</div>`
     : `<div class="shipping-row"><span>${S.shipping}</span><span>${shippingCost === 0 ? S.free : '€' + shippingCost.toFixed(2)}</span></div>
        <div class="shipping-row total"><span>${S.total}</span><span>€${(subtotal + shippingCost).toFixed(2)}</span></div>`;
-  box.innerHTML = `
+  shippingBox.innerHTML = `
     <div class="shipping-row"><span>${S.subtotal}</span><span>€${subtotal.toFixed(2)}</span></div>
     ${shippingHtml}`;
 }
@@ -823,6 +920,152 @@ function renderMarquee() {
   document.getElementById('marquee-content').innerHTML = full.map(i => `<span>${i}</span>`).join('');
 }
 
+// ── BASKET ────────────────────────────────────────────────────────────────
+// Client-side only -- localStorage-backed. Entries are {sku, qty}; resolved
+// against the live `products` array at render time (never stores name/price
+// itself, so a catalog price change or a delisted SKU is always reflected
+// correctly, same "never trust a stale client figure" posture as the
+// shipping-cost estimate below).
+const BASKET_KEY = 'origo-basket';
+let basket = [];
+let paymentConfig = { bank_transfer: { enabled: true }, gateway: { enabled: false, provider: null } };
+
+const BASKET_LABELS = {
+  lt: { title:'Krepšelis', empty:'Krepšelis tuščias.', remove:'Šalinti', subtotal:'Viso', checkout:'Pirkti', emptyCheckout:'Krepšelis tuščias — pasirinkite produktus aukščiau.', added:'Pridėta į krepšelį ✓' },
+  en: { title:'Basket', empty:'Your basket is empty.', remove:'Remove', subtotal:'Subtotal', checkout:'Checkout', emptyCheckout:'Your basket is empty — pick some products above.', added:'Added to basket ✓' },
+  pl: { title:'Koszyk', empty:'Koszyk jest pusty.', remove:'Usuń', subtotal:'Razem', checkout:'Zamów', emptyCheckout:'Koszyk jest pusty — wybierz produkty powyżej.', added:'Dodano do koszyka ✓' },
+};
+
+function loadBasket() {
+  try {
+    const raw = localStorage.getItem(BASKET_KEY);
+    basket = raw ? JSON.parse(raw) : [];
+    if (!Array.isArray(basket)) basket = [];
+  } catch { basket = []; }
+}
+function saveBasket() { localStorage.setItem(BASKET_KEY, JSON.stringify(basket)); }
+
+// Joins basket entries against the live catalog, silently dropping any sku
+// no longer in products.json (e.g. delisted since it was added to the
+// basket) rather than showing a broken row.
+function resolvedBasketItems() {
+  return basket
+    .map(entry => {
+      const product = products.find(p => p.sku === entry.sku);
+      return product ? { product, qty: entry.qty } : null;
+    })
+    .filter(Boolean);
+}
+
+function basketCount() {
+  return basket.reduce((s, e) => s + e.qty, 0);
+}
+
+function addToBasket(sku, qty = 1) {
+  const product = products.find(p => p.sku === sku);
+  if (!product) return;
+  const existing = basket.find(e => e.sku === sku);
+  if (existing) {
+    existing.qty = Math.min(existing.qty + qty, 500); // matches origo_common.py's insane_quantity ceiling
+  } else {
+    basket.push({ sku, qty: Math.min(qty, 500) });
+  }
+  saveBasket();
+  renderCart();
+  showToast({ lt: BASKET_LABELS.lt.added, en: BASKET_LABELS.en.added, pl: BASKET_LABELS.pl.added });
+}
+
+function setBasketQty(sku, qty) {
+  const entry = basket.find(e => e.sku === sku);
+  if (!entry) return;
+  if (qty <= 0) { removeFromBasket(sku); return; }
+  entry.qty = Math.min(qty, 500);
+  saveBasket();
+  renderCart();
+}
+
+function removeFromBasket(sku) {
+  basket = basket.filter(e => e.sku !== sku);
+  saveBasket();
+  renderCart();
+}
+
+function clearBasket() {
+  basket = [];
+  saveBasket();
+  renderCart();
+}
+
+function cartItemRowHtml(item) {
+  const B = BASKET_LABELS[currentLang];
+  const p = item.product;
+  const media = (p.photos && p.photos.length)
+    ? `<img src="photos/${p.sku}/${p.photos[0]}" alt="${p.name[currentLang]}">`
+    : `<span>${p.icon || ''}</span>`;
+  return `
+    <div class="cart-item">
+      <div class="cart-item-img">${media}</div>
+      <div class="cart-item-body">
+        <div class="cart-item-name">${p.name[currentLang]}</div>
+        <div class="cart-item-price">€${p.price_eur.toFixed(2)}</div>
+        <div class="cart-item-row">
+          <div class="qty-stepper">
+            <button type="button" onclick="setBasketQty('${p.sku}', ${item.qty - 1})" aria-label="-">−</button>
+            <span>${item.qty}</span>
+            <button type="button" onclick="setBasketQty('${p.sku}', ${item.qty + 1})" aria-label="+">+</button>
+          </div>
+          <button type="button" class="cart-item-remove" onclick="removeFromBasket('${p.sku}')">${B.remove}</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderCartDrawer() {
+  const B = BASKET_LABELS[currentLang];
+  const body = document.getElementById('cart-drawer-body');
+  const footer = document.getElementById('cart-drawer-footer');
+  if (!body || !footer) return;
+  const items = resolvedBasketItems();
+  if (!items.length) {
+    body.innerHTML = `<div class="cart-empty">${B.empty}</div>`;
+    footer.innerHTML = '';
+    return;
+  }
+  body.innerHTML = items.map(i => cartItemRowHtml(i)).join('');
+  const subtotal = items.reduce((s, i) => s + i.product.price_eur * i.qty, 0);
+  footer.innerHTML = `
+    <div class="cart-subtotal-row"><span>${B.subtotal}</span><span>€${subtotal.toFixed(2)}</span></div>
+    <a href="#contact" class="btn btn-primary cart-checkout-btn" onclick="closeBasket()">${B.checkout}</a>`;
+}
+
+function updateCartBadge() {
+  const badge = document.getElementById('cart-badge');
+  if (!badge) return;
+  const count = basketCount();
+  badge.textContent = count;
+  badge.classList.toggle('hidden', count === 0);
+}
+
+// Re-renders every basket-dependent view: header badge, drawer, and (once
+// segment 2 defines it) the checkout section's summary/shipping/payment.
+function renderCart() {
+  updateCartBadge();
+  renderCartDrawer();
+  if (typeof renderCheckout === 'function') renderCheckout();
+}
+
+function openBasket() {
+  document.getElementById('cart-overlay').classList.add('open');
+  document.getElementById('cart-drawer').classList.add('open');
+}
+function closeBasket() {
+  document.getElementById('cart-overlay').classList.remove('open');
+  document.getElementById('cart-drawer').classList.remove('open');
+}
+function toggleBasket() {
+  document.getElementById('cart-drawer').classList.contains('open') ? closeBasket() : openBasket();
+}
+
 // ── LANGUAGE ──────────────────────────────────────────────────────────────
 function setLang(lang) {
   document.body.className = lang;
@@ -831,16 +1074,13 @@ function setLang(lang) {
   document.getElementById('lang-en').className = lang==='en' ? 'active' : '';
   document.getElementById('lang-pl').className = lang==='pl' ? 'active' : '';
   document.documentElement.lang = lang;
-  renderProducts();  // also refreshes the shipping summary (calls updateShippingSummary() internally)
+  renderProducts();
   renderWhy();
+  renderCart();
   localStorage.setItem('origo-lang', lang);
 }
 
 // ── FORM ──────────────────────────────────────────────────────────────────
-function prefillProduct(name) {
-  setTimeout(()=>{ const s=document.getElementById('product-select'); if(s) s.value=name; }, 100);
-}
-
 const ORDER_ENDPOINT = 'https://orders.iieik.eu/webhook/origo-order';
 
 function showToast(msgs) {
@@ -853,15 +1093,16 @@ function showToast(msgs) {
 async function submitForm(e) {
   e.preventDefault();
 
-  const sku = document.getElementById('product-select').value;
-  const product = products.find(p => p.sku === sku);
-  const qty = parseInt(document.getElementById('f-qty').value, 10) || 1;
+  const items = resolvedBasketItems();
+  if (!items.length) return; // submit is disabled in this state (renderCheckout()); guard anyway
+
   const cityCountry = document.getElementById('f-city').value.trim();
   // "Vilnius, LT" -> city="Vilnius", country="LT"; falls back to the whole
   // string as city + default LT if no comma-separated country code given.
   const cityParts = cityCountry.split(',').map(s => s.trim());
   const country = (cityParts.length > 1 && cityParts[1].length === 2) ? cityParts[1].toUpperCase() : 'LT';
   const city = cityParts[0] || '';
+  const paymentMethod = (document.querySelector('input[name="f-payment"]:checked') || {}).value || 'bank_transfer';
 
   const payload = {
     token: document.getElementById('f-token').value,
@@ -874,10 +1115,11 @@ async function submitForm(e) {
       lang: currentLang, // which language the confirmation/legal-text email is sent in
       address: { street: '', city, postal_code: '', country },
     },
-    items: product ? [{ sku: product.sku, name: product.name[currentLang], qty, unit_price: product.price_eur }] : [],
+    items: items.map(i => ({ sku: i.product.sku, name: i.product.name[currentLang], qty: i.qty, unit_price: i.product.price_eur })),
     // cost is never sent -- origo-order-intake.py recomputes it server-side
     // from the courier + weight, the client's estimate is display-only.
     shipping: { courier: document.getElementById('f-courier').value },
+    payment_method: paymentMethod,
     notes: document.getElementById('f-notes').value.trim(),
     // Consent checkbox (legal completeness pass, 2026-07-22) -- the
     // "required" attribute already blocks submission client-side, but
@@ -904,6 +1146,7 @@ async function submitForm(e) {
     if (!data.ok) throw new Error('server rejected order');
     showToast(successMsgs);
     e.target.reset();
+    clearBasket();
   } catch (err) {
     console.error('Order submission failed:', err);
     showToast(failMsgs);
@@ -926,6 +1169,7 @@ function observeReveal() {
 
 // ── INIT ──────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  loadBasket();
   const saved = localStorage.getItem('origo-lang') || 'lt';
   setLang(saved);
   renderMarquee();
