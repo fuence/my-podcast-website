@@ -30,3 +30,7 @@ Format and workflow: see
 | 2026-06-21 | systematic | bay-of-bengal-gambit-china-2026 | brief | india | publications.json |
 | 2026-06-21 | systematic | chickens-neck-bangladesh-nightmare-2026 | brief | india | publications.json |
 | 2026-06-21 | systematic | evidence-file-bangladesh-2026 | brief | bangladesh | publications.json |
+| 2026-08-10 | systematic | bangladesh-2024-2026-dismantling-republic | report | bangladesh | publications.json |
+| 2026-08-10 | systematic | bangladesh-oversight-gap-preliminary | brief | bangladesh | publications.json |
+| 2026-08-10 | systematic | sonar-bangla-framework-introduction | brief | bangladesh | publications.json |
+| 2026-08-10 | systematic | india-bangladesh-partnership-2026 | report | bangladesh | publications.json |

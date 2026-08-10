@@ -35,7 +35,10 @@ TYPE_INFO = {
 
 SERIES_LABEL = {
     "bangladesh": "Bangladesh",
-    "india": "India / China",
+    # "india" series retired (T2-3) — its content was 100% bwbuai-authored,
+    # now in-house only (OPEN-ITEMS CW-2/CW-3). Any remaining entry with
+    # series:"india" (currently only pre-pipeline dead-link stubs) renders
+    # with no series badge until T2-8 reclassifies it.
 }
 
 HOME_PINNED_LIMIT = 3
@@ -245,6 +248,15 @@ def main():
     pubs = sort_pubs(load("publications.json"))
     milestones = load("milestones.json")
 
+    missing_project = [p["id"] for p in pubs if "project" not in p]
+    if missing_project:
+        raise SystemExit(
+            "build_content.py: publications.json entries missing internal "
+            f"'project' field (never rendered publicly, but required so "
+            f"'series' can't silently drift from real attribution — see "
+            f"OPEN-ITEMS CW-2/CW-3): {missing_project}"
+        )
+
     process_file(ROOT / "publications" / "index.html", [
         ("pub-all", build_pub_all(pubs, depth=1)),
         ("pub-reports", build_pub_type_tab(pubs, "report", depth=1)),
@@ -258,7 +270,7 @@ def main():
         ("home-latest", build_home_latest(pubs, depth=0)),
     ])
 
-    for slug in ("bangladesh", "india"):
+    for slug in ("bangladesh",):
         process_file(ROOT / "series" / slug / "index.html", [
             ("series-pubs", build_series_pubs(pubs, slug, depth=2)),
         ])

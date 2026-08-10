@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <ul class="navbar-nav">
           <li><a href="/index.html">Home</a></li>
           <li><a href="/about/index.html">About</a></li>
+          <li><a href="/projects/index.html">Work</a></li>
           <li><a href="/series/index.html">Series</a></li>
           <li><a href="/publications/index.html">Publications</a></li>
           <li><a href="/initiatives/meridian/index.html">Meridian</a></li>
@@ -65,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="navbar-menu" id="navMenu">
         <a href="/index.html">Home</a>
         <a href="/about/index.html">About</a>
+        <a href="/projects/index.html">Work</a>
         <a href="/series/index.html">Series</a>
         <a href="/publications/index.html">Publications</a>
         <a href="/initiatives/meridian/index.html">Meridian</a>

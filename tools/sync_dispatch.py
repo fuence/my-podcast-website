@@ -11,7 +11,11 @@ Scans a directory of dispatch sidecar JSON files (default:
 "ready" item with platform website-article or website-publication that
 isn't already in publications.json, appends a new entry:
   - type      <- platform (website-publication -> report, website-article -> oped)
-  - series    <- pool (see POOL_SERIES)
+  - series    <- pool (see POOL_SERIES) — the only field ever rendered publicly
+  - project   <- pool, verbatim — internal-only, never rendered; lets a future
+                 sync never again silently mismatch public series vs. real
+                 project attribution (see content/publications.json's own
+                 comment / OPEN-ITEMS CW-2/CW-3)
   - title     <- topic
   - excerpt   <- parsed from the dispatched .md (meta description / abstract)
   - date / date_label <- parsed from sidecar "date" (YYYYMMDD)
@@ -61,10 +65,14 @@ PLATFORM_TYPE = {
 TYPE_PLATFORM = {v: k for k, v in PLATFORM_TYPE.items()}
 
 POOL_SERIES = {
-    "bwbuai": "bangladesh",
+    "bwbuasa": "bangladesh",
     "sonar-bangla": "bangladesh",
-    "india-china": "india",
 }
+
+# Pools that are in-house only (OPEN-ITEMS CW-2/CW-3) — their pipeline output
+# must never reach the public website via this script, regardless of what a
+# dispatch sidecar claims. T2-3, 2026-08-10.
+IN_HOUSE_ONLY_POOLS = {"bwbuai", "india-china"}
 
 TYPE_AUTHOR = {
     "report": "Fuence Research Team",
@@ -164,6 +172,9 @@ def sync(dispatch_dir):
         item_id = f"{pool}-{slug}-{date_raw}"
         if item_id in existing_ids:
             continue
+        if pool in IN_HOUSE_ONLY_POOLS:
+            print(f"  - SKIPPED (in-house-only pool '{pool}'): {json_path.name}")
+            continue
 
         md_path = json_path.with_suffix(".md")
         text = md_path.read_text() if md_path.exists() else ""
@@ -175,6 +186,7 @@ def sync(dispatch_dir):
             "id": item_id,
             "type": pub_type,
             "series": POOL_SERIES.get(pool),
+            "project": pool,
             "title": sidecar.get("topic", "").strip(),
             "excerpt": extract_excerpt(platform, text),
             "date": dt.strftime("%Y-%m-%d"),
