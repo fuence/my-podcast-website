@@ -148,6 +148,8 @@
 .community-platforms{display:flex;flex-direction:column;gap:24px}
 .platform-card{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 28px;transition:all var(--transition)}
 .platform-card:hover{box-shadow:var(--shadow-md);border-color:var(--teal);transform:translateX(3px)}
+.platform-card.soon{border-color:var(--border)}
+.platform-card.soon:hover{border-color:var(--amber-bright)}
 .pc-icon{font-size:2.2rem;flex-shrink:0}
 .pc-body h3{font-size:1.05rem;color:var(--text-dark);margin-bottom:6px}
 .pc-body p{font-size:.88rem;color:var(--text-muted);line-height:1.6}
