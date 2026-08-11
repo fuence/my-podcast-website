@@ -8,7 +8,16 @@
    → This file affects EVERY page — edit carefully
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:wght@300;400;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+/* Font loading moved to a <link rel="stylesheet"> + preconnect in each
+   page's <head> instead of @import here -- @import is always render-
+   blocking and isn't discovered until this whole file downloads+parses,
+   costing ~990ms per Lighthouse. See the "FONTS" block near <head> in
+   each page. Do not re-add an @import for fonts here. */
+
+/* Screen-reader-only utility — visually hidden but announced by assistive
+   tech. Use for labels/headings needed for accessibility structure that
+   don't need a visible on-page presence. */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 
 /* ============================================================
    EDIT: BRAND COLORS — change here, updates everywhere
@@ -24,7 +33,7 @@
   /* Text */
   --text-dark:      #0F1923;
   --text-body:      #2E3D4A;
-  --text-muted:     #6B7E8C;
+  --text-muted:     #60717E;  /* darkened from #6B7E8C for WCAG AA 4.5:1 (Lighthouse-flagged) */
   --text-light:     #F4F1EB;
   --text-light-dim: #A8B8C4;
 
@@ -61,6 +70,44 @@
   --shadow-lg:  0 8px 40px rgba(15,25,35,.16);
   --transition: 0.2s ease;
 }
+
+/* ============================================================
+   DARK MODE — system-preference by default, manual toggle overrides.
+   Reuses the site's existing dark-section palette (--bg-dark etc.)
+   site-wide instead of only within .section-dark blocks, so it stays
+   visually consistent with the design system rather than inventing a
+   new one. data-theme is set on <html> by assets/js/nav.js's toggle
+   (and a tiny inline snippet in each page's <head> applies any stored
+   preference immediately, before paint, to avoid a flash of the wrong
+   theme).
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-page: #0F1923; --bg-card: #1A2733; --bg-tint: #16212C;
+    --text-dark: #F4F1EB; --text-body: #C7D2DA; --text-muted: #8A9BA8;
+    --text-light: #F4F1EB; --text-light-dim: #A8B8C4;
+    --border: #2A3A47;
+    --teal: #2FC4C4; --teal-light: #113838; --teal-hover: #4FDADA;
+    --amber: #E8A020; --amber-light: #3A2E14;
+    --bg-dark: #060B10; --bg-dark-card: #101A22;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,.35);
+    --shadow-md: 0 4px 20px rgba(0,0,0,.45);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,.55);
+  }
+}
+:root[data-theme="dark"] {
+  --bg-page: #0F1923; --bg-card: #1A2733; --bg-tint: #16212C;
+  --text-dark: #F4F1EB; --text-body: #C7D2DA; --text-muted: #8A9BA8;
+  --text-light: #F4F1EB; --text-light-dim: #A8B8C4;
+  --border: #2A3A47;
+  --teal: #2FC4C4; --teal-light: #113838; --teal-hover: #4FDADA;
+  --amber: #E8A020; --amber-light: #3A2E14;
+  --bg-dark: #060B10; --bg-dark-card: #101A22;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.35);
+  --shadow-md: 0 4px 20px rgba(0,0,0,.45);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,.55);
+}
+body{transition:background-color var(--transition),color var(--transition)}
 
 /* ============================================================
    BASE RESET
@@ -125,8 +172,8 @@ p {font-size:1rem;line-height:1.75;color:var(--text-body)}
 }
 .btn-primary{background:var(--teal);color:#fff;border-color:var(--teal)}
 .btn-primary:hover{background:var(--teal-hover);border-color:var(--teal-hover);color:#fff;transform:translateY(-1px);box-shadow:var(--shadow-md)}
-.btn-amber{background:var(--amber-bright);color:#fff;border-color:var(--amber-bright)}
-.btn-amber:hover{background:var(--amber);border-color:var(--amber);color:#fff;transform:translateY(-1px)}
+.btn-amber{background:var(--amber-bright);color:var(--text-dark);border-color:var(--amber-bright)}  /* dark text, not white -- white-on-amber-bright was 2.2:1, WCAG AA needs 4.5:1 */
+.btn-amber:hover{background:var(--amber);border-color:var(--amber);color:var(--text-dark);transform:translateY(-1px)}
 .btn-outline{background:transparent;color:var(--teal);border-color:var(--teal)}
 .btn-outline:hover{background:var(--teal);color:#fff;transform:translateY(-1px)}
 .btn-outline-light{background:transparent;color:var(--text-light);border-color:rgba(244,241,235,.4)}
@@ -156,9 +203,9 @@ p {font-size:1rem;line-height:1.75;color:var(--text-body)}
   font-size:.72rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase
 }
 .badge-teal  {background:var(--teal-light); color:var(--teal)}
-.badge-amber {background:var(--amber-light);color:var(--amber)}
+.badge-amber {background:var(--amber-light);color:#966508}  /* darkened from var(--amber) #C8860A -- was 2.8:1, needs 4.5:1 */
 .badge-active{background:#E8F5E9;color:#2E7D32}
-.badge-soon  {background:#FFF3E0;color:#E65100}
+.badge-soon  {background:#FFF3E0;color:#C34500}  /* darkened from #E65100 -- was 3.5:1, needs 4.5:1 */
 .badge-private{background:#F3E5F5;color:#7B1FA2}
 
 /* ============================================================

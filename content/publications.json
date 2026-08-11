@@ -2,8 +2,9 @@
   {
     "id": "india-bangladesh-partnership-2026",
     "type": "report",
-    "series": "bangladesh",
+    "series": "stable-republic",
     "project": "bwbuasa",
+    "topics": ["regional-partnership-economic-cooperation"],
     "siblings": [
       {"project": "bwbuai", "file": "atlas-full-draft-v2-2026-06-24.md",
        "note": "in-house version (Ghost slug bwbuai-bilateral-atlas-2026, gated BWBUAI tier) — same geography/trade/security/culture/multilateral/development sections carried through, opening/closing rewritten from India-strategic framing to Sonar Bangla regional-cooperation framing; the 1971 founding-history section was dropped here and pointed to companion pieces instead"}
@@ -19,8 +20,9 @@
   {
     "id": "sonar-bangla-framework-introduction",
     "type": "brief",
-    "series": "bangladesh",
+    "series": "stable-republic",
     "project": "bwbuasa",
+    "topics": ["skilled-livelihoods-abroad", "knowledge-economy", "domestic-entrepreneurship", "innovation-pipeline", "cultural-soft-power"],
     "title": "Introducing the Sonar Bangla Framework",
     "excerpt": "Sonar Bangla is usually invoked as a slogan. This brief introduces it instead as a working framework — five pillars covering skilled livelihoods abroad, a knowledge economy, domestic entrepreneurship, an innovation pipeline, and cultural soft power.",
     "date": "2026-08-10",
@@ -32,8 +34,9 @@
   {
     "id": "bangladesh-2024-2026-dismantling-republic",
     "type": "report",
-    "series": "bangladesh",
+    "series": "republic-unmade",
     "project": "bwbuasa",
+    "topics": ["democratic-backsliding-institutional-capture", "interim-government-constitutional-crisis"],
     "siblings": [
       {"project": "bwbuai", "file": "bangladesh-2024-2026-case-study-2026-06-24.md",
        "note": "in-house version, gated BWBUAI tier — same evidence base (Parts 1-8 near-verbatim), closing reframed from India-specific implications to a global-audience \"Why This Matters Beyond Bangladesh\" section"}
@@ -49,8 +52,9 @@
   {
     "id": "bangladesh-oversight-gap-preliminary",
     "type": "brief",
-    "series": "bangladesh",
+    "series": "republic-unmade",
     "project": "bwbuasa",
+    "topics": ["press-freedom-civil-society-restriction", "political-islams-rehabilitation"],
     "title": "Bangladesh's Oversight Gap: A Preliminary Record",
     "excerpt": "Three recurring patterns in Bangladesh's institutional oversight — a shrinking, fragmented civil society, Jamaat-e-Islami's five-decade rehabilitation cycle, and an under-reviewed foreign-infrastructure footprint. A preliminary brief, sourced individually, with open questions stated as plainly as the findings.",
     "date": "2026-08-10",
@@ -62,8 +66,9 @@
   {
     "id": "evidence-file-bangladesh-2026",
     "type": "brief",
-    "series": "bangladesh",
+    "series": "republic-unmade",
     "project": "bwbuasa",
+    "topics": ["democratic-backsliding-institutional-capture"],
     "title": "The Evidence File: Ten Things Every Analyst Needs to Know About What Happened in Bangladesh",
     "excerpt": "Since August 2024, Bangladesh has undergone a systematic transformation. This is not analysis — it is the documented record. Ten facts, ten sources, no speculation.",
     "date": "2026-06-21",
@@ -75,79 +80,15 @@
   {
     "id": "who-is-jamaat-2026",
     "type": "report",
-    "series": "bangladesh",
+    "series": "republic-unmade",
     "project": "bwbuasa",
+    "topics": ["political-islams-rehabilitation", "war-crimes-justice"],
     "title": "Who is Jamaat-e-Islami? Understanding Bangladesh's Most Dangerous Political Force",
-    "excerpt": "A clear-eyed explainer on JEI: its 1971 war crimes, its 2.4 million members, its state infiltration, its international sponsors, and why India must understand it as a direct threat.",
+    "excerpt": "A clear-eyed explainer on JEI: its 1971 war crimes, its 2.4 million members, its state infiltration, and its international sponsors — and why any account of Bangladesh's present crisis has to start with them.",
     "date": "2026-06-21",
     "date_label": "June 2026",
     "author": "Futura Genesis Center",
     "link": "https://blog.fuence.com/who-is-jamaat-2026/",
-    "pinned_home": true
-  },
-  {
-    "id": "bd-shrinking-democratic-space-2025",
-    "type": "report",
-    "series": "bangladesh",
-    "project": "unassigned",
-    "title": "Bangladesh's Shrinking Democratic Space: A 2024 Overview",
-    "excerpt": "A documented review of civil society restrictions, press freedom erosion, and judicial independence.",
-    "date": "2025-05-01",
-    "date_label": "May 2025",
-    "author": "Fuence Research Team",
-    "link": "#",
-    "pinned_home": true
-  },
-  {
-    "id": "china-influence-playbook-south-asia-2025",
-    "type": "report",
-    "series": "india",
-    "project": "unassigned",
-    "title": "China's Influence Playbook in South Asia: A Pattern Analysis",
-    "excerpt": "Documenting how China uses debt, infrastructure, and diplomatic pressure to build dependency relationships.",
-    "date": "2025-04-01",
-    "date_label": "April 2025",
-    "author": "Fuence Research Team",
-    "link": "#",
-    "pinned_home": false
-  },
-  {
-    "id": "india-neutral-eastern-flank-2025",
-    "type": "oped",
-    "series": "india",
-    "project": "unassigned",
-    "title": "Why India Cannot Afford to Stay Neutral on Its Eastern Flank",
-    "excerpt": "The strategic case for a more proactive Indian foreign policy in South Asia.",
-    "date": "2025-03-01",
-    "date_label": "March 2025",
-    "author": "Fuence Editorial",
-    "link": "#",
-    "pinned_home": true
-  },
-  {
-    "id": "international-silence-bangladesh-2025",
-    "type": "oped",
-    "series": "bangladesh",
-    "project": "unassigned",
-    "title": "The International Community's Silence on Bangladesh is a Choice",
-    "excerpt": "Why geopolitical convenience allows serious governance failures to persist unchallenged.",
-    "date": "2025-03-01",
-    "date_label": "March 2025",
-    "author": "Fuence Editorial",
-    "link": "#",
-    "pinned_home": false
-  },
-  {
-    "id": "petitions-political-tools-2025",
-    "type": "brief",
-    "series": "bangladesh",
-    "project": "unassigned",
-    "title": "Petitions as Political Tools: How to Move Diplomatic Needles",
-    "excerpt": "A tactical brief on petition campaigns and how to translate signatures into real diplomatic pressure.",
-    "date": "2025-02-01",
-    "date_label": "February 2025",
-    "author": "Fuence Action Team",
-    "link": "#",
     "pinned_home": true
   }
 ]

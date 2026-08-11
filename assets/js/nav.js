@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
           <li><a href="/initiatives/meridian/index.html">Meridian</a></li>
           <li><a href="/community/index.html">Community</a></li>
           <li><a href="/contact/index.html">Contact</a></li>
+          <li><a href="/search/index.html" aria-label="Search">🔍</a></li>
+          <li><button type="button" id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode"></button></li>
           <!-- EDIT: Support CTA button — change link or text -->
           <li class="nav-cta"><a href="/support/index.html">☕ Support Us</a></li>
           <!-- ================================================
@@ -72,6 +74,8 @@ document.addEventListener('DOMContentLoaded', function () {
         <a href="/initiatives/meridian/index.html">Meridian</a>
         <a href="/community/index.html">Community</a>
         <a href="/contact/index.html">Contact</a>
+        <a href="/search/index.html">🔍 Search</a>
+        <button type="button" id="themeToggleMobile" class="theme-toggle-mobile" aria-label="Toggle dark mode">🌙 Toggle Dark Mode</button>
         <div class="menu-cta"><a href="/support/index.html">☕ Support Us</a></div>
       </div>
     </div>
@@ -104,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
           </p>
           <p class="footer-tagline-sub">Vision · Genesis · Legacy</p>
           <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:8px">
-            <a href="https://substack.com/@fuence" target="_blank" style="padding:7px 13px;background:var(--accent,#c07a1a);color:#fff;border-radius:5px;font-size:12px;text-decoration:none;white-space:nowrap">📬 Substack</a>
+            <a href="https://substack.com/@fuence" target="_blank" style="padding:7px 13px;background:#A56916;color:#fff;border-radius:5px;font-size:12px;text-decoration:none;white-space:nowrap">📬 Substack</a>
             <a href="https://patreon.com/Fuence" target="_blank" style="padding:7px 13px;background:rgba(255,255,255,0.1);color:inherit;border:1px solid rgba(255,255,255,0.2);border-radius:5px;font-size:12px;text-decoration:none;white-space:nowrap">🎙 Patreon</a>
             <a href="https://x.com/Fuence4w" target="_blank" style="padding:7px 13px;background:rgba(255,255,255,0.1);color:inherit;border:1px solid rgba(255,255,255,0.2);border-radius:5px;font-size:12px;text-decoration:none;white-space:nowrap">𝕏 Twitter</a>
             <a href="https://discord.gg/7zNnKfc8rr" target="_blank" style="padding:7px 13px;background:#5865F2;color:#fff;border-radius:5px;font-size:12px;text-decoration:none;white-space:nowrap">💬 Discord</a>
@@ -115,9 +119,9 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="footer-col">
           <h4>Series</h4>
           <ul>
-            <li><a href="/series/bangladesh/index.html">Bangladesh</a></li>
-            <li><a href="/series/india/index.html">India & China</a></li>
-            <li><a href="/series/index.html">Africa (Soon)</a></li>
+            <li><a href="/series/bangladesh/index.html">South Asia & Bangladesh</a></li>
+            <li><a href="/series/index.html">Youth (In Progress)</a></li>
+            <li><a href="/series/index.html">Golden Horizons (Soon)</a></li>
             <li><a href="/initiatives/meridian/index.html">The Meridian Initiative</a></li>
             <!-- ADD NEW SERIES: <li><a href="/series/TOPIC/index.html">Topic</a></li> -->
           </ul>
@@ -194,10 +198,21 @@ document.addEventListener('DOMContentLoaded', function () {
   document.head.appendChild(_ld);
 
   if (!document.querySelector('link[rel~="icon"]')) {
+    // EDIT: swap for a dedicated small icon mark (e.g. just the dove) once
+    // one exists — this is a padded/non-distorted stand-in from the full
+    // logo, legible as a browser-tab thumbnail but not much finer detail.
     var _fav = document.createElement('link');
-    _fav.rel = 'icon'; _fav.type = 'image/jpeg';
-    _fav.href = '/assets/img/fuence-logo.jpg';
+    _fav.rel = 'icon'; _fav.type = 'image/png'; _fav.sizes = '512x512';
+    _fav.href = '/assets/img/favicon-512.png';
     document.head.appendChild(_fav);
+
+    var _favIco = document.createElement('link');
+    _favIco.rel = 'shortcut icon'; _favIco.href = '/favicon.ico';
+    document.head.appendChild(_favIco);
+
+    var _appleTouch = document.createElement('link');
+    _appleTouch.rel = 'apple-touch-icon'; _appleTouch.href = '/assets/img/apple-touch-icon.png';
+    document.head.appendChild(_appleTouch);
   }
 
   /* ============================================================
@@ -217,6 +232,31 @@ document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.getElementById('navToggle');
   const menu   = document.getElementById('navMenu');
   if (toggle && menu) toggle.addEventListener('click', () => menu.classList.toggle('open'));
+
+  // Dark mode toggle — system preference by default (see the inline
+  // FOUC-prevention snippet in each page's <head>), explicit choice
+  // stored in localStorage and takes over from there.
+  function isDarkNow() {
+    const attr = document.documentElement.getAttribute('data-theme');
+    if (attr) return attr === 'dark';
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  const themeBtn = document.getElementById('themeToggle');
+  const themeBtnMobile = document.getElementById('themeToggleMobile');
+  function syncThemeIcon() {
+    const dark = isDarkNow();
+    if (themeBtn) themeBtn.textContent = dark ? '☀️' : '🌙';
+    if (themeBtnMobile) themeBtnMobile.textContent = dark ? '☀️ Toggle Light Mode' : '🌙 Toggle Dark Mode';
+  }
+  syncThemeIcon();
+  function handleThemeToggle() {
+    const next = isDarkNow() ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    syncThemeIcon();
+  }
+  if (themeBtn) themeBtn.addEventListener('click', handleThemeToggle);
+  if (themeBtnMobile) themeBtnMobile.addEventListener('click', handleThemeToggle);
 
   // Active link highlight
   const path = window.location.pathname;

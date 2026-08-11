@@ -32,6 +32,17 @@
   text-decoration:none;transition:all var(--transition)
 }
 .navbar-nav a:hover,.navbar-nav a.active{color:var(--teal);background:var(--teal-light)}
+.theme-toggle{
+  font-family:var(--font-sans);font-size:.95rem;
+  color:var(--text-body);padding:6px 10px;border-radius:var(--radius-sm);
+  background:none;border:none;cursor:pointer;transition:all var(--transition);line-height:1
+}
+.theme-toggle:hover{background:var(--teal-light)}
+.theme-toggle-mobile{
+  font-family:var(--font-sans);font-size:.95rem;font-weight:500;
+  color:var(--text-body);padding:10px 0;border:none;border-bottom:1px solid var(--border);
+  background:none;text-align:left;cursor:pointer;width:100%
+}
 .navbar-nav .nav-cta a{
   background:var(--amber-bright);color:#fff;padding:7px 16px;
   border-radius:var(--radius-sm);font-weight:600
@@ -61,7 +72,7 @@
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 .footer-col ul a{font-size:.88rem;color:var(--text-light-dim);text-decoration:none;transition:color var(--transition)}
 .footer-col ul a:hover{color:var(--amber-bright)}
-.footer-tagline-sub{font-size:.75rem;color:var(--text-light-dim);opacity:.6;margin-top:8px;font-style:italic}
+.footer-tagline-sub{font-size:.75rem;color:var(--text-light-dim);margin-top:8px;font-style:italic}  /* removed opacity:.6 -- was dropping an already-fine color below WCAG AA */
 .footer-bottom{border-top:1px solid var(--border-dark);padding-top:var(--sp-lg);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--sp-md)}
 .footer-bottom p{font-size:.8rem;color:var(--text-light-dim)}
 .footer-bottom a{color:var(--text-light-dim)}

@@ -2,3 +2,7 @@
 *.pyc
 __pycache__/
 *.log
+
+# Pagefind's index is generated at build time (npx pagefind --site . --output-path pagefind)
+# Rebuild after any content change; not hand-edited, but small enough to also commit for now
+# so the site works without a build step on deploy. Revisit if it grows unwieldy.

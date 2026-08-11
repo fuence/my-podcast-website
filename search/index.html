@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:wght@300;400;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap">
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search — Fuence</title>
+  <meta name="description" content="Search research and publications from Fuence." />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="canonical" href="https://www.fuence.com/search/" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/nav.css" />
+  <link rel="stylesheet" href="../assets/css/inner.css" />
+  <style>
+    .search-layout{display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:start}
+    @media (max-width:760px){.search-layout{grid-template-columns:1fr}}
+    .search-box{width:100%;padding:14px 16px;font-size:1.05rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);box-sizing:border-box}
+    .filter-group{margin-bottom:22px}
+    .filter-group h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);margin-bottom:8px;font-weight:600}
+    .filter-option{display:flex;align-items:center;gap:7px;font-size:.85rem;padding:3px 0;cursor:pointer;color:var(--text)}
+    .filter-option input{cursor:pointer}
+    .filter-count{color:var(--text-muted);font-size:.78rem}
+    .search-meta{color:var(--text-muted);font-size:.85rem;margin:16px 0}
+    .search-empty{padding:40px 20px;text-align:center;color:var(--text-muted);border:1px dashed var(--border);border-radius:10px}
+    mark{background:var(--amber-bright,#f2c14e);color:inherit;padding:0 2px;border-radius:2px}
+  </style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">Find Research</span>
+    <h1>Search</h1>
+    <p class="page-hero-sub">Search across every series, program, and publication on Fuence.</p>
+    <label for="search-box" class="sr-only">Search</label>
+    <input type="text" id="search-box" class="search-box" placeholder="Search publications, series, topics…" autofocus />
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="search-layout">
+      <aside>
+        <h2 class="sr-only">Filters</h2>
+        <div id="filters"></div>
+      </aside>
+      <div>
+        <h2 class="sr-only">Results</h2>
+        <div id="search-meta" class="search-meta"></div>
+        <div id="results" class="pub-list"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/main.js"></script>
+<script type="module">
+  const params = new URLSearchParams(location.search);
+  const activeFilters = {};
+
+  async function boot() {
+    const pagefind = await import("../pagefind/pagefind.js");
+    await pagefind.init();
+
+    const filterData = await pagefind.filters();
+    renderFilterUI(filterData);
+
+    const initialQuery = params.get("q") || "";
+    document.getElementById("search-box").value = initialQuery;
+    await runSearch(pagefind, initialQuery);
+
+    let debounce;
+    document.getElementById("search-box").addEventListener("input", (e) => {
+      clearTimeout(debounce);
+      debounce = setTimeout(() => runSearch(pagefind, e.target.value), 200);
+    });
+
+    window._pagefind = pagefind; // reused by filter checkbox handlers
+  }
+
+  function renderFilterUI(filterData) {
+    const order = ["Program", "Series", "Type", "Topic"];
+    const el = document.getElementById("filters");
+    el.innerHTML = order
+      .filter((key) => filterData[key])
+      .map((key) => {
+        const options = Object.entries(filterData[key]).sort((a, b) => b[1] - a[1]);
+        return `
+          <div class="filter-group">
+            <h3>${key}</h3>
+            ${options
+              .map(
+                ([value, count]) => `
+              <label class="filter-option">
+                <input type="checkbox" data-filter-key="${key}" value="${value}" />
+                ${value} <span class="filter-count">(${count})</span>
+              </label>`
+              )
+              .join("")}
+          </div>`;
+      })
+      .join("");
+
+    el.querySelectorAll("input[type=checkbox]").forEach((cb) => {
+      cb.addEventListener("change", () => {
+        const key = cb.dataset.filterKey;
+        activeFilters[key] = activeFilters[key] || [];
+        if (cb.checked) activeFilters[key].push(cb.value);
+        else activeFilters[key] = activeFilters[key].filter((v) => v !== cb.value);
+        if (activeFilters[key].length === 0) delete activeFilters[key];
+        runSearch(window._pagefind, document.getElementById("search-box").value);
+      });
+    });
+  }
+
+  async function runSearch(pagefind, query) {
+    const filters = {};
+    for (const [k, v] of Object.entries(activeFilters)) filters[k] = v;
+
+    const search = await pagefind.search(query || null, { filters });
+    const results = await Promise.all(search.results.slice(0, 30).map((r) => r.data()));
+
+    const metaEl = document.getElementById("search-meta");
+    const resultsEl = document.getElementById("results");
+
+    if (!query && Object.keys(activeFilters).length === 0) {
+      metaEl.textContent = "Start typing, or filter by program/series/type/topic.";
+      resultsEl.innerHTML = "";
+      return;
+    }
+
+    metaEl.textContent = `${search.results.length} result${search.results.length === 1 ? "" : "s"}`;
+
+    if (results.length === 0) {
+      resultsEl.innerHTML = '<div class="search-empty">No results. Try a different term or fewer filters.</div>';
+      return;
+    }
+
+    resultsEl.innerHTML = results
+      .map(
+        (r) => `
+      <div class="pub-item scroll-reveal">
+        <div class="pi-body">
+          <h4><a href="../${r.url.replace(/^\//, "")}" style="color:inherit;text-decoration:none">${r.meta.title || r.url}</a></h4>
+          <p>${r.excerpt}</p>
+        </div>
+      </div>`
+      )
+      .join("");
+  }
+
+  boot();
+</script>
+</body>
+</html>

@@ -26,8 +26,10 @@
   transition:all var(--transition);border-top:4px solid var(--teal)
 }
 .series-project-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
-.series-project-card.soon{border-top-color:var(--border);opacity:.75}
-.series-project-card.soon:hover{opacity:.9;border-top-color:var(--amber-bright)}
+/* De-emphasis via border/badge only, not opacity -- opacity on the whole
+   card was fading text/buttons below WCAG AA contrast (Lighthouse-flagged). */
+.series-project-card.soon{border-top-color:var(--border)}
+.series-project-card.soon:hover{border-top-color:var(--amber-bright)}
 .series-project-card.private-card{border-top-color:#7B1FA2}
 .spc-header{display:flex;align-items:center;justify-content:space-between}
 .spc-region{font-size:2rem}

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Topics &amp; Series Manager — Fuence</title>
+<meta name="robots" content="noindex,nofollow" />
+<style>
+  :root {
+    --bg: #0f1115; --panel: #171a21; --panel-2: #1e222b; --border: #2a2f3a;
+    --text: #e7e9ee; --text-muted: #9aa1ae; --accent: #2fb4a3; --accent-2: #d9a441;
+    --danger: #d9534f; --radius: 10px;
+    --candidate: #6b7280; --active: #3b82f6; --core: #2fb4a3; --dormant: #4b5563;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--text); font-size: 14px;
+  }
+  header {
+    padding: 16px 24px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    position: sticky; top: 0; background: var(--bg); z-index: 10;
+  }
+  header h1 { font-size: 17px; margin: 0; font-weight: 600; }
+  header .sub { color: var(--text-muted); font-size: 12px; margin-top: 2px; }
+  .btn {
+    background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
+    padding: 8px 14px; border-radius: var(--radius); cursor: pointer; font-size: 13px;
+  }
+  .btn:hover { border-color: var(--accent); }
+  .btn.primary { background: var(--accent); color: #061613; border-color: var(--accent); font-weight: 600; }
+  .btn.primary:hover { filter: brightness(1.1); }
+  .btn:disabled { opacity: .4; cursor: not-allowed; }
+  main { padding: 20px 24px 80px; max-width: 1200px; margin: 0 auto; }
+  .toolbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; align-items: center; }
+  input[type="text"], select, textarea {
+    background: var(--panel); border: 1px solid var(--border); color: var(--text);
+    padding: 8px 10px; border-radius: 8px; font-size: 13px; font-family: inherit;
+  }
+  #search { flex: 1; min-width: 220px; }
+  .stats { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+  .stat {
+    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 10px 16px; font-size: 12px; color: var(--text-muted);
+  }
+  .stat b { color: var(--text); font-size: 18px; display: block; font-weight: 700; }
+  .empty-state {
+    text-align: center; padding: 60px 20px; color: var(--text-muted);
+    border: 1px dashed var(--border); border-radius: var(--radius);
+  }
+  .group { margin-bottom: 22px; }
+  .group-title {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted);
+    margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
+  }
+  .group-title .count { background: var(--panel-2); padding: 1px 7px; border-radius: 20px; font-size: 11px; }
+  .topic-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+  .topic-card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 12px 14px; cursor: pointer; transition: border-color .15s;
+  }
+  .topic-card:hover { border-color: var(--accent); }
+  .topic-card .name { font-weight: 600; font-size: 13.5px; margin-bottom: 6px; }
+  .topic-card .meta { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .badge {
+    font-size: 10.5px; padding: 2px 8px; border-radius: 20px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .03em;
+  }
+  .badge.candidate { background: color-mix(in srgb, var(--candidate) 25%, transparent); color: #c3c8d1; }
+  .badge.active { background: color-mix(in srgb, var(--active) 25%, transparent); color: #93c5fd; }
+  .badge.core { background: color-mix(in srgb, var(--core) 25%, transparent); color: #7fe0d2; }
+  .badge.dormant { background: color-mix(in srgb, var(--dormant) 25%, transparent); color: #9ca3af; }
+  .pub-count { color: var(--text-muted); font-size: 11px; }
+  .modal-backdrop {
+    position: fixed; inset: 0; background: rgba(0,0,0,.6); display: none;
+    align-items: flex-start; justify-content: center; padding: 40px 16px; z-index: 100; overflow-y: auto;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal {
+    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 22px; width: 100%; max-width: 480px;
+  }
+  .modal h2 { margin: 0 0 16px; font-size: 16px; }
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 5px; }
+  .field input, .field select, .field textarea { width: 100%; }
+  .field textarea { min-height: 60px; resize: vertical; }
+  .modal-actions { display: flex; justify-content: space-between; margin-top: 20px; gap: 10px; }
+  .modal-actions .right { display: flex; gap: 10px; }
+  .toast {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: var(--panel-2); border: 1px solid var(--accent); color: var(--text);
+    padding: 10px 18px; border-radius: 8px; font-size: 13px; display: none; z-index: 200;
+  }
+  .toast.show { display: block; }
+  .unsaved-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--accent-2); display: none;
+  }
+  .unsaved-dot.show { display: inline-block; }
+</style>
+</head>
+<body data-pagefind-ignore="all">
+
+<header>
+  <div>
+    <h1>Topics &amp; Series Manager <span class="unsaved-dot" id="unsavedDot" title="Unsaved changes"></span></h1>
+    <div class="sub">content/topics.json — candidate → active → core → dormant lifecycle</div>
+  </div>
+  <div style="display:flex; gap:8px; align-items:center">
+    <span class="sub" id="fileStatus">No file opened</span>
+    <button class="btn" id="openBtn">Open topics.json</button>
+    <button class="btn primary" id="saveBtn" disabled>Save</button>
+  </div>
+</header>
+
+<main>
+
+  <div id="noFileMsg" class="empty-state">
+    Click <b>"Open topics.json"</b> above and select<br>
+    <code>/home/elijo/fuence website/content/topics.json</code><br><br>
+    (Requires Chrome or Edge — uses the File System Access API to read and write the file directly, no server needed.)
+  </div>
+
+  <div id="app" style="display:none">
+    <div class="stats" id="stats"></div>
+
+    <div class="toolbar">
+      <input type="text" id="search" placeholder="Search topics…" />
+      <select id="statusFilter">
+        <option value="">All statuses</option>
+        <option value="candidate">Candidate</option>
+        <option value="active">Active</option>
+        <option value="core">Core</option>
+        <option value="dormant">Dormant</option>
+      </select>
+      <select id="seriesFilter"><option value="">All series</option></select>
+      <button class="btn primary" id="addBtn">+ Add Topic</button>
+    </div>
+
+    <div id="groups"></div>
+  </div>
+
+</main>
+
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <h2 id="modalTitle">Edit Topic</h2>
+    <div class="field">
+      <label>Name</label>
+      <input type="text" id="fName" />
+    </div>
+    <div class="field">
+      <label>Slug (auto-generated, edit if needed)</label>
+      <input type="text" id="fSlug" />
+    </div>
+    <div class="field">
+      <label>Status</label>
+      <select id="fStatus">
+        <option value="candidate">Candidate — proposed, unused</option>
+        <option value="active">Active — attached to ≥1 real publication</option>
+        <option value="core">Core — featured badge on publication pages</option>
+        <option value="dormant">Dormant — unused/superseded, hidden</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Series (comma-separated slugs)</label>
+      <input type="text" id="fSeries" placeholder="e.g. republic-unmade, stable-republic" />
+    </div>
+    <div class="field">
+      <label>Publication count</label>
+      <input type="text" id="fCount" inputmode="numeric" />
+    </div>
+    <div class="field">
+      <label>Description / notes</label>
+      <textarea id="fDesc"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="btn" id="deleteBtn" style="color:#f3a5a2; border-color: var(--danger)">Delete</button>
+      <div class="right">
+        <button class="btn" id="cancelBtn">Cancel</button>
+        <button class="btn primary" id="saveTopicBtn">Save Topic</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let fileHandle = null;
+let data = null;
+let dirty = false;
+let editingSlug = null; // null = adding new
+
+const $ = (id) => document.getElementById(id);
+
+function toast(msg) {
+  const t = $('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function markDirty(v) {
+  dirty = v;
+  $('unsavedDot').classList.toggle('show', v);
+  $('saveBtn').disabled = !v;
+}
+
+function slugify(s) {
+  return s.toLowerCase().trim()
+    .replace(/['"]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+async function openFile() {
+  try {
+    [fileHandle] = await window.showOpenFilePicker({
+      types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }]
+    });
+    const file = await fileHandle.getFile();
+    const text = await file.text();
+    data = JSON.parse(text);
+    if (!data.topics || !data.series_registry) {
+      throw new Error('This doesn\'t look like topics.json — missing "topics" or "series_registry".');
+    }
+    $('fileStatus').textContent = file.name;
+    $('noFileMsg').style.display = 'none';
+    $('app').style.display = 'block';
+    populateSeriesFilter();
+    render();
+    markDirty(false);
+    toast('Loaded ' + data.topics.length + ' topics');
+  } catch (err) {
+    if (err.name !== 'AbortError') toast('Error: ' + err.message);
+  }
+}
+
+async function saveFile() {
+  if (!fileHandle) return;
+  data.meta.last_updated = new Date().toISOString().slice(0, 10);
+  const writable = await fileHandle.createWritable();
+  await writable.write(JSON.stringify(data, null, 2) + '\n');
+  await writable.close();
+  markDirty(false);
+  toast('Saved');
+}
+
+function populateSeriesFilter() {
+  const sel = $('seriesFilter');
+  sel.innerHTML = '<option value="">All series</option>';
+  Object.entries(data.series_registry).forEach(([slug, s]) => {
+    const opt = document.createElement('option');
+    opt.value = slug;
+    opt.textContent = s.name;
+    sel.appendChild(opt);
+  });
+}
+
+function seriesName(slug) {
+  return (data.series_registry[slug] && data.series_registry[slug].name) || slug;
+}
+
+function renderStats() {
+  const counts = { candidate: 0, active: 0, core: 0, dormant: 0 };
+  data.topics.forEach(t => counts[t.status] = (counts[t.status] || 0) + 1);
+  $('stats').innerHTML = `
+    <div class="stat"><b>${data.topics.length}</b>Total topics</div>
+    <div class="stat"><b>${counts.candidate}</b>Candidate</div>
+    <div class="stat"><b>${counts.active}</b>Active</div>
+    <div class="stat"><b>${counts.core}</b>Core (shown as public badges)</div>
+    <div class="stat"><b>${counts.dormant}</b>Dormant</div>
+  `;
+}
+
+function render() {
+  renderStats();
+  const q = $('search').value.toLowerCase().trim();
+  const statusF = $('statusFilter').value;
+  const seriesF = $('seriesFilter').value;
+
+  const filtered = data.topics.filter(t => {
+    if (statusF && t.status !== statusF) return false;
+    if (seriesF && !(t.series || []).includes(seriesF)) return false;
+    if (q && !t.name.toLowerCase().includes(q) && !t.slug.toLowerCase().includes(q)) return false;
+    return true;
+  });
+
+  // Group by primary series (first entry) for display
+  const groups = {};
+  filtered.forEach(t => {
+    const key = (t.series && t.series[0]) || '(unassigned)';
+    (groups[key] = groups[key] || []).push(t);
+  });
+
+  const groupsEl = $('groups');
+  groupsEl.innerHTML = '';
+
+  if (filtered.length === 0) {
+    groupsEl.innerHTML = '<div class="empty-state">No topics match this filter.</div>';
+    return;
+  }
+
+  Object.keys(groups).sort((a, b) => seriesName(a).localeCompare(seriesName(b))).forEach(key => {
+    const div = document.createElement('div');
+    div.className = 'group';
+    div.innerHTML = `<div class="group-title">${seriesName(key)} <span class="count">${groups[key].length}</span></div>`;
+    const grid = document.createElement('div');
+    grid.className = 'topic-grid';
+    groups[key].forEach(t => grid.appendChild(topicCard(t)));
+    div.appendChild(grid);
+    groupsEl.appendChild(div);
+  });
+}
+
+function topicCard(t) {
+  const card = document.createElement('div');
+  card.className = 'topic-card';
+  card.innerHTML = `
+    <div class="name">${t.name}</div>
+    <div class="meta">
+      <span class="badge ${t.status}">${t.status}</span>
+      <span class="pub-count">${t.publication_count || 0} pub${t.publication_count === 1 ? '' : 's'}</span>
+      ${(t.series || []).length > 1 ? `<span class="pub-count">· ${t.series.length} series</span>` : ''}
+    </div>
+  `;
+  card.addEventListener('click', () => openEditModal(t.slug));
+  return card;
+}
+
+function openEditModal(slug) {
+  editingSlug = slug;
+  const t = slug ? data.topics.find(x => x.slug === slug) : null;
+  $('modalTitle').textContent = t ? 'Edit Topic' : 'Add Topic';
+  $('fName').value = t ? t.name : '';
+  $('fSlug').value = t ? t.slug : '';
+  $('fStatus').value = t ? t.status : 'candidate';
+  $('fSeries').value = t ? (t.series || []).join(', ') : '';
+  $('fCount').value = t ? (t.publication_count || 0) : 0;
+  $('fDesc').value = t ? (t.description || '') : '';
+  $('deleteBtn').style.display = t ? 'inline-block' : 'none';
+  $('modalBackdrop').classList.add('open');
+}
+
+function closeModal() {
+  $('modalBackdrop').classList.remove('open');
+  editingSlug = null;
+}
+
+$('fName').addEventListener('input', () => {
+  if (!editingSlug) $('fSlug').value = slugify($('fName').value);
+});
+
+function saveTopicFromModal() {
+  const name = $('fName').value.trim();
+  if (!name) { toast('Name is required'); return; }
+  const slug = $('fSlug').value.trim() || slugify(name);
+  const series = $('fSeries').value.split(',').map(s => s.trim()).filter(Boolean);
+  const payload = {
+    slug, name,
+    status: $('fStatus').value,
+    description: $('fDesc').value.trim(),
+    series,
+    publication_count: parseInt($('fCount').value, 10) || 0
+  };
+
+  const existingIdx = data.topics.findIndex(x => x.slug === (editingSlug || slug));
+  if (existingIdx >= 0) {
+    data.topics[existingIdx] = payload;
+  } else {
+    if (data.topics.some(x => x.slug === slug)) {
+      toast('A topic with this slug already exists');
+      return;
+    }
+    data.topics.push(payload);
+  }
+  markDirty(true);
+  closeModal();
+  render();
+}
+
+function deleteTopic() {
+  if (!editingSlug) return;
+  if (!confirm('Delete "' + $('fName').value + '"? This cannot be undone until you re-open the file without saving.')) return;
+  data.topics = data.topics.filter(x => x.slug !== editingSlug);
+  markDirty(true);
+  closeModal();
+  render();
+}
+
+$('openBtn').addEventListener('click', openFile);
+$('saveBtn').addEventListener('click', saveFile);
+$('addBtn').addEventListener('click', () => openEditModal(null));
+$('cancelBtn').addEventListener('click', closeModal);
+$('saveTopicBtn').addEventListener('click', saveTopicFromModal);
+$('deleteBtn').addEventListener('click', deleteTopic);
+$('search').addEventListener('input', render);
+$('statusFilter').addEventListener('change', render);
+$('seriesFilter').addEventListener('change', render);
+$('modalBackdrop').addEventListener('click', (e) => { if (e.target === $('modalBackdrop')) closeModal(); });
+
+window.addEventListener('beforeunload', (e) => {
+  if (dirty) { e.preventDefault(); e.returnValue = ''; }
+});
+
+if (!window.showOpenFilePicker) {
+  $('noFileMsg').innerHTML = '⚠ This tool needs the File System Access API (Chrome or Edge). It\'s not available in this browser.';
+  $('openBtn').disabled = true;
+}
+</script>
+
+</body>
+</html>

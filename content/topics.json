@@ -1,0 +1,676 @@
+{
+  "meta": {
+    "description": "Cross-cutting topic taxonomy registry for fuence.com and Ghost's public post tags. Single source of truth \u2014 new topics get proposed here (via the Topics & Series Manager tool), not freehand-typed per publication. Prevents duplicate/synonym sprawl.",
+    "status_model": [
+      "candidate",
+      "active",
+      "core",
+      "dormant"
+    ],
+    "status_definitions": {
+      "candidate": "Proposed, not yet attached to any real publication.",
+      "active": "Attached to at least 1 real (published or approved-draft) publication.",
+      "core": "Recurring \u2014 3+ publications or 2+ series \u2014 featured/shown as a visible badge on publication pages. Only Core-status topics surface as public UI tags; all statuses power search and related-publications matching regardless.",
+      "dormant": "Unused or superseded by a renamed/merged topic \u2014 hidden but kept for history."
+    },
+    "excluded_vocabulary": [
+      "Geopolitics-India and Geopolitics-China are never added to this registry, in any form, from any source project \u2014 Ghost-only internal indexing layer, never public. See CLAUDE architecture plan Segment 1.",
+      "Microfinance & Women's Economic Access is deliberately excluded from Women, Prosperity, Zenith \u2014 Elijo wants a critical (not pro-empowerment) treatment, possible future home under A Republic Unmade instead."
+    ],
+    "pending_topic_sets": [
+      "Regional Desk (public sibling series) \u2014 needs its own neutral topic set, not yet drafted.",
+      "Education & Empowerment (flagship project) \u2014 framework not yet designed, no topics yet."
+    ],
+    "last_updated": "2026-08-11"
+  },
+  "topics": [
+    {
+      "slug": "1971-liberation-war-genocide",
+      "name": "1971 Liberation War & Genocide",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "genesis-of-a-republic"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "war-crimes-justice",
+      "name": "War Crimes & Justice",
+      "status": "active",
+      "description": "",
+      "series": [
+        "genesis-of-a-republic"
+      ],
+      "publication_count": 1
+    },
+    {
+      "slug": "founding-constitutional-principles",
+      "name": "Founding Constitutional Principles",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "genesis-of-a-republic"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "living-memory-commemoration",
+      "name": "Living Memory & Commemoration",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "genesis-of-a-republic"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "democratic-backsliding-institutional-capture",
+      "name": "Democratic Backsliding & Institutional Capture",
+      "status": "active",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 2
+    },
+    {
+      "slug": "press-freedom-civil-society-restriction",
+      "name": "Press Freedom & Civil Society Restriction",
+      "status": "active",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 1
+    },
+    {
+      "slug": "political-islams-rehabilitation",
+      "name": "Political Islam's Rehabilitation",
+      "status": "active",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 2
+    },
+    {
+      "slug": "interim-government-constitutional-crisis",
+      "name": "Interim Government & Constitutional Crisis",
+      "status": "active",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 1
+    },
+    {
+      "slug": "economic-mismanagement",
+      "name": "Economic Mismanagement",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "banking-sector-collapse",
+      "name": "Banking Sector Collapse",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "fiscal-policy-megaproject-debt",
+      "name": "Fiscal Policy & Megaproject Debt",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "self-dealing-elite-corruption",
+      "name": "Self-Dealing & Elite Corruption",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "mob-violence-minority-persecution",
+      "name": "Mob Violence & Minority Persecution",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "international-accountability-mechanisms",
+      "name": "International Accountability Mechanisms",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "political-parties-electoral-integrity",
+      "name": "Political Parties & Electoral Integrity",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "security-vacuum-extremism-risk",
+      "name": "Security Vacuum & Extremism Risk",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "international-legitimization-diplomatic-recognition",
+      "name": "International Legitimization & Diplomatic Recognition",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "student-leadership-new-political-actors",
+      "name": "Student Leadership & New Political Actors",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "international-economic-pressure-trade",
+      "name": "International Economic Pressure & Trade",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "historical-precedent-minus-two-formula",
+      "name": "Historical Precedent: The \"Minus-Two\" Formula",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "comparative-case-studies",
+      "name": "Comparative Case Studies",
+      "status": "candidate",
+      "description": "How other democracies have collapsed/recovered \u2014 possibly cross-cutting beyond just A Republic Unmade.",
+      "series": [
+        "republic-unmade"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "bangladesh-development-miracle",
+      "name": "Bangladesh's Development Miracle",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-ascending"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "institution-building-democratic-consolidation",
+      "name": "Institution-Building & Democratic Consolidation",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-ascending"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "global-economic-integration",
+      "name": "Global Economic Integration",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "republic-ascending"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "vision-bangladesh-long-term-national-strategy",
+      "name": "Vision Bangladesh / Long-Term National Strategy",
+      "status": "candidate",
+      "description": "Renamed from \"Vision 2041\" to avoid association with the ruling party's own official plan name.",
+      "series": [
+        "stable-republic"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "regional-partnership-economic-cooperation",
+      "name": "Regional Partnership & Economic Cooperation",
+      "status": "active",
+      "description": "",
+      "series": [
+        "stable-republic"
+      ],
+      "publication_count": 1
+    },
+    {
+      "slug": "skilled-livelihoods-abroad",
+      "name": "Skilled Livelihoods Abroad",
+      "status": "active",
+      "description": "One of the 5 Sonar Bangla framework pillars. Recurs across Stable Republic and the Golden Horizons program.",
+      "series": [
+        "stable-republic",
+        "rising-africa",
+        "rising-south-america",
+        "comparative-ledger"
+      ],
+      "publication_count": 1
+    },
+    {
+      "slug": "knowledge-economy",
+      "name": "Knowledge Economy",
+      "status": "active",
+      "description": "One of the 5 Sonar Bangla framework pillars.",
+      "series": [
+        "stable-republic"
+      ],
+      "publication_count": 1
+    },
+    {
+      "slug": "domestic-entrepreneurship",
+      "name": "Domestic Entrepreneurship",
+      "status": "active",
+      "description": "One of the 5 Sonar Bangla framework pillars.",
+      "series": [
+        "stable-republic"
+      ],
+      "publication_count": 1
+    },
+    {
+      "slug": "innovation-pipeline",
+      "name": "Innovation Pipeline",
+      "status": "active",
+      "description": "One of the 5 Sonar Bangla framework pillars.",
+      "series": [
+        "stable-republic"
+      ],
+      "publication_count": 1
+    },
+    {
+      "slug": "cultural-soft-power",
+      "name": "Cultural Soft Power",
+      "status": "active",
+      "description": "One of the 5 Sonar Bangla framework pillars.",
+      "series": [
+        "stable-republic"
+      ],
+      "publication_count": 1
+    },
+    {
+      "slug": "youth-demographic-dividend",
+      "name": "Youth Demographic Dividend",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "a-generations-potential"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "comparative-global-youth-models",
+      "name": "Comparative Global Youth Models",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "a-generations-potential"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "skills-workforce-development-tvet",
+      "name": "Skills & Workforce Development (TVET)",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "a-generations-potential"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "youth-unemployment-underemployment",
+      "name": "Youth Unemployment & Underemployment",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "barriers-to-belonging"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "migration-pressure-brain-drain",
+      "name": "Migration Pressure & Brain Drain",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "barriers-to-belonging"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "political-uncertainty-impact-on-youth",
+      "name": "Political Uncertainty's Impact on Youth",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "barriers-to-belonging"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "social-exclusion-identity-crisis",
+      "name": "Social Exclusion & Identity Crisis",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "barriers-to-belonging"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "global-youth-success-stories",
+      "name": "Global Youth Success Stories",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "youth-playbook"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "diaspora-remittances",
+      "name": "Diaspora & Remittances",
+      "status": "candidate",
+      "description": "Deliberately excluded from Women, Prosperity, Zenith (migration-vulnerability concern specific to that program) \u2014 stays available here.",
+      "series": [
+        "youth-playbook"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "labour-migration-overseas-employment",
+      "name": "Labour Migration & Overseas Employment",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "youth-playbook"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "innovation-entrepreneurship-pathways",
+      "name": "Innovation & Entrepreneurship Pathways",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "youth-playbook"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "knowledge-economy-transition",
+      "name": "Knowledge Economy Transition",
+      "status": "candidate",
+      "description": "Golden Horizons framework-level topic \u2014 no drafted content yet.",
+      "series": [
+        "rising-africa",
+        "rising-south-america",
+        "comparative-ledger"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "domestic-entrepreneurship-local-enterprise",
+      "name": "Domestic Entrepreneurship & Local Enterprise",
+      "status": "candidate",
+      "description": "Golden Horizons framework-level topic \u2014 no drafted content yet.",
+      "series": [
+        "rising-africa",
+        "rising-south-america",
+        "comparative-ledger"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "innovation-pipeline-technology-adoption",
+      "name": "Innovation Pipeline & Technology Adoption",
+      "status": "candidate",
+      "description": "Golden Horizons framework-level topic \u2014 no drafted content yet.",
+      "series": [
+        "rising-africa",
+        "rising-south-america",
+        "comparative-ledger"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "cultural-soft-power-global-identity",
+      "name": "Cultural Soft Power & Global Identity",
+      "status": "candidate",
+      "description": "Golden Horizons framework-level topic \u2014 no drafted content yet.",
+      "series": [
+        "rising-africa",
+        "rising-south-america",
+        "comparative-ledger"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "development-case-studies-comparative-growth",
+      "name": "Development Case Studies & Comparative Growth",
+      "status": "candidate",
+      "description": "Golden Horizons framework-level topic \u2014 no drafted content yet.",
+      "series": [
+        "rising-africa",
+        "rising-south-america",
+        "comparative-ledger"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "resource-governance-sovereignty",
+      "name": "Resource Governance & Sovereignty",
+      "status": "candidate",
+      "description": "Africa-leaning, drawn from the retired placeholder card's own language.",
+      "series": [
+        "rising-africa"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "great-power-competition-democratic-resilience",
+      "name": "Great Power Competition & Democratic Resilience",
+      "status": "candidate",
+      "description": "South America-leaning, drawn from the retired placeholder card's own language.",
+      "series": [
+        "rising-south-america"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "garment-industry-female-workforce",
+      "name": "Garment Industry & Female Workforce",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "women-prosperity-zenith"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "rural-womens-economic-participation",
+      "name": "Rural Women's Economic Participation",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "women-prosperity-zenith"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "women-in-politics-leadership",
+      "name": "Women in Politics & Leadership",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "women-prosperity-zenith"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "womens-legal-rights-safety",
+      "name": "Women's Legal Rights & Safety",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "women-prosperity-zenith"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "education-literacy-gains-for-women",
+      "name": "Education & Literacy Gains for Women",
+      "status": "candidate",
+      "description": "Cross-references the future Education & Empowerment flagship project.",
+      "series": [
+        "women-prosperity-zenith"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "women-led-enterprise-domestic-entrepreneurship",
+      "name": "Women-Led Enterprise & Domestic Entrepreneurship",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "women-prosperity-zenith"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "skills-training-vocational-certification-women",
+      "name": "Skills Training & Vocational Certification for Women",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "women-prosperity-zenith"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "cooperative-community-based-economic-models",
+      "name": "Cooperative & Community-Based Economic Models",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "women-prosperity-zenith"
+      ],
+      "publication_count": 0
+    },
+    {
+      "slug": "mentorship-role-model-networks",
+      "name": "Mentorship & Role-Model Networks",
+      "status": "candidate",
+      "description": "",
+      "series": [
+        "women-prosperity-zenith"
+      ],
+      "publication_count": 0
+    }
+  ],
+  "series_registry": {
+    "genesis-of-a-republic": {
+      "name": "Genesis of a Republic",
+      "program": "South Asia & Bangladesh"
+    },
+    "republic-unmade": {
+      "name": "A Republic Unmade: Bangladesh at the Brink",
+      "program": "South Asia & Bangladesh",
+      "focal": true
+    },
+    "republic-ascending": {
+      "name": "Pre-July 2024: The Republic Ascending",
+      "program": "South Asia & Bangladesh"
+    },
+    "stable-republic": {
+      "name": "Stable Republic: Full Potential of Democratic Bangladesh",
+      "program": "South Asia & Bangladesh"
+    },
+    "a-generations-potential": {
+      "name": "A Generation's Potential",
+      "program": "Youth"
+    },
+    "barriers-to-belonging": {
+      "name": "Barriers to Belonging",
+      "program": "Youth"
+    },
+    "youth-playbook": {
+      "name": "The Youth Playbook",
+      "program": "Youth"
+    },
+    "rising-africa": {
+      "name": "Rising Africa",
+      "program": "Golden Horizons",
+      "status": "coming_soon"
+    },
+    "rising-south-america": {
+      "name": "Rising South America",
+      "program": "Golden Horizons",
+      "status": "coming_soon"
+    },
+    "comparative-ledger": {
+      "name": "The Comparative Ledger",
+      "program": "Golden Horizons",
+      "status": "coming_soon"
+    },
+    "women-prosperity-zenith": {
+      "name": "Women, Prosperity, Zenith",
+      "program": null
+    },
+    "regional-desk": {
+      "name": "Regional Desk",
+      "program": null,
+      "note": "Public sibling series only \u2014 curated, neutral-framed subset of India-China-and-region content. No topics drafted yet."
+    }
+  }
+}
