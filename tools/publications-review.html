@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Publications Review — Fuence</title>
+<meta name="robots" content="noindex,nofollow" />
+<style>
+  :root {
+    --bg: #0f1115; --panel: #171a21; --panel-2: #1e222b; --border: #2a2f3a;
+    --text: #e7e9ee; --text-muted: #9aa1ae; --accent: #2fb4a3; --accent-2: #d9a441;
+    --danger: #d9534f; --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--text); font-size: 14px;
+  }
+  header {
+    padding: 16px 24px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    position: sticky; top: 0; background: var(--bg); z-index: 10;
+  }
+  header h1 { font-size: 17px; margin: 0; font-weight: 600; }
+  header .sub { color: var(--text-muted); font-size: 12px; margin-top: 2px; }
+  .btn {
+    background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
+    padding: 8px 14px; border-radius: var(--radius); cursor: pointer; font-size: 13px;
+  }
+  .btn:hover { border-color: var(--accent); }
+  .btn.primary { background: var(--accent); color: #061613; border-color: var(--accent); font-weight: 600; }
+  .btn.primary:hover { filter: brightness(1.1); }
+  .btn:disabled { opacity: .4; cursor: not-allowed; }
+  main { padding: 20px 24px 100px; max-width: 1100px; margin: 0 auto; }
+  .openbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+  .openbar .btn { position: relative; }
+  .openbar .ok::after { content: "✓"; color: var(--accent); margin-left: 6px; }
+  input[type="text"], input[type="date"], select, textarea {
+    background: var(--panel); border: 1px solid var(--border); color: var(--text);
+    padding: 7px 9px; border-radius: 8px; font-size: 13px; font-family: inherit; width: 100%;
+  }
+  textarea { min-height: 56px; resize: vertical; }
+  .stats { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+  .stat {
+    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 10px 16px; font-size: 12px; color: var(--text-muted);
+  }
+  .stat b { color: var(--text); font-size: 18px; display: block; font-weight: 700; }
+  .empty-state {
+    text-align: center; padding: 60px 20px; color: var(--text-muted);
+    border: 1px dashed var(--border); border-radius: var(--radius);
+  }
+  .group-title {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted);
+    margin: 26px 0 10px; display: flex; align-items: center; gap: 8px;
+  }
+  .group-title .count { background: var(--panel-2); padding: 1px 7px; border-radius: 20px; font-size: 11px; }
+  .group-note { font-size: 11.5px; color: var(--text-muted); margin: -6px 0 12px; text-transform: none; letter-spacing: 0; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 14px 16px; margin-bottom: 10px;
+  }
+  .card.included { border-color: var(--accent); }
+  .card-head { display: flex; align-items: flex-start; gap: 10px; justify-content: space-between; }
+  .card-head label { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; flex: 1; }
+  .card-head input[type="checkbox"] { margin-top: 3px; width: 16px; height: 16px; flex-shrink: 0; }
+  .card-title { font-weight: 600; font-size: 14px; }
+  .card-meta { color: var(--text-muted); font-size: 11.5px; margin-top: 3px; }
+  .card-meta a { color: var(--text-muted); }
+  .card-excerpt { color: var(--text-muted); font-size: 12.5px; margin-top: 6px; line-height: 1.5; }
+  .badge { font-size: 10.5px; padding: 2px 8px; border-radius: 20px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .03em; background: color-mix(in srgb, var(--accent-2) 25%, transparent); color: #f0ce8f; }
+  .form-grid { display: none; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px;
+    padding-top: 14px; border-top: 1px solid var(--border); }
+  .card.included .form-grid { display: grid; }
+  .form-grid .full { grid-column: 1 / -1; }
+  .field label { display: block; font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+  .topic-list { display: flex; flex-wrap: wrap; gap: 6px 14px; max-height: 110px; overflow-y: auto;
+    background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; }
+  .topic-list label { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text); cursor: pointer; }
+  .topic-list.empty { color: var(--text-muted); font-size: 12px; font-style: italic; }
+  .footer-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; background: var(--panel);
+    border-top: 1px solid var(--border); padding: 12px 24px; display: flex;
+    align-items: center; justify-content: center; gap: 14px; z-index: 50;
+  }
+  .toast {
+    position: fixed; bottom: 70px; left: 50%; transform: translateX(-50%);
+    background: var(--panel-2); border: 1px solid var(--accent); color: var(--text);
+    padding: 10px 18px; border-radius: 8px; font-size: 13px; display: none; z-index: 200;
+  }
+  .toast.show { display: block; }
+  .already-added { opacity: .5; }
+  .already-added .card-title::after { content: " (already in publications.json)"; color: var(--text-muted); font-weight: 400; font-size: 11px; }
+</style>
+</head>
+<body data-pagefind-ignore="all">
+
+<header>
+  <div>
+    <h1>Publications Review</h1>
+    <div class="sub">Ghost posts with no fuence.com publications.json entry yet — assign series/topics, then save</div>
+  </div>
+  <div class="stat" id="pendingCount" style="display:none"></div>
+</header>
+
+<main>
+
+  <div id="noFileMsg" class="empty-state">
+    <p>Open all three files below (Chrome/Edge only — File System Access API, no server):</p>
+    <div class="openbar" style="justify-content:center">
+      <button class="btn" id="openStagingBtn">1. Open unsurfaced-ghost-posts.json</button>
+      <button class="btn" id="openTopicsBtn">2. Open topics.json</button>
+      <button class="btn" id="openPubsBtn">3. Open publications.json</button>
+    </div>
+    <p class="sub" style="margin-top:14px">All three live in <code>/home/elijo/fuence website/content/</code></p>
+  </div>
+
+  <div id="app" style="display:none">
+    <div class="openbar">
+      <button class="btn ok" id="openStagingBtn2">unsurfaced-ghost-posts.json</button>
+      <button class="btn ok" id="openTopicsBtn2">topics.json</button>
+      <button class="btn ok" id="openPubsBtn2">publications.json</button>
+    </div>
+
+    <div class="stats" id="stats"></div>
+
+    <div id="groups"></div>
+  </div>
+
+</main>
+
+<div class="footer-bar" id="footerBar" style="display:none">
+  <span class="sub" id="footerStatus">0 posts selected</span>
+  <button class="btn primary" id="saveBtn" disabled>Save selected to publications.json</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let stagingData = null, topicsData = null, pubsData = null;
+let pubsHandle = null;
+const existingIds = new Set();
+
+const $ = (id) => document.getElementById(id);
+
+function toast(msg) {
+  const t = $('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+async function openStaging() {
+  try {
+    const [handle] = await window.showOpenFilePicker({ types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }] });
+    stagingData = JSON.parse(await (await handle.getFile()).text());
+    if (!stagingData.posts) throw new Error('Missing "posts" array — is this unsurfaced-ghost-posts.json?');
+    markOpened('staging');
+    toast('Loaded ' + stagingData.posts.length + ' unsurfaced posts');
+    maybeRender();
+  } catch (err) { if (err.name !== 'AbortError') toast('Error: ' + err.message); }
+}
+
+async function openTopics() {
+  try {
+    const [handle] = await window.showOpenFilePicker({ types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }] });
+    topicsData = JSON.parse(await (await handle.getFile()).text());
+    if (!topicsData.series_registry || !topicsData.topics) throw new Error('Missing series_registry/topics — is this topics.json?');
+    markOpened('topics');
+    toast('Loaded ' + topicsData.series_registry ? Object.keys(topicsData.series_registry).length + ' series' : '');
+    maybeRender();
+  } catch (err) { if (err.name !== 'AbortError') toast('Error: ' + err.message); }
+}
+
+async function openPubs() {
+  try {
+    const [handle] = await window.showOpenFilePicker({ types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }] });
+    pubsHandle = handle;
+    pubsData = JSON.parse(await (await handle.getFile()).text());
+    if (!Array.isArray(pubsData)) throw new Error('Expected a JSON array — is this publications.json?');
+    pubsData.forEach(p => existingIds.add(p.id));
+    markOpened('pubs');
+    toast('Loaded ' + pubsData.length + ' existing publications');
+    maybeRender();
+  } catch (err) { if (err.name !== 'AbortError') toast('Error: ' + err.message); }
+}
+
+function markOpened(which) {
+  ({ staging: ['openStagingBtn', 'openStagingBtn2'], topics: ['openTopicsBtn', 'openTopicsBtn2'], pubs: ['openPubsBtn', 'openPubsBtn2'] })[which]
+    .forEach(id => $(id).classList.add('ok'));
+}
+
+function maybeRender() {
+  if (stagingData && topicsData && pubsData) {
+    $('noFileMsg').style.display = 'none';
+    $('app').style.display = 'block';
+    $('footerBar').style.display = 'flex';
+    render();
+  }
+}
+
+function seriesOptions(selected) {
+  const byProgram = {};
+  Object.entries(topicsData.series_registry).forEach(([slug, s]) => {
+    const prog = s.program || '(no program)';
+    (byProgram[prog] = byProgram[prog] || []).push([slug, s.name]);
+  });
+  let html = '<option value="">— choose series —</option>';
+  Object.keys(byProgram).sort().forEach(prog => {
+    html += `<optgroup label="${prog}">`;
+    byProgram[prog].forEach(([slug, name]) => {
+      html += `<option value="${slug}" ${slug === selected ? 'selected' : ''}>${name}</option>`;
+    });
+    html += '</optgroup>';
+  });
+  return html;
+}
+
+function topicCheckboxes(seriesSlug, selectedSlugs, uid) {
+  if (!seriesSlug) return '<div class="topic-list empty">Choose a series first</div>';
+  const matches = topicsData.topics.filter(t => (t.series || []).includes(seriesSlug));
+  if (!matches.length) return '<div class="topic-list empty">No topics registered yet for this series — add one in Topics &amp; Series Manager first, or leave blank.</div>';
+  return '<div class="topic-list">' + matches.map(t => `
+    <label><input type="checkbox" data-topic-cb="${uid}" value="${t.slug}" ${selectedSlugs.includes(t.slug) ? 'checked' : ''}> ${t.name}</label>
+  `).join('') + '</div>';
+}
+
+function defaultsFor(post) {
+  // Pre-clarified by Elijo: Go Back to Your Village (november-2023-wage-revolt-2026)
+  // is Women, Prosperity, Zenith -> Garment Industry & Female Workforce, include=true.
+  if (post.slug === 'november-2023-wage-revolt-2026') {
+    return { include: true, series: 'women-prosperity-zenith', topics: ['garment-industry-female-workforce'] };
+  }
+  return { include: !post.likely_atlas_chapter, series: '', topics: [] };
+}
+
+function render() {
+  const total = stagingData.posts.length;
+  const alreadyAdded = stagingData.posts.filter(p => existingIds.has(p.slug)).length;
+  const atlas = stagingData.posts.filter(p => p.likely_atlas_chapter).length;
+  $('stats').innerHTML = `
+    <div class="stat"><b>${total}</b>Unsurfaced posts</div>
+    <div class="stat"><b>${atlas}</b>Likely atlas chapters</div>
+    <div class="stat"><b>${total - atlas}</b>Standalone</div>
+    <div class="stat"><b>${alreadyAdded}</b>Already in publications.json (skip)</div>
+  `;
+
+  const groupsEl = $('groups');
+  groupsEl.innerHTML = '';
+
+  const standalone = stagingData.posts.filter(p => !p.likely_atlas_chapter);
+  const atlasChapters = stagingData.posts.filter(p => p.likely_atlas_chapter);
+
+  groupsEl.appendChild(buildGroup('Standalone pieces', 'No obvious reason these are missing a publication page — review and assign.', standalone));
+  groupsEl.appendChild(buildGroup('Likely 1971 Atlas source chapters', 'These may be the individual posts the consolidated Atlas page was assembled from — kept live for citation, probably NOT meant as separate listings. Defaulted to excluded; check the box to include one anyway.', atlasChapters));
+
+  updateFooter();
+}
+
+function buildGroup(title, note, posts) {
+  const wrap = document.createElement('div');
+  if (!posts.length) return wrap;
+  wrap.innerHTML = `<div class="group-title">${title} <span class="count">${posts.length}</span></div><div class="group-note">${note}</div>`;
+  posts.forEach(p => wrap.appendChild(buildCard(p)));
+  return wrap;
+}
+
+function buildCard(post) {
+  const uid = post.slug;
+  const alreadyAdded = existingIds.has(post.slug);
+  const d = defaultsFor(post);
+  const card = document.createElement('div');
+  card.className = 'card' + (alreadyAdded ? ' already-added' : '');
+  card.dataset.slug = uid;
+
+  const dateLabel = new Date(post.published_at + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+  card.innerHTML = `
+    <div class="card-head">
+      <label>
+        <input type="checkbox" class="include-cb" ${d.include ? 'checked' : ''} ${alreadyAdded ? 'disabled' : ''}>
+        <div>
+          <div class="card-title">${post.title}</div>
+          <div class="card-meta">
+            <a href="${post.url}" target="_blank">${post.slug}</a> · ${post.published_at}
+            ${post.likely_atlas_chapter ? '<span class="badge">atlas chapter?</span>' : ''}
+          </div>
+          <div class="card-excerpt">${post.custom_excerpt || '<em>(no Ghost excerpt set)</em>'}</div>
+        </div>
+      </label>
+    </div>
+    <div class="form-grid">
+      <div class="field full">
+        <label>Title</label>
+        <input type="text" class="f-title" value="${post.title.replace(/"/g, '&quot;')}">
+      </div>
+      <div class="field">
+        <label>Type</label>
+        <select class="f-type">
+          <option value="report">Report</option>
+          <option value="brief">Brief</option>
+          <option value="oped">Op-Ed</option>
+          <option value="guest">Guest Article</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Project</label>
+        <input type="text" class="f-project" value="bwbuasa">
+      </div>
+      <div class="field full">
+        <label>Series</label>
+        <select class="f-series">${seriesOptions(d.series)}</select>
+      </div>
+      <div class="field full">
+        <label>Topics</label>
+        <div class="f-topics">${topicCheckboxes(d.series, d.topics, uid)}</div>
+      </div>
+      <div class="field full">
+        <label>Excerpt (shown on fuence.com — 1-2 sentences)</label>
+        <textarea class="f-excerpt">${post.custom_excerpt || ''}</textarea>
+      </div>
+      <div class="field">
+        <label>Date</label>
+        <input type="date" class="f-date" value="${post.published_at}">
+      </div>
+      <div class="field">
+        <label>Date label (shown on page)</label>
+        <input type="text" class="f-date-label" value="${dateLabel}">
+      </div>
+      <div class="field">
+        <label>Author</label>
+        <input type="text" class="f-author" value="Futura Genesis Center">
+      </div>
+      <div class="field">
+        <label><input type="checkbox" class="f-pinned"> Pin to homepage</label>
+      </div>
+    </div>
+  `;
+
+  if (d.include && !alreadyAdded) card.classList.add('included');
+
+  card.querySelector('.include-cb').addEventListener('change', (e) => {
+    card.classList.toggle('included', e.target.checked);
+    updateFooter();
+  });
+  card.querySelector('.f-series').addEventListener('change', (e) => {
+    card.querySelector('.f-topics').innerHTML = topicCheckboxes(e.target.value, [], uid);
+  });
+
+  return card;
+}
+
+function updateFooter() {
+  const n = document.querySelectorAll('.card.included').length;
+  $('footerStatus').textContent = n + ' post' + (n === 1 ? '' : 's') + ' selected';
+  $('saveBtn').disabled = n === 0;
+}
+
+function collectEntry(card, post) {
+  const series = card.querySelector('.f-series').value;
+  const topics = Array.from(card.querySelectorAll('[data-topic-cb]:checked')).map(cb => cb.value);
+  return {
+    id: post.slug,
+    type: card.querySelector('.f-type').value,
+    series: series || null,
+    project: card.querySelector('.f-project').value.trim() || 'bwbuasa',
+    topics,
+    title: card.querySelector('.f-title').value.trim(),
+    excerpt: card.querySelector('.f-excerpt').value.trim(),
+    date: card.querySelector('.f-date').value,
+    date_label: card.querySelector('.f-date-label').value.trim(),
+    author: card.querySelector('.f-author').value.trim() || 'Futura Genesis Center',
+    link: post.url,
+    pinned_home: card.querySelector('.f-pinned').checked,
+  };
+}
+
+async function saveSelected() {
+  const cards = Array.from(document.querySelectorAll('.card.included'));
+  if (!cards.length) return;
+
+  const newEntries = [];
+  for (const card of cards) {
+    const slug = card.dataset.slug;
+    const post = stagingData.posts.find(p => p.slug === slug);
+    const entry = collectEntry(card, post);
+    if (!entry.title || !entry.excerpt || !entry.series) {
+      toast('Skipped "' + entry.title + '" — title, excerpt, and series are required');
+      continue;
+    }
+    if (existingIds.has(entry.id)) {
+      toast('Skipped "' + entry.title + '" — already in publications.json');
+      continue;
+    }
+    newEntries.push(entry);
+    existingIds.add(entry.id);
+  }
+
+  if (!newEntries.length) { toast('Nothing valid to save'); return; }
+
+  pubsData.push(...newEntries);
+  const writable = await pubsHandle.createWritable();
+  await writable.write(JSON.stringify(pubsData, null, 2) + '\n');
+  await writable.close();
+
+  toast('Saved ' + newEntries.length + ' new publication(s). Run build_content.py to generate the pages.');
+  newEntries.forEach(e => {
+    const card = document.querySelector(`.card[data-slug="${e.id}"]`);
+    if (card) { card.classList.add('already-added'); card.classList.remove('included'); card.querySelector('.include-cb').disabled = true; }
+  });
+  render();
+}
+
+$('openStagingBtn').addEventListener('click', openStaging);
+$('openTopicsBtn').addEventListener('click', openTopics);
+$('openPubsBtn').addEventListener('click', openPubs);
+$('openStagingBtn2').addEventListener('click', openStaging);
+$('openTopicsBtn2').addEventListener('click', openTopics);
+$('openPubsBtn2').addEventListener('click', openPubs);
+$('saveBtn').addEventListener('click', saveSelected);
+
+if (!window.showOpenFilePicker) {
+  $('noFileMsg').innerHTML = '⚠ This tool needs the File System Access API (Chrome or Edge). It\'s not available in this browser.';
+  document.querySelectorAll('.openbar .btn').forEach(b => b.disabled = true);
+}
+</script>
+
+</body>
+</html>

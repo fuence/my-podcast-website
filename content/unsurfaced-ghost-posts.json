@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "description": "Staging list of Ghost public+published posts with no fuence.com publications.json entry yet -- regenerate via scripts/ghost-fetch-unsurfaced.py, don't hand-edit except via the Publications Review tool's own form fields.",
+    "generated": "2026-08-11",
+    "count": 13
+  },
+  "posts": [
+    {
+      "ghost_id": "6a487d760cbd2a00015af185",
+      "slug": "mascarenhas-genocide-article-2026",
+      "title": "'Genocide': The 9,047 Words That Changed the Bangladesh War",
+      "url": "https://blog.fuence.com/mascarenhas-genocide-article-2026/",
+      "published_at": "2026-07-04",
+      "custom_excerpt": "",
+      "current_tags": [
+        "Bangladesh",
+        "South Asia",
+        "Fuence Research"
+      ],
+      "likely_atlas_chapter": true
+    },
+    {
+      "ghost_id": "6a3bf197e6caa5000141e7c1",
+      "slug": "1971-historical-record-2026",
+      "title": "Bangladesh 1971: The Liberation War — A Historical Record",
+      "url": "https://blog.fuence.com/1971-historical-record-2026/",
+      "published_at": "2026-06-24",
+      "custom_excerpt": "",
+      "current_tags": [
+        "Bangladesh",
+        "South Asia",
+        "Fuence Research"
+      ],
+      "likely_atlas_chapter": true
+    },
+    {
+      "ghost_id": "6a487d760cbd2a00015af193",
+      "slug": "eleven-sectors-mukti-bahini-2026",
+      "title": "Eleven Sectors, One Army: The Map of How Bangladesh Freed Itself",
+      "url": "https://blog.fuence.com/eleven-sectors-mukti-bahini-2026/",
+      "published_at": "2026-07-04",
+      "custom_excerpt": "",
+      "current_tags": [
+        "Bangladesh",
+        "South Asia",
+        "Fuence Research"
+      ],
+      "likely_atlas_chapter": true
+    },
+    {
+      "ghost_id": "6a487d760cbd2a00015af17e",
+      "slug": "blood-telegram-1971-2026",
+      "title": "Moral Bankruptcy: The Cable That Tried to Stop the 1971 Genocide",
+      "url": "https://blog.fuence.com/blood-telegram-1971-2026/",
+      "published_at": "2026-07-04",
+      "custom_excerpt": "",
+      "current_tags": [
+        "Bangladesh",
+        "South Asia",
+        "Fuence Research"
+      ],
+      "likely_atlas_chapter": true
+    },
+    {
+      "ghost_id": "6a487d760cbd2a00015af18c",
+      "slug": "selective-genocide-hindus-1971-2026",
+      "title": "Selective Genocide: The Specific Targeting of Hindus in East Pakistan, 1971",
+      "url": "https://blog.fuence.com/selective-genocide-hindus-1971-2026/",
+      "published_at": "2026-07-04",
+      "custom_excerpt": "",
+      "current_tags": [
+        "Bangladesh",
+        "South Asia",
+        "Fuence Research"
+      ],
+      "likely_atlas_chapter": true
+    },
+    {
+      "ghost_id": "6a487d770cbd2a00015af1cb",
+      "slug": "ict-act-party-trials-2026",
+      "title": "A New Kind of Defendant: Bangladesh's Tribunal Law Now Reaches Political Parties",
+      "url": "https://blog.fuence.com/ict-act-party-trials-2026/",
+      "published_at": "2026-07-04",
+      "custom_excerpt": "",
+      "current_tags": [
+        "Bangladesh",
+        "South Asia",
+        "Fuence Research"
+      ],
+      "likely_atlas_chapter": false
+    },
+    {
+      "ghost_id": "6a3c5488e6caa5000141e7da",
+      "slug": "a-generation-waiting",
+      "title": "A generation waiting",
+      "url": "https://blog.fuence.com/a-generation-waiting/",
+      "published_at": "2026-06-24",
+      "custom_excerpt": "The demographic window is real. It opens when a country's youth cohort is largest relative to its total population — and it closes without asking, in roughly ten to twenty years. Most countries are doing the same thing: not much.",
+      "current_tags": [
+        "The Meridian Initiative",
+        "Youth Development",
+        "Fuence Research"
+      ],
+      "likely_atlas_chapter": false
+    },
+    {
+      "ghost_id": "6a487d770cbd2a00015af1bd",
+      "slug": "extraction-as-continuity-2026",
+      "title": "Extraction as Continuity: How Bangladesh Went from the 22 Families of Pakistan to the 22 Brands of the World",
+      "url": "https://blog.fuence.com/extraction-as-continuity-2026/",
+      "published_at": "2026-07-04",
+      "custom_excerpt": "",
+      "current_tags": [
+        "Bangladesh",
+        "South Asia",
+        "Fuence Research"
+      ],
+      "likely_atlas_chapter": false
+    },
+    {
+      "ghost_id": "6a487d770cbd2a00015af1b6",
+      "slug": "five-decades-one-ideology-2026",
+      "title": "Five Decades, One Ideology: From the 1971 Mass Rapes to the 2026 Anti-Women Bills",
+      "url": "https://blog.fuence.com/five-decades-one-ideology-2026/",
+      "published_at": "2026-07-04",
+      "custom_excerpt": "",
+      "current_tags": [
+        "Bangladesh",
+        "South Asia",
+        "Fuence Research"
+      ],
+      "likely_atlas_chapter": false
+    },
+    {
+      "ghost_id": "6a487d760cbd2a00015af1a1",
+      "slug": "november-2023-wage-revolt-2026",
+      "title": "Go Back to Your Village: How Bangladesh's Garment Workers Won Half a War and Lost the Other Half",
+      "url": "https://blog.fuence.com/november-2023-wage-revolt-2026/",
+      "published_at": "2026-07-04",
+      "custom_excerpt": "",
+      "current_tags": [
+        "Bangladesh",
+        "South Asia",
+        "Fuence Research"
+      ],
+      "likely_atlas_chapter": false
+    },
+    {
+      "ghost_id": "6a487d770cbd2a00015af1d2",
+      "slug": "jamaat-moderate-rebrand-2026",
+      "title": "The Moderate Mask: Jamaat-e-Islami's Rebranding Campaign and What It Doesn't Change",
+      "url": "https://blog.fuence.com/jamaat-moderate-rebrand-2026/",
+      "published_at": "2026-07-04",
+      "custom_excerpt": "",
+      "current_tags": [
+        "Bangladesh",
+        "South Asia",
+        "Fuence Research"
+      ],
+      "likely_atlas_chapter": false
+    },
+    {
+      "ghost_id": "6a6a10300cbd2a00015af259",
+      "slug": "the-two-flagships",
+      "title": "The two flagships: why going and staying are equally the right answer",
+      "url": "https://blog.fuence.com/the-two-flagships/",
+      "published_at": "2026-07-29",
+      "custom_excerpt": "Every youth development program picks a side: either it helps young people leave, or it tries to keep them. Both postures are wrong — and they're wrong for the same reason.",
+      "current_tags": [
+        "The Meridian Initiative",
+        "Youth Development",
+        "Fuence Research",
+        "Meridian Papers"
+      ],
+      "likely_atlas_chapter": false
+    },
+    {
+      "ghost_id": "6a487d770cbd2a00015af1af",
+      "slug": "jei-anti-women-platform-2026",
+      "title": "What Jamaat-e-Islami Says in Private vs. What It Promises Women: A Source-Led Audit",
+      "url": "https://blog.fuence.com/jei-anti-women-platform-2026/",
+      "published_at": "2026-07-04",
+      "custom_excerpt": "",
+      "current_tags": [
+        "Bangladesh",
+        "South Asia",
+        "Fuence Research"
+      ],
+      "likely_atlas_chapter": false
+    }
+  ]
+}
